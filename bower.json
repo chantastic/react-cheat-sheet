@@ -1,0 +1,29 @@
+{
+  "name": "react-cheat-sheet",
+  "version": "0.0.0",
+  "description": "React Cheat Sheet",
+  "main": "dist/react-cheat-sheet.min.js",
+  "homepage": "https://github.com/chantastic/react-cheat-sheet",
+  "authors": [
+    "Michael Chan"
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "react",
+    "react-component"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".editorconfig",
+    ".gitignore",
+    "package.json",
+    "src",
+    "node_modules",
+    "example",
+    "test"
+  ]
+}
