@@ -10,6 +10,15 @@ function filterResults (predicate, _data) {
   }));
 }
 
+const inputStyle = {
+  width: "50%",
+  padding: 10,
+  fontSize: "1em",
+  borderRadius: 2,
+  border: "1px solid #aaa",
+  color: "black",
+}
+
 class ReactCheatSheet extends Component {
   constructor (props) {
     super(props);
@@ -40,14 +49,20 @@ class ReactCheatSheet extends Component {
 
     return (
       <main>
-        <input
-          autoFocus
-          type="text"
-          placeholder="Search"
-          value={this.state.predicate}
-          ref={c => this.searchInput = c}
-          onChange={this.handleChange}
-        />
+        <label>
+          <input
+            autoFocus
+            type="text"
+            style={inputStyle}
+            placeholder="Filter by name"
+            value={this.state.predicate}
+            ref={c => this.searchInput = c}
+            onChange={this.handleChange}
+          />
+          <div>
+            <small style={{ color: "#999" }}>* using case-insensitive regex match</small>
+          </div>
+        </label>
 
         <section>
           {(this.filteredResults.length)

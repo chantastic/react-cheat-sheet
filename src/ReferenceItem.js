@@ -1,10 +1,14 @@
 import React from 'react';
 import { article as articleStyle } from './styles';
+import Prism from './vendor/Prism';
 
 const styles = {
   root: {
     ...articleStyle,
     borderBottom: '1px solid #333'
+  },
+  header: {
+    overflowY: 'scroll'
   },
   module: {
     marginLeft: '.5em',
@@ -16,7 +20,7 @@ const styles = {
     position: 'relative',
     overflow: 'hidden',
     overflowX: 'scroll',
-    backgroundColor: '#333',
+    backgroundColor: 'rgb(40, 44, 52)',
     color: 'white',
     padding: 20,
     borderRadius: 2,
@@ -38,18 +42,18 @@ const styles = {
 
 const ReferenceItem = ({name, module, reference: href, example, color: backgroundColor}) => (
   <article style={styles.root}>
-    <h2>
+    <h2 style={styles.header}>
       {name}
       <span style={styles.module}>{module}</span>
     </h2>
 
     <pre style={styles.example}>
-      <code style={styles.code}>{example}</code>
+      <code style={styles.code}><Prism>{example}</Prism></code>
       <div style={{backgroundColor, ...styles.exampleColorCode}} />
     </pre>
 
     <div style={styles.reference}>
-      {(href) && <a href={href} target="_blank">Reference</a>}
+      {(href) && <a href={href} target="_blank">Read more &#8594;</a>}
     </div>
   </article>
 );
