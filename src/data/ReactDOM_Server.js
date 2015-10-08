@@ -1,24 +1,16 @@
-function withSharedData (raw) {
-  return raw.map(el => Object.assign(
-    {},
-    {
-      module: 'react-dom/server'
-    },
-    el
-  ));
-}
+import extendWithDefaults from '../assignSharedDefaults';
 
 const data = [
   {
     name: 'renderToString',
     example: `ReactDOMServer.renderToString(<MyComponent />);`,
-    reference: `https://facebook.github.io/react/docs/top-level-api.html#react.rendertostring`,
+    reference: `http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostring`,
   },
   {
     name: 'renderStaticMarkup',
     example: `ReactDOMServer.renderToStaticMarkup(<MyComponent />);`,
-    reference: 'https://facebook.github.io/react/docs/top-level-api.html#react.rendertostaticmarkup',
+    reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostaticmarkup',
   },
 ];
 
-export default withSharedData(data);
+export default extendWithDefaults(data, { module: 'react-dom', color: '#85144b' });

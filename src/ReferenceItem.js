@@ -13,10 +13,20 @@ const styles = {
     fontWeight: 'normal',
   },
   example: {
+    position: 'relative',
+    overflow: 'hidden',
+    overflowX: 'scroll',
     backgroundColor: '#333',
     color: 'white',
     padding: 20,
     borderRadius: 2,
+  },
+  exampleColorCode: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    height: '100%',
+    width: 4
   },
   code: {
     fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
@@ -26,7 +36,7 @@ const styles = {
   }
 };
 
-const ReferenceItem = ({name, module, reference: href, example}) => (
+const ReferenceItem = ({name, module, reference: href, example, color: backgroundColor}) => (
   <article style={styles.root}>
     <h2>
       {name}
@@ -35,6 +45,7 @@ const ReferenceItem = ({name, module, reference: href, example}) => (
 
     <pre style={styles.example}>
       <code style={styles.code}>{example}</code>
+      <div style={{backgroundColor, ...styles.exampleColorCode}} />
     </pre>
 
     <div style={styles.reference}>

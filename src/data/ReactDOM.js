@@ -1,28 +1,21 @@
-function withSharedData (raw) {
-  return raw.map(el => Object.assign(
-    {},
-    {
-      module: 'react-dom'
-    },
-    el
-  ));
-}
+import extendWithDefaults from '../assignSharedDefaults';
 
 const data = [
   {
     name: 'render',
-    example: `ReactDOM.render(<MyComponent />, document.getElementById('MyComponent');`
+    example: `ReactDOM.render(<MyComponent />, document.getElementById('MyComponent');`,
+    reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdom.render'
   },
   {
     name: 'findDOMNode',
     example: `ReactDOM.findDOMNode(componentRef);`,
-    reference: 'https://facebook.github.io/react/docs/working-with-the-browser.html#refs-and-finddomnode',
+    reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdom.finddomnode',
   },
   {
     name: 'unmountComponentAtNode',
     example: `ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))`,
-    reference: 'https://facebook.github.io/react/docs/top-level-api.html#react.unmountcomponentatnode',
+    reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode',
   },
 ];
 
-export default withSharedData(data);
+export default extendWithDefaults(data, { module: 'react-dom', color: '#85144b' });
