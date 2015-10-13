@@ -11,11 +11,12 @@ function filterResults (predicate, _data) {
 }
 
 const inputStyle = {
-  width: "50%",
+  width: "100%",
   padding: 10,
   fontSize: "1em",
   borderRadius: 2,
   border: "1px solid #aaa",
+  boxSizing: "border-box",
   color: "black",
 }
 
