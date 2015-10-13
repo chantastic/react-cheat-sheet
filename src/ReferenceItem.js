@@ -5,7 +5,7 @@ import Prism from './vendor/Prism';
 const styles = {
   root: {
     ...articleStyle,
-    borderBottom: '1px solid #333'
+    borderBottom: '1px solid #aaa'
   },
   header: {
     overflowY: 'scroll'
@@ -53,7 +53,7 @@ const ReferenceItem = ({name, module, reference: href, example, color: backgroun
     </pre>
 
     <div style={styles.reference}>
-      {(href) && <a href={href} target="_blank">Read more &#8594;</a>}
+      {(href) && <a href={href} style={{color: "#56b6c2"}} target="_blank">Read more &#8594;</a>}
     </div>
   </article>
 );
