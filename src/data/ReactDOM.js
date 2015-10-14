@@ -3,7 +3,7 @@ import extendWithDefaults from '../assignSharedDefaults';
 const data = [
   {
     name: 'render',
-    example: `ReactDOM.render(<MyComponent />, document.getElementById('MyComponent');`,
+    example: `ReactDOM.render(<MyComponent />, document.getElementById('MyComponent'));`,
     reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdom.render'
   },
   {
