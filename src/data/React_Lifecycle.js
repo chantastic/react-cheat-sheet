@@ -40,7 +40,7 @@ const data = [
   },
   {
     name: 'componentDidUpdate',
-    example: `componentDidUpdate: function (nextProps, nextState) {
+    example: `componentDidUpdate: function (prevProps, prevState) {
   // invoked immediately after DOM updates, not for initial 'render'
 }`,
     reference: 'http://facebook.github.io/react/docs/component-specs.html#updating-componentdidupdate',
