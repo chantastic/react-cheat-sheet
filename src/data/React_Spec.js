@@ -28,7 +28,7 @@ const data = [
   },
   {
     name: 'propTypes',
-    example: `propTypes: function () {
+    example: `propTypes: {
   myProp: React.PropTypes.bool
 }
 
