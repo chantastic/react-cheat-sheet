@@ -1,0 +1,29 @@
+.sans-serif {
+  font-family: 'avenir next', avenir, helvetica, 'helvetica neue', arial, sans-serif;
+}
+/* prism theme */
+.language-javascript {
+  color: #dbdee4;
+}
+.language-javascript .token.string {
+  color: #98c379;
+}
+.language-javascript .token.comment {
+  color: #5c6370;
+  font-style: italic;
+}
+.language-javascript .token.class-name {
+  color: #e5c07b;
+}
+.language-javascript .token.keyword {
+  color: #c678dd;
+}
+.language-javascript .token.operator {
+  color: #e06c75;
+}
+.language-javascript .token.function *:first-child {
+  color: #56b6c2;
+}
+.language-javascript .token.punctuation ~ .language-javascript .token.keyword {
+  color: #008000;
+}

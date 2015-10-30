@@ -2,7 +2,7 @@
   "name": "react-cheat-sheet",
   "version": "0.0.1",
   "description": "React Cheat Sheet",
-  "main": "lib/ReactCheatSheet.js",
+  "main": "index.js",
   "author": "Michael Chan",
   "homepage": "https://github.com/chantastic/react-cheat-sheet",
   "repository": {
@@ -12,36 +12,17 @@
   "bugs": {
     "url": "https://github.com/chantastic/react-cheat-sheet/issues"
   },
-  "dependencies": {
-    "classnames": "^2.1.2"
-  },
-  "devDependencies": {
-    "babel-eslint": "^3.1.14",
-    "eslint": "^0.22.1",
-    "eslint-plugin-react": "^2.5.0",
-    "gulp": "^3.9.0",
-    "lodash.filter": "^3.1.1",
-    "react": ">=0.13.3",
-    "react-component-gulp-tasks": "^0.7.0"
-  },
-  "peerDependencies": {
-    "react": ">=0.13.3"
-  },
-  "browserify-shim": {
-    "react": "global:React"
-  },
   "scripts": {
-    "build": "gulp clean && NODE_ENV=production gulp build",
-    "examples": "gulp dev:server",
-    "lint": "eslint ./; true",
-    "publish:site": "gulp publish:examples",
-    "release": "gulp release",
-    "start": "gulp dev",
-    "test": "echo \"no tests yet\" && exit 0",
-    "watch": "gulp watch:lib"
+    "start": "webpack --progress --colors --watch"
   },
   "keywords": [
-    "react",
-    "react-component"
-  ]
+    "react"
+  ],
+  "devDependencies": {
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3",
+    "lodash.filter": "^3.1.1",
+    "react": "^0.14.1",
+    "webpack": "^1.12.2"
+  }
 }
