@@ -215,7 +215,7 @@ Token.reactify = function(o) {
     className: 'token ' + o.type
   }
   if (o.type == 'comment') {
-    attributes.spellcheck = true;
+    attributes.spellCheck = true;
   }
 
   return React.DOM.span(attributes, Token.reactify(o.content));

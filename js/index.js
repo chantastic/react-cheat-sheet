@@ -1,4 +1,5 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var ReactCheatSheet = require('./ReactCheatSheet.js');
 
-React.render(<ReactCheatSheet />, document.getElementById('app'));
+ReactDOM.render(<ReactCheatSheet />, document.getElementById('app'));

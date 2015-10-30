@@ -47,9 +47,10 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var ReactCheatSheet = __webpack_require__(158);
+	var ReactDOM = __webpack_require__(158);
+	var ReactCheatSheet = __webpack_require__(159);
 
-	React.render(React.createElement(ReactCheatSheet, null), document.getElementById('app'));
+	ReactDOM.render(React.createElement(ReactCheatSheet, null), document.getElementById('app'));
 
 /***/ },
 /* 1 */
@@ -19624,6 +19625,15 @@
 
 	'use strict';
 
+	module.exports = __webpack_require__(3);
+
+
+/***/ },
+/* 159 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
@@ -19644,17 +19654,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _styles = __webpack_require__(159);
+	var _styles = __webpack_require__(160);
 
-	var _lodashFilter = __webpack_require__(160);
+	var _lodashFilter = __webpack_require__(161);
 
 	var _lodashFilter2 = _interopRequireDefault(_lodashFilter);
 
-	var _dataJs = __webpack_require__(173);
+	var _dataJs = __webpack_require__(174);
 
 	var _dataJs2 = _interopRequireDefault(_dataJs);
 
-	var _ReferenceItemJs = __webpack_require__(181);
+	var _ReferenceItemJs = __webpack_require__(182);
 
 	var _ReferenceItemJs2 = _interopRequireDefault(_ReferenceItemJs);
 
@@ -19713,7 +19723,9 @@
 	      };
 
 	      var results = function results() {
-	        return _this2.filteredResults.map(_ReferenceItemJs2['default']);
+	        return _this2.filteredResults.map(function (item, i) {
+	          return _react2['default'].createElement(_ReferenceItemJs2['default'], _extends({ key: i }, item));
+	        });
 	      };
 
 	      return _react2['default'].createElement(
@@ -19764,7 +19776,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 159 */
+/* 160 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19781,7 +19793,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 160 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19792,10 +19804,10 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var arrayFilter = __webpack_require__(161),
-	    baseCallback = __webpack_require__(162),
-	    baseFilter = __webpack_require__(171),
-	    isArray = __webpack_require__(164);
+	var arrayFilter = __webpack_require__(162),
+	    baseCallback = __webpack_require__(163),
+	    baseFilter = __webpack_require__(172),
+	    isArray = __webpack_require__(165);
 
 	/**
 	 * Iterates over elements of `collection`, returning an array of all elements
@@ -19856,7 +19868,7 @@
 
 
 /***/ },
-/* 161 */
+/* 162 */
 /***/ function(module, exports) {
 
 	/**
@@ -19896,7 +19908,7 @@
 
 
 /***/ },
-/* 162 */
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19907,10 +19919,10 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseIsEqual = __webpack_require__(163),
-	    bindCallback = __webpack_require__(169),
-	    isArray = __webpack_require__(164),
-	    pairs = __webpack_require__(170);
+	var baseIsEqual = __webpack_require__(164),
+	    bindCallback = __webpack_require__(170),
+	    isArray = __webpack_require__(165),
+	    pairs = __webpack_require__(171);
 
 	/** Used to match property names within property paths. */
 	var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\n\\]|\\.)*?\1)\]/,
@@ -20324,7 +20336,7 @@
 
 
 /***/ },
-/* 163 */
+/* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20335,9 +20347,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var isArray = __webpack_require__(164),
-	    isTypedArray = __webpack_require__(165),
-	    keys = __webpack_require__(166);
+	var isArray = __webpack_require__(165),
+	    isTypedArray = __webpack_require__(166),
+	    keys = __webpack_require__(167);
 
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',
@@ -20672,7 +20684,7 @@
 
 
 /***/ },
-/* 164 */
+/* 165 */
 /***/ function(module, exports) {
 
 	/**
@@ -20858,7 +20870,7 @@
 
 
 /***/ },
-/* 165 */
+/* 166 */
 /***/ function(module, exports) {
 
 	/**
@@ -20974,7 +20986,7 @@
 
 
 /***/ },
-/* 166 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20985,9 +20997,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(167),
-	    isArguments = __webpack_require__(168),
-	    isArray = __webpack_require__(164);
+	var getNative = __webpack_require__(168),
+	    isArguments = __webpack_require__(169),
+	    isArray = __webpack_require__(165);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -21216,7 +21228,7 @@
 
 
 /***/ },
-/* 167 */
+/* 168 */
 /***/ function(module, exports) {
 
 	/**
@@ -21359,7 +21371,7 @@
 
 
 /***/ },
-/* 168 */
+/* 169 */
 /***/ function(module, exports) {
 
 	/**
@@ -21471,7 +21483,7 @@
 
 
 /***/ },
-/* 169 */
+/* 170 */
 /***/ function(module, exports) {
 
 	/**
@@ -21542,7 +21554,7 @@
 
 
 /***/ },
-/* 170 */
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21553,7 +21565,7 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var keys = __webpack_require__(166);
+	var keys = __webpack_require__(167);
 
 	/**
 	 * Converts `value` to an object if it's not one.
@@ -21626,7 +21638,7 @@
 
 
 /***/ },
-/* 171 */
+/* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21637,7 +21649,7 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseEach = __webpack_require__(172);
+	var baseEach = __webpack_require__(173);
 
 	/**
 	 * The base implementation of `_.filter` without support for callback
@@ -21662,7 +21674,7 @@
 
 
 /***/ },
-/* 172 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21673,7 +21685,7 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var keys = __webpack_require__(166);
+	var keys = __webpack_require__(167);
 
 	/**
 	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
@@ -21849,7 +21861,7 @@
 
 
 /***/ },
-/* 173 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21862,27 +21874,27 @@
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
 
-	var _dataReactDOM = __webpack_require__(174);
+	var _dataReactDOM = __webpack_require__(175);
 
 	var _dataReactDOM2 = _interopRequireDefault(_dataReactDOM);
 
-	var _dataReactDOM_Server = __webpack_require__(176);
+	var _dataReactDOM_Server = __webpack_require__(177);
 
 	var _dataReactDOM_Server2 = _interopRequireDefault(_dataReactDOM_Server);
 
-	var _dataReact_TopLevel = __webpack_require__(177);
+	var _dataReact_TopLevel = __webpack_require__(178);
 
 	var _dataReact_TopLevel2 = _interopRequireDefault(_dataReact_TopLevel);
 
-	var _dataReact_Spec = __webpack_require__(178);
+	var _dataReact_Spec = __webpack_require__(179);
 
 	var _dataReact_Spec2 = _interopRequireDefault(_dataReact_Spec);
 
-	var _dataReact_Lifecycle = __webpack_require__(179);
+	var _dataReact_Lifecycle = __webpack_require__(180);
 
 	var _dataReact_Lifecycle2 = _interopRequireDefault(_dataReact_Lifecycle);
 
-	var _dataReact_PropTypes = __webpack_require__(180);
+	var _dataReact_PropTypes = __webpack_require__(181);
 
 	var _dataReact_PropTypes2 = _interopRequireDefault(_dataReact_PropTypes);
 
@@ -21890,7 +21902,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 174 */
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21901,7 +21913,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _assignSharedDefaults = __webpack_require__(175);
+	var _assignSharedDefaults = __webpack_require__(176);
 
 	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
 
@@ -21923,7 +21935,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 175 */
+/* 176 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -21943,7 +21955,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 176 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21954,7 +21966,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _assignSharedDefaults = __webpack_require__(175);
+	var _assignSharedDefaults = __webpack_require__(176);
 
 	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
 
@@ -21972,7 +21984,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 177 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21983,7 +21995,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _assignSharedDefaults = __webpack_require__(175);
+	var _assignSharedDefaults = __webpack_require__(176);
 
 	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
 
@@ -22037,7 +22049,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 178 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22048,7 +22060,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _assignSharedDefaults = __webpack_require__(175);
+	var _assignSharedDefaults = __webpack_require__(176);
 
 	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
 
@@ -22086,7 +22098,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 179 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22097,7 +22109,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _assignSharedDefaults = __webpack_require__(175);
+	var _assignSharedDefaults = __webpack_require__(176);
 
 	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
 
@@ -22135,7 +22147,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 180 */
+/* 181 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22146,7 +22158,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _assignSharedDefaults = __webpack_require__(175);
+	var _assignSharedDefaults = __webpack_require__(176);
 
 	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
 
@@ -22201,7 +22213,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 181 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22218,9 +22230,9 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _styles = __webpack_require__(159);
+	var _styles = __webpack_require__(160);
 
-	var _vendorPrism = __webpack_require__(182);
+	var _vendorPrism = __webpack_require__(183);
 
 	var _vendorPrism2 = _interopRequireDefault(_vendorPrism);
 
@@ -22300,7 +22312,7 @@
 	      href && _react2['default'].createElement(
 	        'a',
 	        { href: href, style: { color: "#56b6c2" }, target: '_blank' },
-	        'Read more →'
+	        'Go to docs'
 	      )
 	    )
 	  );
@@ -22310,7 +22322,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 182 */
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22533,7 +22545,7 @@
 	    className: 'token ' + o.type
 	  };
 	  if (o.type == 'comment') {
-	    attributes.spellcheck = true;
+	    attributes.spellCheck = true;
 	  }
 
 	  return React.DOM.span(attributes, Token.reactify(o.content));

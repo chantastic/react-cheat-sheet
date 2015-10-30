@@ -45,7 +45,7 @@ class ReactCheatSheet extends Component {
     );
 
     const results = () => (
-      this.filteredResults.map(ReferenceItem)
+      this.filteredResults.map((item, i) => <ReferenceItem key={i} {...item} />)
     );
 
     return (

@@ -53,7 +53,7 @@ const ReferenceItem = ({name, module, reference: href, example, color: backgroun
     </pre>
 
     <div style={styles.reference}>
-      {(href) && <a href={href} style={{color: "#56b6c2"}} target="_blank">Read more &#8594;</a>}
+      {(href) && <a href={href} style={{color: "#56b6c2"}} target="_blank">Go to docs</a>}
     </div>
   </article>
 );
