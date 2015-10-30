@@ -11,13 +11,13 @@ function filterResults (predicate, _data) {
 }
 
 const inputStyle = {
-  width: "100%",
-  padding: 10,
-  fontSize: "1em",
+  width: '100%',
+  padding: '1em',
+  fontSize: '1em',
   borderRadius: 2,
-  border: "1px solid #aaa",
-  boxSizing: "border-box",
-  color: "black",
+  border: '1px solid #aaa',
+  boxSizing: 'border-box',
+  color: 'black',
 }
 
 class ReactCheatSheet extends Component {

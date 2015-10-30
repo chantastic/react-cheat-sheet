@@ -5,16 +5,17 @@ import Prism from './vendor/Prism';
 const styles = {
   root: {
     ...articleStyle,
-    borderBottom: '1px solid #aaa'
+    borderBottom: '1px solid #e0e0e0'
   },
   header: {
-    overflowY: 'scroll'
+    overflowY: 'scroll',
+    marginBottom: 0,
   },
   module: {
-    marginLeft: '.5em',
     fontSize: '1em',
     color: '#aaa',
     fontWeight: 'normal',
+    marginBottom: '1.5em'
   },
   example: {
     position: 'relative',
@@ -44,8 +45,8 @@ const ReferenceItem = ({name, module, reference: href, example, color: backgroun
   <article style={styles.root}>
     <h2 style={styles.header}>
       {name}
-      <span style={styles.module}>{module}</span>
     </h2>
+    <div style={styles.module}>{module}</div>
 
     <pre style={styles.example}>
       <code style={styles.code}><Prism>{example}</Prism></code>

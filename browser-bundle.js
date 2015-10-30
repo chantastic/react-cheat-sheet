@@ -19677,13 +19677,13 @@
 	}
 
 	var inputStyle = {
-	  width: "100%",
-	  padding: 10,
-	  fontSize: "1em",
+	  width: '100%',
+	  padding: '1em',
+	  fontSize: '1em',
 	  borderRadius: 2,
-	  border: "1px solid #aaa",
-	  boxSizing: "border-box",
-	  color: "black"
+	  border: '1px solid #aaa',
+	  boxSizing: 'border-box',
+	  color: 'black'
 	};
 
 	var ReactCheatSheet = (function (_Component) {
@@ -22238,16 +22238,17 @@
 
 	var styles = {
 	  root: _extends({}, _styles.article, {
-	    borderBottom: '1px solid #aaa'
+	    borderBottom: '1px solid #e0e0e0'
 	  }),
 	  header: {
-	    overflowY: 'scroll'
+	    overflowY: 'scroll',
+	    marginBottom: 0
 	  },
 	  module: {
-	    marginLeft: '.5em',
 	    fontSize: '1em',
 	    color: '#aaa',
-	    fontWeight: 'normal'
+	    fontWeight: 'normal',
+	    marginBottom: '1.5em'
 	  },
 	  example: {
 	    position: 'relative',
@@ -22285,12 +22286,12 @@
 	    _react2['default'].createElement(
 	      'h2',
 	      { style: styles.header },
-	      name,
-	      _react2['default'].createElement(
-	        'span',
-	        { style: styles.module },
-	        module
-	      )
+	      name
+	    ),
+	    _react2['default'].createElement(
+	      'div',
+	      { style: styles.module },
+	      module
 	    ),
 	    _react2['default'].createElement(
 	      'pre',
