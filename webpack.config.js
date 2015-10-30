@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./index.js",
+  entry: "./js/index.js",
   output: {
     filename: "browser-bundle.js"
   },
@@ -8,7 +8,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel'
+        loader: "babel"
       }
     ]
   }
