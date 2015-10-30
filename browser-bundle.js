@@ -19701,7 +19701,7 @@
 	    };
 
 	    this.handleChange = function () {
-	      _this.setState({ predicate: _this.searchInput.getDOMNode().value });
+	      _this.setState({ predicate: _this.searchInput.value });
 	    };
 	  }
 

@@ -29,7 +29,7 @@ class ReactCheatSheet extends Component {
     };
 
     this.handleChange = () => {
-      this.setState({ predicate: this.searchInput.getDOMNode().value });
+      this.setState({ predicate: this.searchInput.value });
     };
   }
 
