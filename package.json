@@ -13,7 +13,8 @@
     "url": "https://github.com/chantastic/react-cheat-sheet/issues"
   },
   "scripts": {
-    "start": "webpack --progress --colors --watch"
+    "start": "webpack --progress --colors --watch",
+    "build:p": "NODE_ENV=production webpack -p"
   },
   "keywords": [
     "react"
