@@ -8,7 +8,7 @@ const styles = {
     borderBottom: '1px solid #e0e0e0'
   },
   header: {
-    overflowY: 'scroll',
+    overflowX: 'auto',
     marginBottom: 0,
   },
   module: {
@@ -20,7 +20,7 @@ const styles = {
   example: {
     position: 'relative',
     overflow: 'hidden',
-    overflowX: 'scroll',
+    overflowX: 'auto',
     backgroundColor: 'rgb(40, 44, 52)',
     color: 'white',
     padding: 20,
