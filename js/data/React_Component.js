@@ -41,7 +41,7 @@ this.replaceState({firstName: 'Spazz'});
   },
   {
     name: 'getDOMNode',
-    example: `// Dericated. Use ReactDOM.findDOMNode`,
+    example: `// Deprecated. Use ReactDOM.findDOMNode`,
     reference: 'https://facebook.github.io/react/docs/component-api.html#getdomnode'
   },
   {
