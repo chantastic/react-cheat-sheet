@@ -22082,7 +22082,7 @@
 	  reference: 'https://facebook.github.io/react/docs/component-api.html#forceupdate'
 	}, {
 	  name: 'getDOMNode',
-	  example: '// Dericated. Use ReactDOM.findDOMNode',
+	  example: '// Deprecated. Use ReactDOM.findDOMNode',
 	  reference: 'https://facebook.github.io/react/docs/component-api.html#getdomnode'
 	}, {
 	  name: 'isMounted',
