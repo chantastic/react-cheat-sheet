@@ -22074,8 +22074,9 @@
 	  reference: 'https://facebook.github.io/react/docs/component-api.html#setstate'
 	}, {
 	  name: 'replaceState',
-	  example: '// Like setState but replaces state object instead of merging\n\n// (before)\n// state => { firstName: \'Michael\', lastName: \'Chan\' }\n\nthis.replaceState({firstName: \'Spazz\'});\n\n// (after)\n// this.state => { firstName: \'Spazz\' }\n\n// NOT AVAILABLE with React.Component',
-	  reference: 'https://facebook.github.io/react/docs/component-api.html#replacestate'
+	  example: '// Like setState but replaces state object instead of merging\n\n// (before)\n// state => { firstName: \'Michael\', lastName: \'Chan\' }\n\nthis.replaceState({firstName: \'Spazz\'});\n\n// (after)\n// this.state => { firstName: \'Spazz\' }',
+	  reference: 'https://facebook.github.io/react/docs/component-api.html#replacestate',
+	  notAvailableInComponentClass: true
 	}, {
 	  name: 'forceUpdate',
 	  example: 'this.forceUpdate();\n\n// forces component tree to update.\n// AVOID where posible',
@@ -22086,16 +22087,19 @@
 	  reference: 'https://facebook.github.io/react/docs/component-api.html#getdomnode'
 	}, {
 	  name: 'isMounted',
-	  example: 'this.isMounted();\n\n// NOT AVAILABLE with React.Component',
-	  reference: 'https://facebook.github.io/react/docs/component-api.html#ismounted'
+	  example: 'this.isMounted();',
+	  reference: 'https://facebook.github.io/react/docs/component-api.html#ismounted',
+	  notAvailableInComponentClass: true
 	}, {
 	  name: 'setProps',
-	  example: 'this.setProps({someKey: \'a new value\'});\n\n// Only available on root-lever components\n// Prefer calling ReactDOM.render() again\n\n// NOT AVAILABLE with React.Component',
-	  reference: 'https://facebook.github.io/react/docs/component-api.html#setprops'
+	  example: 'this.setProps({someKey: \'a new value\'});\n\n// Only available on root-lever components\n// Prefer calling ReactDOM.render() again',
+	  reference: 'https://facebook.github.io/react/docs/component-api.html#setprops',
+	  notAvailableInComponentClass: true
 	}, {
 	  name: 'replaceProps',
-	  example: '// Like setProps but replaces props object instead of merging\n\nthis.replaceProps({someKey: \'a new value\'});\n\n// NOT AVAILABLE with React.Component ',
-	  reference: 'https://facebook.github.io/react/docs/component-api.html#replaceprops'
+	  example: '// Like setProps but replaces props object instead of merging\n\nthis.replaceProps({someKey: \'a new value\'}); ',
+	  reference: 'https://facebook.github.io/react/docs/component-api.html#replaceprops',
+	  notAvailableInComponentClass: true
 	}];
 
 	exports['default'] = (0, _assignSharedDefaults2['default'])(data, { module: 'react', color: '#0074D9' });
@@ -22123,20 +22127,24 @@
 	  reference: 'http://facebook.github.io/react/docs/component-specs.html#render'
 	}, {
 	  name: 'getInitialState',
-	  example: 'getInitialState: function () {\n  return { key: value };\n}\n\n// not available with React.Component',
-	  reference: 'http://facebook.github.io/react/docs/component-specs.html#getinitialstate'
+	  example: 'getInitialState: function () {\n  return { key: value };\n}',
+	  reference: 'http://facebook.github.io/react/docs/component-specs.html#getinitialstate',
+	  notAvailableInComponentClass: true
 	}, {
 	  name: 'getDefaultProps',
-	  example: 'getDefaultProps: function () {\n  return { key: value };\n}\n\n// not available with React.Component',
-	  reference: 'http://facebook.github.io/react/docs/component-specs.html#getdefaultprops'
+	  example: 'getDefaultProps: function () {\n  return { key: value };\n}',
+	  reference: 'http://facebook.github.io/react/docs/component-specs.html#getdefaultprops',
+	  notAvailableInComponentClass: true
 	}, {
 	  name: 'propTypes',
-	  example: 'propTypes: {\n  myProp: React.PropTypes.bool\n}\n\n// not available with React.Component',
-	  reference: 'http://facebook.github.io/react/docs/component-specs.html#proptypes'
+	  example: 'propTypes: {\n  myProp: React.PropTypes.bool\n}',
+	  reference: 'http://facebook.github.io/react/docs/component-specs.html#proptypes',
+	  notAvailableInComponentClass: true
 	}, {
 	  name: 'mixins',
-	  example: 'mixins: [ AMixinObject, AnotherMixinObject ];\n\n// not available in React.Component',
-	  reference: 'http://facebook.github.io/react/docs/component-specs.html#mixins'
+	  example: 'mixins: [ AMixinObject, AnotherMixinObject ];',
+	  reference: 'http://facebook.github.io/react/docs/component-specs.html#mixins',
+	  notAvailableInComponentClass: true
 	}, {
 	  name: 'statics',
 	  example: 'statics: {\n  customMethod: function(foo) {\n    return foo === \'bar\';\n  }\n}',
@@ -22333,6 +22341,7 @@
 	  var href = _ref.reference;
 	  var example = _ref.example;
 	  var backgroundColor = _ref.color;
+	  var notAvailableInComponentClass = _ref.notAvailableInComponentClass;
 	  return _react2['default'].createElement(
 	    'article',
 	    { style: styles.root },
@@ -22359,6 +22368,19 @@
 	        )
 	      ),
 	      _react2['default'].createElement('div', { style: _extends({ backgroundColor: backgroundColor }, styles.exampleColorCode) })
+	    ),
+	    _react2['default'].createElement(
+	      'div',
+	      null,
+	      notAvailableInComponentClass && _react2['default'].createElement(
+	        'span',
+	        { style: { color: "#e06c75" } },
+	        _react2['default'].createElement(
+	          'strong',
+	          null,
+	          '︎✖︎ React.Component'
+	        )
+	      )
 	    ),
 	    _react2['default'].createElement(
 	      'div',

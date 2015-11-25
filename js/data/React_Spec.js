@@ -12,35 +12,31 @@ const data = [
     name: 'getInitialState',
     example: `getInitialState: function () {
   return { key: value };
-}
-
-// not available with React.Component`,
+}`,
     reference: 'http://facebook.github.io/react/docs/component-specs.html#getinitialstate',
+    notAvailableInComponentClass: true,
   },
   {
     name: 'getDefaultProps',
     example: `getDefaultProps: function () {
   return { key: value };
-}
-
-// not available with React.Component`,
+}`,
     reference: 'http://facebook.github.io/react/docs/component-specs.html#getdefaultprops',
+    notAvailableInComponentClass: true,
   },
   {
     name: 'propTypes',
     example: `propTypes: {
   myProp: React.PropTypes.bool
-}
-
-// not available with React.Component`,
+}`,
     reference: 'http://facebook.github.io/react/docs/component-specs.html#proptypes',
+    notAvailableInComponentClass: true,
   },
   {
     name: 'mixins',
-    example: `mixins: [ AMixinObject, AnotherMixinObject ];
-
-// not available in React.Component`,
+    example: `mixins: [ AMixinObject, AnotherMixinObject ];`,
     reference: 'http://facebook.github.io/react/docs/component-specs.html#mixins',
+    notAvailableInComponentClass: true,
   },
   {
     name: 'statics',

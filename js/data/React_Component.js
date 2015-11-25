@@ -26,10 +26,9 @@ this.setState(function(previousState, currentProps) {
 this.replaceState({firstName: 'Spazz'});
 
 // (after)
-// this.state => { firstName: 'Spazz' }
-
-// NOT AVAILABLE with React.Component`,
-    reference: 'https://facebook.github.io/react/docs/component-api.html#replacestate'
+// this.state => { firstName: 'Spazz' }`,
+    reference: 'https://facebook.github.io/react/docs/component-api.html#replacestate',
+    notAvailableInComponentClass: true,
   },
   {
     name: 'forceUpdate',
@@ -46,29 +45,26 @@ this.replaceState({firstName: 'Spazz'});
   },
   {
     name: 'isMounted',
-    example: `this.isMounted();
-
-// NOT AVAILABLE with React.Component`,
-    reference: 'https://facebook.github.io/react/docs/component-api.html#ismounted'
+    example: `this.isMounted();`,
+    reference: 'https://facebook.github.io/react/docs/component-api.html#ismounted',
+    notAvailableInComponentClass: true,
   },
   {
     name: 'setProps',
     example: `this.setProps({someKey: 'a new value'});
 
 // Only available on root-lever components
-// Prefer calling ReactDOM.render() again
-
-// NOT AVAILABLE with React.Component`,
-    reference: 'https://facebook.github.io/react/docs/component-api.html#setprops'
+// Prefer calling ReactDOM.render() again`,
+    reference: 'https://facebook.github.io/react/docs/component-api.html#setprops',
+    notAvailableInComponentClass: true,
   },
   {
     name: 'replaceProps',
     example: `// Like setProps but replaces props object instead of merging
 
-this.replaceProps({someKey: 'a new value'});
-
-// NOT AVAILABLE with React.Component `,
-    reference: 'https://facebook.github.io/react/docs/component-api.html#replaceprops'
+this.replaceProps({someKey: 'a new value'}); `,
+    reference: 'https://facebook.github.io/react/docs/component-api.html#replaceprops',
+    notAvailableInComponentClass: true,
   },
 ];
 
