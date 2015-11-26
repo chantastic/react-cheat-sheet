@@ -34,9 +34,10 @@ const data = [
     name: 'componentWillUpdate',
     example: `componentWillUpdate: function (nextProps, nextState) {
   // invoked immediately before rendering with new props or state, not for initial 'render'
-  // CANNOT CALL setState(). see componentWillReceiveProps
+  // see componentWillReceiveProps if you need to call setState
 }`,
     reference: 'http://facebook.github.io/react/docs/component-specs.html#updating-componentwillupdate',
+    cannotCallSetState: true,
   },
   {
     name: 'componentDidUpdate',

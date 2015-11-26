@@ -41,7 +41,7 @@ const styles = {
   }
 };
 
-const ReferenceItem = ({name, module, reference: href, example, color: backgroundColor, notAvailableInComponentClass}) => (
+const ReferenceItem = ({name, module, reference: href, example, color: backgroundColor, notAvailableInComponentClass, cannotCallSetState}) => (
   <article style={styles.root}>
     <h2 style={styles.header}>
       {name}
@@ -55,6 +55,7 @@ const ReferenceItem = ({name, module, reference: href, example, color: backgroun
 
     <div>
       {(notAvailableInComponentClass) && <span style={{color: "#e06c75"}}><strong>{'︎✖︎ React.Component'}</strong></span>}
+      {(cannotCallSetState) && <span style={{color: "#e06c75"}}><strong>{'︎✖︎ this.setState()'}</strong></span>}
     </div>
 
     <div style={styles.reference}>

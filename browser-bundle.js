@@ -22192,8 +22192,9 @@
 	  reference: 'http://facebook.github.io/react/docs/component-specs.html#updating-shouldcomponentupdate'
 	}, {
 	  name: 'componentWillUpdate',
-	  example: 'componentWillUpdate: function (nextProps, nextState) {\n  // invoked immediately before rendering with new props or state, not for initial \'render\'\n  // CANNOT CALL setState(). see componentWillReceiveProps\n}',
-	  reference: 'http://facebook.github.io/react/docs/component-specs.html#updating-componentwillupdate'
+	  example: 'componentWillUpdate: function (nextProps, nextState) {\n  // invoked immediately before rendering with new props or state, not for initial \'render\'\n  // see componentWillReceiveProps if you need to call setState\n}',
+	  reference: 'http://facebook.github.io/react/docs/component-specs.html#updating-componentwillupdate',
+	  cannotCallSetState: true
 	}, {
 	  name: 'componentDidUpdate',
 	  example: 'componentDidUpdate: function (prevProps, prevState) {\n  // invoked immediately after DOM updates, not for initial \'render\'\n}',
@@ -22342,6 +22343,7 @@
 	  var example = _ref.example;
 	  var backgroundColor = _ref.color;
 	  var notAvailableInComponentClass = _ref.notAvailableInComponentClass;
+	  var cannotCallSetState = _ref.cannotCallSetState;
 	  return _react2['default'].createElement(
 	    'article',
 	    { style: styles.root },
@@ -22379,6 +22381,15 @@
 	          'strong',
 	          null,
 	          '︎✖︎ React.Component'
+	        )
+	      ),
+	      cannotCallSetState && _react2['default'].createElement(
+	        'span',
+	        { style: { color: "#e06c75" } },
+	        _react2['default'].createElement(
+	          'strong',
+	          null,
+	          '︎✖︎ this.setState()'
 	        )
 	      )
 	    ),
