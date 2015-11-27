@@ -21,9 +21,11 @@ This will start a webpack process that watches the filesystem for changes.
 
 I don't have any type of web-server at the moment. I typically just open `index.html` from the file system. If you feel you need one, you can run `python -m SimpleHTTPServer 8000
 
-#### Commit and PR into `master`
+#### Commit everything and PR int `gh-pages`
 
-Commit your changes and PR into `master`. If everything looks good, I'll merge it and run a build on the `gh-pages` branch.
+There's really not a need for `master`. This is a super simple page.
+
+If everything looks good, I'll merge it and run a build on the `gh-pages` branch.
 
 Cheers!
 
