@@ -41,7 +41,7 @@ const styles = {
   }
 };
 
-const ReferenceItem = ({name, module, reference: href, example, color: backgroundColor, notAvailableInComponentClass, cannotCallSetState}) => (
+const ReferenceItem = ({name, module, reference: href, example, color: backgroundColor, notAvailableInComponentClass, cannotCallSetState, video}) => (
   <article style={styles.root}>
     <h2 style={styles.header}>
       {name}
@@ -60,6 +60,10 @@ const ReferenceItem = ({name, module, reference: href, example, color: backgroun
 
     <div style={styles.reference}>
       {(href) && <a href={href} style={{color: "#56b6c2"}} target="_blank">Go to docs</a>}
+    </div>
+
+    <div>
+      <a href={video} target="_blank"> Watch a short video on {name}.</a>
     </div>
   </article>
 );

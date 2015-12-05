@@ -21979,9 +21979,10 @@
 	  example: 'ReactDOMServer.renderToString(<MyComponent />);',
 	  reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostring'
 	}, {
-	  name: 'renderStaticMarkup',
+	  name: 'renderToStaticMarkup',
 	  example: 'ReactDOMServer.renderToStaticMarkup(<MyComponent />);',
-	  reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostaticmarkup'
+	  reference: 'http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostaticmarkup',
+	  video: 'https://www.youtube.com/watch?v=RfqLD4DqUYo'
 	}];
 
 	exports['default'] = (0, _assignSharedDefaults2['default'])(data, { module: 'react-dom', color: '#85144b' });
@@ -22344,6 +22345,7 @@
 	  var backgroundColor = _ref.color;
 	  var notAvailableInComponentClass = _ref.notAvailableInComponentClass;
 	  var cannotCallSetState = _ref.cannotCallSetState;
+	  var video = _ref.video;
 	  return _react2['default'].createElement(
 	    'article',
 	    { style: styles.root },
@@ -22400,6 +22402,17 @@
 	        'a',
 	        { href: href, style: { color: "#56b6c2" }, target: '_blank' },
 	        'Go to docs'
+	      )
+	    ),
+	    _react2['default'].createElement(
+	      'div',
+	      null,
+	      _react2['default'].createElement(
+	        'a',
+	        { href: video, target: '_blank' },
+	        ' Watch a short video on ',
+	        name,
+	        '.'
 	      )
 	    )
 	  );
