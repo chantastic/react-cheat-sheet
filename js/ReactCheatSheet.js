@@ -1,23 +1,42 @@
 import React, { Component } from 'react';
-import { article as articleStyle } from './styles';
-import filter from 'lodash.filter';
-import data from './data.js';
-import ReferenceItem from './ReferenceItem.js';
 
-function filterResults (predicate, _data) {
-  return filter(_data, (({name}) => {
+import data from './data.js';
+
+import styles from './styles';
+import colors from './colors';
+
+import ReferenceItem from './ReferenceItem.js';
+import CategoryList from './CategoryList.js';
+import CategoryLabel from './CategoryLabel.js';
+import NoResults from './NoResults.js';
+
+import filter from 'lodash.filter';
+import without from 'lodash.without';
+
+function filterByCategory(_data, categories = []) {
+  if (!categories.length) return _data;
+
+  return filter(_data, ({category}) => categories.includes(category));
+}
+
+function filterResults (_data, predicate = '', categories = []) {
+  return filter(filterByCategory(_data, categories), (({name}) => {
     return name.match(new RegExp(predicate, 'i'));
   }));
 }
 
-const inputStyle = {
-  width: '100%',
-  padding: '1em',
-  fontSize: '1em',
-  borderRadius: 2,
-  border: '1px solid #aaa',
-  boxSizing: 'border-box',
-  color: 'black',
+function toggleCategory(arr, item, cond) {
+  return (cond) ? arr.concat([item]) : without(arr, item);
+}
+
+function handleLifecycleFilterChange () {
+  this.setState({
+    categories: toggleCategory(this.state.categories, 'LIFECYCLE', this.lifecycleCheckbox.checked)
+  });
+}
+
+function handleChange () {
+  this.setState({ predicate: this.searchInput.value });
 }
 
 class ReactCheatSheet extends Component {
@@ -25,25 +44,16 @@ class ReactCheatSheet extends Component {
     super(props);
 
     this.state = {
-      predicate: ''
-    };
-
-    this.handleChange = () => {
-      this.setState({ predicate: this.searchInput.value });
+      predicate: '',
+      categories: [],
     };
   }
 
   get filteredResults () {
-    return filterResults(this.state.predicate, data);
+    return filterResults(data, this.state.predicate, this.state.categories);
   }
 
   render () {
-    const noResults = () => (
-      <article style={{ ...articleStyle }}>
-        <h2>No results</h2>
-      </article>
-    );
-
     const results = () => (
       this.filteredResults.map((item, i) => <ReferenceItem key={i} {...item} />)
     );
@@ -54,21 +64,33 @@ class ReactCheatSheet extends Component {
           <input
             autoFocus
             type="text"
-            style={inputStyle}
+            style={styles.searchInput}
             placeholder="Filter by name"
             value={this.state.predicate}
             ref={c => this.searchInput = c}
-            onChange={this.handleChange}
+            onChange={handleChange.bind(this)}
           />
-          <div>
-            <small style={{ color: "#999" }}>* using case-insensitive regex match</small>
-          </div>
         </label>
+
+        <CategoryList>
+          <CategoryLabel
+            color={colors.orange}
+            active={this.state.categories.includes('LIFECYCLE')}
+          >
+            <span>Lifecycle{' '}</span>
+            <input
+              type="checkbox"
+              onChange={handleLifecycleFilterChange.bind(this)}
+              checked={this.state.categories.includes('LIFECYCLE')}
+              ref={c => this.lifecycleCheckbox = c}
+            />
+          </CategoryLabel>
+        </CategoryList>
 
         <section>
           {(this.filteredResults.length)
            ? results()
-           : noResults()
+           : <NoResults />
           }
         </section>
       </main>

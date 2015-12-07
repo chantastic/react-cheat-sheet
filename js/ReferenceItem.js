@@ -23,7 +23,7 @@ const styles = {
     overflowX: 'auto',
     backgroundColor: 'rgb(40, 44, 52)',
     color: 'white',
-    padding: 20,
+    padding: '1.2em',
     borderRadius: 2,
   },
   exampleColorCode: {
