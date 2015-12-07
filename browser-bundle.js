@@ -19642,7 +19642,7 @@
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x4, _x5, _x6) { var _again = true; _function: while (_again) { var object = _x4, property = _x5, receiver = _x6; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x4 = parent; _x5 = property; _x6 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -19654,76 +19654,99 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _dataJs = __webpack_require__(174);
+
+	var _dataJs2 = _interopRequireDefault(_dataJs);
+
 	var _styles = __webpack_require__(160);
+
+	var _styles2 = _interopRequireDefault(_styles);
+
+	var _colors = __webpack_require__(182);
+
+	var _colors2 = _interopRequireDefault(_colors);
+
+	var _ReferenceItemJs = __webpack_require__(184);
+
+	var _ReferenceItemJs2 = _interopRequireDefault(_ReferenceItemJs);
+
+	var _CategoryListJs = __webpack_require__(194);
+
+	var _CategoryListJs2 = _interopRequireDefault(_CategoryListJs);
+
+	var _CategoryLabelJs = __webpack_require__(186);
+
+	var _CategoryLabelJs2 = _interopRequireDefault(_CategoryLabelJs);
+
+	var _NoResultsJs = __webpack_require__(196);
+
+	var _NoResultsJs2 = _interopRequireDefault(_NoResultsJs);
 
 	var _lodashFilter = __webpack_require__(161);
 
 	var _lodashFilter2 = _interopRequireDefault(_lodashFilter);
 
-	var _dataJs = __webpack_require__(174);
+	var _lodashWithout = __webpack_require__(187);
 
-	var _dataJs2 = _interopRequireDefault(_dataJs);
+	var _lodashWithout2 = _interopRequireDefault(_lodashWithout);
 
-	var _ReferenceItemJs = __webpack_require__(183);
+	function filterByCategory(_data) {
+	  var categories = arguments.length <= 1 || arguments[1] === undefined ? [] : arguments[1];
 
-	var _ReferenceItemJs2 = _interopRequireDefault(_ReferenceItemJs);
+	  if (!categories.length) return _data;
 
-	function filterResults(predicate, _data) {
 	  return (0, _lodashFilter2['default'])(_data, function (_ref) {
-	    var name = _ref.name;
+	    var category = _ref.category;
+	    return categories.includes(category);
+	  });
+	}
+
+	function filterResults(_data) {
+	  var predicate = arguments.length <= 1 || arguments[1] === undefined ? '' : arguments[1];
+	  var categories = arguments.length <= 2 || arguments[2] === undefined ? [] : arguments[2];
+
+	  return (0, _lodashFilter2['default'])(filterByCategory(_data, categories), function (_ref2) {
+	    var name = _ref2.name;
 
 	    return name.match(new RegExp(predicate, 'i'));
 	  });
 	}
 
-	var inputStyle = {
-	  width: '100%',
-	  padding: '1em',
-	  fontSize: '1em',
-	  borderRadius: 2,
-	  border: '1px solid #aaa',
-	  boxSizing: 'border-box',
-	  color: 'black'
-	};
+	function toggleCategory(arr, item, cond) {
+	  return cond ? arr.concat([item]) : (0, _lodashWithout2['default'])(arr, item);
+	}
+
+	function handleLifecycleFilterChange() {
+	  this.setState({
+	    categories: toggleCategory(this.state.categories, 'LIFECYCLE', this.lifecycleCheckbox.checked)
+	  });
+	}
+
+	function handleChange() {
+	  this.setState({ predicate: this.searchInput.value });
+	}
 
 	var ReactCheatSheet = (function (_Component) {
 	  _inherits(ReactCheatSheet, _Component);
 
 	  function ReactCheatSheet(props) {
-	    var _this = this;
-
 	    _classCallCheck(this, ReactCheatSheet);
 
 	    _get(Object.getPrototypeOf(ReactCheatSheet.prototype), 'constructor', this).call(this, props);
 
 	    this.state = {
-	      predicate: ''
-	    };
-
-	    this.handleChange = function () {
-	      _this.setState({ predicate: _this.searchInput.value });
+	      predicate: '',
+	      categories: []
 	    };
 	  }
 
 	  _createClass(ReactCheatSheet, [{
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this;
-
-	      var noResults = function noResults() {
-	        return _react2['default'].createElement(
-	          'article',
-	          { style: _extends({}, _styles.article) },
-	          _react2['default'].createElement(
-	            'h2',
-	            null,
-	            'No results'
-	          )
-	        );
-	      };
+	      var _this = this;
 
 	      var results = function results() {
-	        return _this2.filteredResults.map(function (item, i) {
+	        return _this.filteredResults.map(function (item, i) {
 	          return _react2['default'].createElement(_ReferenceItemJs2['default'], _extends({ key: i }, item));
 	        });
 	      };
@@ -19737,35 +19760,51 @@
 	          _react2['default'].createElement('input', {
 	            autoFocus: true,
 	            type: 'text',
-	            style: inputStyle,
+	            style: _styles2['default'].searchInput,
 	            placeholder: 'Filter by name',
 	            value: this.state.predicate,
 	            ref: function (c) {
-	              return _this2.searchInput = c;
+	              return _this.searchInput = c;
 	            },
-	            onChange: this.handleChange
-	          }),
+	            onChange: handleChange.bind(this)
+	          })
+	        ),
+	        _react2['default'].createElement(
+	          _CategoryListJs2['default'],
+	          null,
 	          _react2['default'].createElement(
-	            'div',
-	            null,
+	            _CategoryLabelJs2['default'],
+	            {
+	              color: _colors2['default'].orange,
+	              active: this.state.categories.includes('LIFECYCLE')
+	            },
 	            _react2['default'].createElement(
-	              'small',
-	              { style: { color: "#999" } },
-	              '* using case-insensitive regex match'
-	            )
+	              'span',
+	              null,
+	              'Lifecycle',
+	              ' '
+	            ),
+	            _react2['default'].createElement('input', {
+	              type: 'checkbox',
+	              onChange: handleLifecycleFilterChange.bind(this),
+	              checked: this.state.categories.includes('LIFECYCLE'),
+	              ref: function (c) {
+	                return _this.lifecycleCheckbox = c;
+	              }
+	            })
 	          )
 	        ),
 	        _react2['default'].createElement(
 	          'section',
 	          null,
-	          this.filteredResults.length ? results() : noResults()
+	          this.filteredResults.length ? results() : _react2['default'].createElement(_NoResultsJs2['default'], null)
 	        )
 	      );
 	    }
 	  }, {
 	    key: 'filteredResults',
 	    get: function get() {
-	      return filterResults(this.state.predicate, _dataJs2['default']);
+	      return filterResults(_dataJs2['default'], this.state.predicate, this.state.categories);
 	    }
 	  }]);
 
@@ -19788,6 +19827,16 @@
 	  article: {
 	    paddingTop: '1em',
 	    paddingBottom: '1em'
+	  },
+
+	  searchInput: {
+	    width: '100%',
+	    padding: '1em',
+	    fontSize: '1em',
+	    borderRadius: 2,
+	    border: '1px solid #aaa',
+	    boxSizing: 'border-box',
+	    color: 'black'
 	  }
 	};
 	module.exports = exports['default'];
@@ -21898,7 +21947,7 @@
 
 	var _dataReact_Lifecycle2 = _interopRequireDefault(_dataReact_Lifecycle);
 
-	var _dataReact_PropTypes = __webpack_require__(182);
+	var _dataReact_PropTypes = __webpack_require__(183);
 
 	var _dataReact_PropTypes2 = _interopRequireDefault(_dataReact_PropTypes);
 
@@ -22174,6 +22223,8 @@
 
 	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
 
+	var _colors = __webpack_require__(182);
+
 	var data = [{
 	  name: 'componentWillMount',
 	  example: 'componentWillMount: function () {\n  // invoked once, before initial \'render\'\n}',
@@ -22205,11 +22256,29 @@
 	  reference: 'http://facebook.github.io/react/docs/component-specs.html#unmounting-componentwillunmount'
 	}];
 
-	exports['default'] = (0, _assignSharedDefaults2['default'])(data, { module: 'react', color: '#ff851b' });
+	exports['default'] = (0, _assignSharedDefaults2['default'])(data, {
+	  module: 'react',
+	  color: _colors.orange,
+	  category: 'LIFECYCLE'
+	});
 	module.exports = exports['default'];
 
 /***/ },
 /* 182 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports["default"] = {
+	  orange: "#ff851b"
+	};
+	module.exports = exports["default"];
+
+/***/ },
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22275,7 +22344,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 183 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -22294,7 +22363,7 @@
 
 	var _styles = __webpack_require__(160);
 
-	var _vendorPrism = __webpack_require__(184);
+	var _vendorPrism = __webpack_require__(185);
 
 	var _vendorPrism2 = _interopRequireDefault(_vendorPrism);
 
@@ -22318,7 +22387,7 @@
 	    overflowX: 'auto',
 	    backgroundColor: 'rgb(40, 44, 52)',
 	    color: 'white',
-	    padding: 20,
+	    padding: '1.2em',
 	    borderRadius: 2
 	  },
 	  exampleColorCode: {
@@ -22409,7 +22478,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 184 */
+/* 185 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22776,6 +22845,719 @@
 	});
 
 	module.exports = Prism;
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var styles = function styles(props) {
+	  return {
+	    backgroundColor: props.active ? props.color : "#aaa",
+	    padding: "0.25em .5em",
+	    borderRadius: "2px",
+	    color: "white",
+	    cursor: "pointer",
+	    WebkitUserSelect: "none",
+	    MozUserSelect: "none",
+	    msUserSelect: "none",
+	    userSelect: "none"
+	  };
+	};
+
+	var CategoryLabel = function CategoryLabel(props) {
+	  return _react2["default"].createElement("label", _extends({ style: styles(props) }, props));
+	};
+
+	CategoryLabel.propTypes = {
+	  active: _react2["default"].PropTypes.bool.isRequired
+	};
+
+	exports["default"] = CategoryLabel;
+	module.exports = exports["default"];
+
+/***/ },
+/* 187 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * lodash 3.2.1 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+	var baseDifference = __webpack_require__(188),
+	    restParam = __webpack_require__(193);
+
+	/**
+	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
+	 * of an array-like value.
+	 */
+	var MAX_SAFE_INTEGER = 9007199254740991;
+
+	/**
+	 * The base implementation of `_.property` without support for deep paths.
+	 *
+	 * @private
+	 * @param {string} key The key of the property to get.
+	 * @returns {Function} Returns the new function.
+	 */
+	function baseProperty(key) {
+	  return function(object) {
+	    return object == null ? undefined : object[key];
+	  };
+	}
+
+	/**
+	 * Gets the "length" property value of `object`.
+	 *
+	 * **Note:** This function is used to avoid a [JIT bug](https://bugs.webkit.org/show_bug.cgi?id=142792)
+	 * that affects Safari on at least iOS 8.1-8.3 ARM64.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @returns {*} Returns the "length" value.
+	 */
+	var getLength = baseProperty('length');
+
+	/**
+	 * Checks if `value` is array-like.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is array-like, else `false`.
+	 */
+	function isArrayLike(value) {
+	  return value != null && isLength(getLength(value));
+	}
+
+	/**
+	 * Checks if `value` is a valid array-like length.
+	 *
+	 * **Note:** This function is based on [`ToLength`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength).
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
+	 */
+	function isLength(value) {
+	  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+	}
+
+	/**
+	 * Creates an array excluding all provided values using
+	 * [`SameValueZero`](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-samevaluezero)
+	 * for equality comparisons.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Array
+	 * @param {Array} array The array to filter.
+	 * @param {...*} [values] The values to exclude.
+	 * @returns {Array} Returns the new array of filtered values.
+	 * @example
+	 *
+	 * _.without([1, 2, 1, 3], 1, 2);
+	 * // => [3]
+	 */
+	var without = restParam(function(array, values) {
+	  return isArrayLike(array)
+	    ? baseDifference(array, values)
+	    : [];
+	});
+
+	module.exports = without;
+
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * lodash 3.0.3 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+	var baseIndexOf = __webpack_require__(189),
+	    cacheIndexOf = __webpack_require__(190),
+	    createCache = __webpack_require__(191);
+
+	/** Used as the size to enable large array optimizations. */
+	var LARGE_ARRAY_SIZE = 200;
+
+	/**
+	 * The base implementation of `_.difference` which accepts a single array
+	 * of values to exclude.
+	 *
+	 * @private
+	 * @param {Array} array The array to inspect.
+	 * @param {Array} values The values to exclude.
+	 * @returns {Array} Returns the new array of filtered values.
+	 */
+	function baseDifference(array, values) {
+	  var length = array ? array.length : 0,
+	      result = [];
+
+	  if (!length) {
+	    return result;
+	  }
+	  var index = -1,
+	      indexOf = baseIndexOf,
+	      isCommon = true,
+	      cache = (isCommon && values.length >= LARGE_ARRAY_SIZE) ? createCache(values) : null,
+	      valuesLength = values.length;
+
+	  if (cache) {
+	    indexOf = cacheIndexOf;
+	    isCommon = false;
+	    values = cache;
+	  }
+	  outer:
+	  while (++index < length) {
+	    var value = array[index];
+
+	    if (isCommon && value === value) {
+	      var valuesIndex = valuesLength;
+	      while (valuesIndex--) {
+	        if (values[valuesIndex] === value) {
+	          continue outer;
+	        }
+	      }
+	      result.push(value);
+	    }
+	    else if (indexOf(values, value, 0) < 0) {
+	      result.push(value);
+	    }
+	  }
+	  return result;
+	}
+
+	module.exports = baseDifference;
+
+
+/***/ },
+/* 189 */
+/***/ function(module, exports) {
+
+	/**
+	 * lodash 3.1.0 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.2 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+
+	/**
+	 * The base implementation of `_.indexOf` without support for binary searches.
+	 *
+	 * @private
+	 * @param {Array} array The array to search.
+	 * @param {*} value The value to search for.
+	 * @param {number} fromIndex The index to search from.
+	 * @returns {number} Returns the index of the matched value, else `-1`.
+	 */
+	function baseIndexOf(array, value, fromIndex) {
+	  if (value !== value) {
+	    return indexOfNaN(array, fromIndex);
+	  }
+	  var index = fromIndex - 1,
+	      length = array.length;
+
+	  while (++index < length) {
+	    if (array[index] === value) {
+	      return index;
+	    }
+	  }
+	  return -1;
+	}
+
+	/**
+	 * Gets the index at which the first occurrence of `NaN` is found in `array`.
+	 * If `fromRight` is provided elements of `array` are iterated from right to left.
+	 *
+	 * @private
+	 * @param {Array} array The array to search.
+	 * @param {number} fromIndex The index to search from.
+	 * @param {boolean} [fromRight] Specify iterating from right to left.
+	 * @returns {number} Returns the index of the matched `NaN`, else `-1`.
+	 */
+	function indexOfNaN(array, fromIndex, fromRight) {
+	  var length = array.length,
+	      index = fromIndex + (fromRight ? 0 : -1);
+
+	  while ((fromRight ? index-- : ++index < length)) {
+	    var other = array[index];
+	    if (other !== other) {
+	      return index;
+	    }
+	  }
+	  return -1;
+	}
+
+	module.exports = baseIndexOf;
+
+
+/***/ },
+/* 190 */
+/***/ function(module, exports) {
+
+	/**
+	 * lodash 3.0.2 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+
+	/**
+	 * Checks if `value` is in `cache` mimicking the return signature of
+	 * `_.indexOf` by returning `0` if the value is found, else `-1`.
+	 *
+	 * @private
+	 * @param {Object} cache The cache to search.
+	 * @param {*} value The value to search for.
+	 * @returns {number} Returns `0` if `value` is found, else `-1`.
+	 */
+	function cacheIndexOf(cache, value) {
+	  var data = cache.data,
+	      result = (typeof value == 'string' || isObject(value)) ? data.set.has(value) : data.hash[value];
+
+	  return result ? 0 : -1;
+	}
+
+	/**
+	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
+	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(1);
+	 * // => false
+	 */
+	function isObject(value) {
+	  // Avoid a V8 JIT bug in Chrome 19-20.
+	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+	  var type = typeof value;
+	  return !!value && (type == 'object' || type == 'function');
+	}
+
+	module.exports = cacheIndexOf;
+
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * lodash 3.1.2 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+	var getNative = __webpack_require__(192);
+
+	/** Native method references. */
+	var Set = getNative(global, 'Set');
+
+	/* Native method references for those with the same name as other `lodash` methods. */
+	var nativeCreate = getNative(Object, 'create');
+
+	/**
+	 *
+	 * Creates a cache object to store unique values.
+	 *
+	 * @private
+	 * @param {Array} [values] The values to cache.
+	 */
+	function SetCache(values) {
+	  var length = values ? values.length : 0;
+
+	  this.data = { 'hash': nativeCreate(null), 'set': new Set };
+	  while (length--) {
+	    this.push(values[length]);
+	  }
+	}
+
+	/**
+	 * Adds `value` to the cache.
+	 *
+	 * @private
+	 * @name push
+	 * @memberOf SetCache
+	 * @param {*} value The value to cache.
+	 */
+	function cachePush(value) {
+	  var data = this.data;
+	  if (typeof value == 'string' || isObject(value)) {
+	    data.set.add(value);
+	  } else {
+	    data.hash[value] = true;
+	  }
+	}
+
+	/**
+	 * Creates a `Set` cache object to optimize linear searches of large arrays.
+	 *
+	 * @private
+	 * @param {Array} [values] The values to cache.
+	 * @returns {null|Object} Returns the new cache object if `Set` is supported, else `null`.
+	 */
+	function createCache(values) {
+	  return (nativeCreate && Set) ? new SetCache(values) : null;
+	}
+
+	/**
+	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
+	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(1);
+	 * // => false
+	 */
+	function isObject(value) {
+	  // Avoid a V8 JIT bug in Chrome 19-20.
+	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+	  var type = typeof value;
+	  return !!value && (type == 'object' || type == 'function');
+	}
+
+	// Add functions to the `Set` cache.
+	SetCache.prototype.push = cachePush;
+
+	module.exports = createCache;
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 192 */
+/***/ function(module, exports) {
+
+	/**
+	 * lodash 3.9.1 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+
+	/** `Object#toString` result references. */
+	var funcTag = '[object Function]';
+
+	/** Used to detect host constructors (Safari > 5). */
+	var reIsHostCtor = /^\[object .+?Constructor\]$/;
+
+	/**
+	 * Checks if `value` is object-like.
+	 *
+	 * @private
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+	 */
+	function isObjectLike(value) {
+	  return !!value && typeof value == 'object';
+	}
+
+	/** Used for native method references. */
+	var objectProto = Object.prototype;
+
+	/** Used to resolve the decompiled source of functions. */
+	var fnToString = Function.prototype.toString;
+
+	/** Used to check objects for own properties. */
+	var hasOwnProperty = objectProto.hasOwnProperty;
+
+	/**
+	 * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var objToString = objectProto.toString;
+
+	/** Used to detect if a method is native. */
+	var reIsNative = RegExp('^' +
+	  fnToString.call(hasOwnProperty).replace(/[\\^$.*+?()[\]{}|]/g, '\\$&')
+	  .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?') + '$'
+	);
+
+	/**
+	 * Gets the native function at `key` of `object`.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @param {string} key The key of the method to get.
+	 * @returns {*} Returns the function if it's native, else `undefined`.
+	 */
+	function getNative(object, key) {
+	  var value = object == null ? undefined : object[key];
+	  return isNative(value) ? value : undefined;
+	}
+
+	/**
+	 * Checks if `value` is classified as a `Function` object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
+	 * @example
+	 *
+	 * _.isFunction(_);
+	 * // => true
+	 *
+	 * _.isFunction(/abc/);
+	 * // => false
+	 */
+	function isFunction(value) {
+	  // The use of `Object#toString` avoids issues with the `typeof` operator
+	  // in older versions of Chrome and Safari which return 'function' for regexes
+	  // and Safari 8 equivalents which return 'object' for typed array constructors.
+	  return isObject(value) && objToString.call(value) == funcTag;
+	}
+
+	/**
+	 * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
+	 * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+	 * @example
+	 *
+	 * _.isObject({});
+	 * // => true
+	 *
+	 * _.isObject([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObject(1);
+	 * // => false
+	 */
+	function isObject(value) {
+	  // Avoid a V8 JIT bug in Chrome 19-20.
+	  // See https://code.google.com/p/v8/issues/detail?id=2291 for more details.
+	  var type = typeof value;
+	  return !!value && (type == 'object' || type == 'function');
+	}
+
+	/**
+	 * Checks if `value` is a native function.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a native function, else `false`.
+	 * @example
+	 *
+	 * _.isNative(Array.prototype.push);
+	 * // => true
+	 *
+	 * _.isNative(_);
+	 * // => false
+	 */
+	function isNative(value) {
+	  if (value == null) {
+	    return false;
+	  }
+	  if (isFunction(value)) {
+	    return reIsNative.test(fnToString.call(value));
+	  }
+	  return isObjectLike(value) && reIsHostCtor.test(value);
+	}
+
+	module.exports = getNative;
+
+
+/***/ },
+/* 193 */
+/***/ function(module, exports) {
+
+	/**
+	 * lodash 3.6.1 (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modern modularize exports="npm" -o ./`
+	 * Copyright 2012-2015 The Dojo Foundation <http://dojofoundation.org/>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 * Available under MIT license <https://lodash.com/license>
+	 */
+
+	/** Used as the `TypeError` message for "Functions" methods. */
+	var FUNC_ERROR_TEXT = 'Expected a function';
+
+	/* Native method references for those with the same name as other `lodash` methods. */
+	var nativeMax = Math.max;
+
+	/**
+	 * Creates a function that invokes `func` with the `this` binding of the
+	 * created function and arguments from `start` and beyond provided as an array.
+	 *
+	 * **Note:** This method is based on the [rest parameter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+	 *
+	 * @static
+	 * @memberOf _
+	 * @category Function
+	 * @param {Function} func The function to apply a rest parameter to.
+	 * @param {number} [start=func.length-1] The start position of the rest parameter.
+	 * @returns {Function} Returns the new function.
+	 * @example
+	 *
+	 * var say = _.restParam(function(what, names) {
+	 *   return what + ' ' + _.initial(names).join(', ') +
+	 *     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
+	 * });
+	 *
+	 * say('hello', 'fred', 'barney', 'pebbles');
+	 * // => 'hello fred, barney, & pebbles'
+	 */
+	function restParam(func, start) {
+	  if (typeof func != 'function') {
+	    throw new TypeError(FUNC_ERROR_TEXT);
+	  }
+	  start = nativeMax(start === undefined ? (func.length - 1) : (+start || 0), 0);
+	  return function() {
+	    var args = arguments,
+	        index = -1,
+	        length = nativeMax(args.length - start, 0),
+	        rest = Array(length);
+
+	    while (++index < length) {
+	      rest[index] = args[start + index];
+	    }
+	    switch (start) {
+	      case 0: return func.call(this, rest);
+	      case 1: return func.call(this, args[0], rest);
+	      case 2: return func.call(this, args[0], args[1], rest);
+	    }
+	    var otherArgs = Array(start + 1);
+	    index = -1;
+	    while (++index < start) {
+	      otherArgs[index] = args[index];
+	    }
+	    otherArgs[start] = rest;
+	    return func.apply(this, otherArgs);
+	  };
+	}
+
+	module.exports = restParam;
+
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var styles = function styles() {
+	  return {
+	    padding: '1.5em 0',
+	    borderBottom: '1px solid #e0e0e0'
+	  };
+	};
+
+	var CategoryList = function CategoryList(props) {
+	  return _react2['default'].createElement('div', _extends({ style: styles() }, props));
+	};
+
+	exports['default'] = CategoryList;
+	module.exports = exports['default'];
+
+/***/ },
+/* 195 */,
+/* 196 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _styles = __webpack_require__(160);
+
+	var _styles2 = _interopRequireDefault(_styles);
+
+	var NoResults = function NoResults(props) {
+	  return _react2['default'].createElement(
+	    'article',
+	    { style: _extends({}, _styles2['default'].article) },
+	    _react2['default'].createElement(
+	      'h2',
+	      null,
+	      'No results'
+	    )
+	  );
+	};
+
+	exports['default'] = NoResults;
+	module.exports = exports['default'];
 
 /***/ }
 /******/ ]);
