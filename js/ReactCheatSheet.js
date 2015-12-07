@@ -10,13 +10,14 @@ import CategoryList from './CategoryList.js';
 import CategoryLabel from './CategoryLabel.js';
 import NoResults from './NoResults.js';
 
+import includes from 'lodash.includes';
 import filter from 'lodash.filter';
 import without from 'lodash.without';
 
 function filterByCategory(_data, categories = []) {
   if (!categories.length) return _data;
 
-  return filter(_data, ({category}) => categories.includes(category));
+  return filter(_data, ({category}) => includes(categories, category));
 }
 
 function filterResults (_data, predicate = '', categories = []) {
@@ -105,78 +106,78 @@ class ReactCheatSheet extends Component {
         <CategoryList>
           <CategoryLabel
             color={colors.purple}
-            active={this.state.categories.includes('REACTDOM')}
+            active={includes(this.state.categories, 'REACTDOM')}
           >
             <span>ReactDOM{' '}</span>
             <input
               type="checkbox"
               onChange={handleReactDOMFilterChange.bind(this)}
-              checked={this.state.categories.includes('REACTDOM')}
+              checked={includes(this.state.categories, 'REACTDOM')}
               ref={c => this.reactDOMCheckbox = c}
             />
           </CategoryLabel>
 
           <CategoryLabel
             color={colors.yellow}
-            active={this.state.categories.includes('TOPLEVEL')}
+            active={includes(this.state.categories, 'TOPLEVEL')}
           >
-            <span style={(this.state.categories.includes('TOPLEVEL')) ? { color: "#222" } : null }>Top-level{' '}</span>
+          <span style={(includes(this.state.categories, 'TOPLEVEL')) ? { color: "#222" } : null }>Top-level{' '}</span>
             <input
               type="checkbox"
               onChange={handleToplevelFilterChange.bind(this)}
-              checked={this.state.categories.includes('TOPLEVEL')}
+              checked={includes(this.state.categories, 'TOPLEVEL')}
               ref={c => this.toplevelCheckbox = c}
             />
           </CategoryLabel>
 
           <CategoryLabel
             color={colors.blue}
-            active={this.state.categories.includes('COMPONENT')}
+            active={includes(this.state.categories, 'COMPONENT')}
           >
             <span>Component{' '}</span>
             <input
               type="checkbox"
               onChange={handleComponentFilterChange.bind(this)}
-              checked={this.state.categories.includes('COMPONENT')}
+              checked={includes(this.state.categories, 'COMPONENT')}
               ref={c => this.componentCheckbox = c}
             />
           </CategoryLabel>
 
           <CategoryLabel
             color={colors.olive}
-            active={this.state.categories.includes('SPEC')}
+            active={includes(this.state.categories, 'SPEC')}
           >
             <span>Spec{' '}</span>
             <input
               type="checkbox"
               onChange={handleSpecFilterChange.bind(this)}
-              checked={this.state.categories.includes('SPEC')}
+              checked={includes(this.state.categories, 'SPEC')}
               ref={c => this.specCheckbox = c}
             />
           </CategoryLabel>
 
           <CategoryLabel
             color={colors.orange}
-            active={this.state.categories.includes('LIFECYCLE')}
+            active={includes(this.state.categories, 'LIFECYCLE')}
           >
             <span>Lifecycle{' '}</span>
             <input
               type="checkbox"
               onChange={handleLifecycleFilterChange.bind(this)}
-              checked={this.state.categories.includes('LIFECYCLE')}
+              checked={includes(this.state.categories, 'LIFECYCLE')}
               ref={c => this.lifecycleCheckbox = c}
             />
           </CategoryLabel>
 
           <CategoryLabel
             color={colors.pink}
-            active={this.state.categories.includes('PROPTYPES')}
+            active={includes(this.state.categories, 'PROPTYPES')}
           >
             <span>PropTypes{' '}</span>
             <input
               type="checkbox"
               onChange={handleProptypesFilterChange.bind(this)}
-              checked={this.state.categories.includes('PROPTYPES')}
+              checked={includes(this.state.categories, 'PROPTYPES')}
               ref={c => this.proptypesCheckbox = c}
             />
           </CategoryLabel>
