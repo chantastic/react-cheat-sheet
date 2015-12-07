@@ -3,6 +3,7 @@ import React, { PropTypes } from 'react';
 const styles = (props) => {
   return {
     backgroundColor: (props.active) ? props.color : "#aaa",
+    marginRight: ".5em",
     padding: "0.25em .5em",
     borderRadius: "2px",
     color: "white",

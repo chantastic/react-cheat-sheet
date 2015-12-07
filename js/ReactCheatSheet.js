@@ -35,6 +35,12 @@ function handleLifecycleFilterChange () {
   });
 }
 
+function handleSpecFilterChange () {
+  this.setState({
+    categories: toggleCategory(this.state.categories, 'SPEC', this.specCheckbox.checked)
+  });
+}
+
 function handleChange () {
   this.setState({ predicate: this.searchInput.value });
 }
@@ -73,6 +79,19 @@ class ReactCheatSheet extends Component {
         </label>
 
         <CategoryList>
+          <CategoryLabel
+            color={colors.olive}
+            active={this.state.categories.includes('SPEC')}
+          >
+            <span>Spec{' '}</span>
+            <input
+              type="checkbox"
+              onChange={handleSpecFilterChange.bind(this)}
+              checked={this.state.categories.includes('SPEC')}
+              ref={c => this.specCheckbox = c}
+            />
+          </CategoryLabel>
+
           <CategoryLabel
             color={colors.orange}
             active={this.state.categories.includes('LIFECYCLE')}
