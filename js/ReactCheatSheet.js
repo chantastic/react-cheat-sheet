@@ -29,6 +29,12 @@ function toggleCategory(arr, item, cond) {
   return (cond) ? arr.concat([item]) : without(arr, item);
 }
 
+function handleComponentFilterChange () {
+  this.setState({
+    categories: toggleCategory(this.state.categories, 'COMPONENT', this.componentCheckbox.checked)
+  });
+}
+
 function handleLifecycleFilterChange () {
   this.setState({
     categories: toggleCategory(this.state.categories, 'LIFECYCLE', this.lifecycleCheckbox.checked)
@@ -79,6 +85,19 @@ class ReactCheatSheet extends Component {
         </label>
 
         <CategoryList>
+          <CategoryLabel
+            color={colors.blue}
+            active={this.state.categories.includes('COMPONENT')}
+          >
+            <span>Component{' '}</span>
+            <input
+              type="checkbox"
+              onChange={handleComponentFilterChange.bind(this)}
+              checked={this.state.categories.includes('COMPONENT')}
+              ref={c => this.componentCheckbox = c}
+            />
+          </CategoryLabel>
+
           <CategoryLabel
             color={colors.olive}
             active={this.state.categories.includes('SPEC')}
