@@ -41,6 +41,12 @@ function handleLifecycleFilterChange () {
   });
 }
 
+function handleProptypesFilterChange () {
+  this.setState({
+    categories: toggleCategory(this.state.categories, 'PROPTYPES', this.proptypesCheckbox.checked)
+  });
+}
+
 function handleSpecFilterChange () {
   this.setState({
     categories: toggleCategory(this.state.categories, 'SPEC', this.specCheckbox.checked)
@@ -121,6 +127,19 @@ class ReactCheatSheet extends Component {
               onChange={handleLifecycleFilterChange.bind(this)}
               checked={this.state.categories.includes('LIFECYCLE')}
               ref={c => this.lifecycleCheckbox = c}
+            />
+          </CategoryLabel>
+
+          <CategoryLabel
+            color={colors.pink}
+            active={this.state.categories.includes('PROPTYPES')}
+          >
+            <span>PropTypes{' '}</span>
+            <input
+              type="checkbox"
+              onChange={handleProptypesFilterChange.bind(this)}
+              checked={this.state.categories.includes('PROPTYPES')}
+              ref={c => this.proptypesCheckbox = c}
             />
           </CategoryLabel>
         </CategoryList>
