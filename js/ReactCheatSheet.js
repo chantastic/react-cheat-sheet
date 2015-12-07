@@ -29,6 +29,12 @@ function toggleCategory(arr, item, cond) {
   return (cond) ? arr.concat([item]) : without(arr, item);
 }
 
+function handleReactDOMFilterChange () {
+  this.setState({
+    categories: toggleCategory(this.state.categories, 'REACTDOM', this.reactDOMCheckbox.checked)
+  });
+}
+
 function handleToplevelFilterChange () {
   this.setState({
     categories: toggleCategory(this.state.categories, 'TOPLEVEL', this.toplevelCheckbox.checked)
@@ -97,6 +103,19 @@ class ReactCheatSheet extends Component {
         </label>
 
         <CategoryList>
+          <CategoryLabel
+            color={colors.purple}
+            active={this.state.categories.includes('REACTDOM')}
+          >
+            <span>ReactDOM{' '}</span>
+            <input
+              type="checkbox"
+              onChange={handleReactDOMFilterChange.bind(this)}
+              checked={this.state.categories.includes('REACTDOM')}
+              ref={c => this.reactDOMCheckbox = c}
+            />
+          </CategoryLabel>
+
           <CategoryLabel
             color={colors.yellow}
             active={this.state.categories.includes('TOPLEVEL')}
