@@ -1,5 +1,7 @@
 import extendWithDefaults from '../assignSharedDefaults';
 
+import { blue } from '../colors';
+
 const data = [
   {
     name: 'setState',
@@ -68,4 +70,8 @@ this.replaceProps({someKey: 'a new value'}); `,
   },
 ];
 
-export default extendWithDefaults(data, { module: 'react', color: '#0074D9' });
+export default extendWithDefaults(data, {
+  module: 'react',
+  color: blue,
+  category: 'COMPONENT',
+});
