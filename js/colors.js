@@ -4,4 +4,5 @@ export default {
   blue: "#0074D9",
   pink: "#f012be",
   yellow: "#ffdc00",
+  purple: "#85144b",
 }
