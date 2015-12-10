@@ -66,6 +66,12 @@ function handleSpecFilterChange () {
   });
 }
 
+function handleMiscFilterChange () {
+  this.setState({
+    categories: toggleCategory(this.state.categories, 'MISC', this.miscCheckbox.checked)
+  });
+}
+
 function handleChange () {
   this.setState({ predicate: this.searchInput.value });
 }
@@ -179,6 +185,19 @@ class ReactCheatSheet extends Component {
               onChange={handleProptypesFilterChange.bind(this)}
               checked={includes(this.state.categories, 'PROPTYPES')}
               ref={c => this.proptypesCheckbox = c}
+            />
+          </CategoryLabel>
+
+          <CategoryLabel
+            color={colors.red}
+            active={this.state.categories.includes('MISC')}
+          >
+            <span>Misc{' '}</span>
+            <input
+              type="checkbox"
+              onChange={handleMiscFilterChange.bind(this)}
+              checked={this.state.categories.includes('MISC')}
+              ref={c => this.miscCheckbox = c}
             />
           </CategoryLabel>
         </CategoryList>
