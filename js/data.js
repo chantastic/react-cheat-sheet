@@ -5,6 +5,7 @@ import ReactComponent from './data/React_Component';
 import ReactSpec from './data/React_Spec';
 import ReactLifecycle from './data/React_Lifecycle';
 import ReactPropTypes from './data/React_PropTypes';
+import Misc from './data/Misc';
 
 export default [
   ...ReactDOM,
@@ -14,4 +15,5 @@ export default [
   ...ReactSpec,
   ...ReactLifecycle,
   ...ReactPropTypes,
+  ...Misc,
 ];
