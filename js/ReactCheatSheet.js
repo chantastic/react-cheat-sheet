@@ -190,13 +190,13 @@ class ReactCheatSheet extends Component {
 
           <CategoryLabel
             color={colors.red}
-            active={this.state.categories.includes('MISC')}
+            active={includes(this.state.categories, 'MISC')}
           >
             <span>Misc{' '}</span>
             <input
               type="checkbox"
               onChange={handleMiscFilterChange.bind(this)}
-              checked={this.state.categories.includes('MISC')}
+              checked={includes(this.state.categories, 'MISC')}
               ref={c => this.miscCheckbox = c}
             />
           </CategoryLabel>
