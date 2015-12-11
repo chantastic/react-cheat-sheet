@@ -41,17 +41,25 @@ const styles = {
   }
 };
 
-const ReferenceItem = ({name, module, reference: href, example, color: backgroundColor, notAvailableInComponentClass, cannotCallSetState, refsNotAvailable}) => (
+const ReferenceItem = ({name, module, reference: href, example, chart, color: backgroundColor, notAvailableInComponentClass, cannotCallSetState, refsNotAvailable}) => (
   <article style={styles.root}>
     <h2 style={styles.header}>
       {name}
     </h2>
     <div style={styles.module}>{module}</div>
 
-    <pre style={styles.example}>
-      <code style={styles.code}><Prism>{example}</Prism></code>
-      <div style={{backgroundColor, ...styles.exampleColorCode}} />
-    </pre>
+    {(example) &&
+      <pre style={styles.example}>
+        <code style={styles.code}><Prism>{example}</Prism></code>
+        <div style={{backgroundColor, ...styles.exampleColorCode}} />
+      </pre>
+    }
+
+    {(chart) &&
+      <div>
+        {chart}
+      </div>
+    }
 
     <div>
       {(notAvailableInComponentClass) && <span style={{color: "#e06c75"}}><strong>{'︎✖︎ React.Component'}</strong></span>}
