@@ -13,7 +13,7 @@ this.setState(function(previousState, currentProps) {
   return {counter: previousState.counter + 1};
 });
 
-// both uses take a function as an optional second arugment.
+// both uses take a function as an optional second argument.
 // this function fires after setState
 `,
     reference: 'https://facebook.github.io/react/docs/component-api.html#setstate'
@@ -55,7 +55,7 @@ this.replaceState({firstName: 'Spazz'});
     name: 'setProps',
     example: `this.setProps({someKey: 'a new value'});
 
-// Only available on root-lever components
+// Only available on root-level components
 // Prefer calling ReactDOM.render() again`,
     reference: 'https://facebook.github.io/react/docs/component-api.html#setprops',
     notAvailableInComponentClass: true,
