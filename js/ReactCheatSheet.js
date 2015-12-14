@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import data from './data.js';
 
@@ -7,7 +7,7 @@ import colors from './colors';
 
 import ReferenceItem from './ReferenceItem.js';
 import CategoryList from './CategoryList.js';
-import CategoryLabel from './CategoryLabel.js';
+import CategoryButton from './CategoryButton.js';
 import NoResults from './NoResults.js';
 
 import includes from 'lodash.includes';
@@ -30,50 +30,14 @@ function toggleCategory(arr, item, cond) {
   return (cond) ? arr.concat([item]) : without(arr, item);
 }
 
-function handleReactDOMFilterChange () {
-  this.setState({
-    categories: toggleCategory(this.state.categories, 'REACTDOM', this.reactDOMCheckbox.checked)
-  });
-}
-
-function handleToplevelFilterChange () {
-  this.setState({
-    categories: toggleCategory(this.state.categories, 'TOPLEVEL', this.toplevelCheckbox.checked)
-  });
-}
-
-function handleComponentFilterChange () {
-  this.setState({
-    categories: toggleCategory(this.state.categories, 'COMPONENT', this.componentCheckbox.checked)
-  });
-}
-
-function handleLifecycleFilterChange () {
-  this.setState({
-    categories: toggleCategory(this.state.categories, 'LIFECYCLE', this.lifecycleCheckbox.checked)
-  });
-}
-
-function handleProptypesFilterChange () {
-  this.setState({
-    categories: toggleCategory(this.state.categories, 'PROPTYPES', this.proptypesCheckbox.checked)
-  });
-}
-
-function handleSpecFilterChange () {
-  this.setState({
-    categories: toggleCategory(this.state.categories, 'SPEC', this.specCheckbox.checked)
-  });
-}
-
-function handleMiscFilterChange () {
-  this.setState({
-    categories: toggleCategory(this.state.categories, 'MISC', this.miscCheckbox.checked)
-  });
-}
-
 function handleChange () {
   this.setState({ predicate: this.searchInput.value });
+}
+
+function handleCategoryChange (category, state) {
+  this.setState({
+    categories: toggleCategory(this.state.categories, category, state)
+  });
 }
 
 class ReactCheatSheet extends Component {
@@ -110,96 +74,55 @@ class ReactCheatSheet extends Component {
         </label>
 
         <CategoryList>
-          <CategoryLabel
+          <CategoryButton
             color={colors.purple}
+            name={'ReactDOM'}
             active={includes(this.state.categories, 'REACTDOM')}
-          >
-            <span>ReactDOM{' '}</span>
-            <input
-              type="checkbox"
-              onChange={handleReactDOMFilterChange.bind(this)}
-              checked={includes(this.state.categories, 'REACTDOM')}
-              ref={c => this.reactDOMCheckbox = c}
-            />
-          </CategoryLabel>
+            onToggle={handleCategoryChange.bind(this)}
+          />
 
-          <CategoryLabel
+          <CategoryButton
             color={colors.yellow}
+            name={'Top-level'}
+            nameStyle={(includes(this.state.categories, 'TOPLEVEL')) ? { color: "#222" } : null}
             active={includes(this.state.categories, 'TOPLEVEL')}
-          >
-          <span style={(includes(this.state.categories, 'TOPLEVEL')) ? { color: "#222" } : null }>Top-level{' '}</span>
-            <input
-              type="checkbox"
-              onChange={handleToplevelFilterChange.bind(this)}
-              checked={includes(this.state.categories, 'TOPLEVEL')}
-              ref={c => this.toplevelCheckbox = c}
-            />
-          </CategoryLabel>
+            onToggle={handleCategoryChange.bind(this)}
+          />
 
-          <CategoryLabel
+          <CategoryButton
             color={colors.blue}
+            name={'COMPONENT'}
             active={includes(this.state.categories, 'COMPONENT')}
-          >
-            <span>Component{' '}</span>
-            <input
-              type="checkbox"
-              onChange={handleComponentFilterChange.bind(this)}
-              checked={includes(this.state.categories, 'COMPONENT')}
-              ref={c => this.componentCheckbox = c}
-            />
-          </CategoryLabel>
+            onToggle={handleCategoryChange.bind(this)}
+          />
 
-          <CategoryLabel
+          <CategoryButton
             color={colors.olive}
+            name={'SPEC'}
             active={includes(this.state.categories, 'SPEC')}
-          >
-            <span>Spec{' '}</span>
-            <input
-              type="checkbox"
-              onChange={handleSpecFilterChange.bind(this)}
-              checked={includes(this.state.categories, 'SPEC')}
-              ref={c => this.specCheckbox = c}
-            />
-          </CategoryLabel>
+            onToggle={handleCategoryChange.bind(this)}
+          />
 
-          <CategoryLabel
+          <CategoryButton
             color={colors.orange}
+            name={'Lifecycle'}
             active={includes(this.state.categories, 'LIFECYCLE')}
-          >
-            <span>Lifecycle{' '}</span>
-            <input
-              type="checkbox"
-              onChange={handleLifecycleFilterChange.bind(this)}
-              checked={includes(this.state.categories, 'LIFECYCLE')}
-              ref={c => this.lifecycleCheckbox = c}
-            />
-          </CategoryLabel>
+            onToggle={handleCategoryChange.bind(this)}
+          />
 
-          <CategoryLabel
+          <CategoryButton
             color={colors.pink}
+            name={'PropTypes'}
             active={includes(this.state.categories, 'PROPTYPES')}
-          >
-            <span>PropTypes{' '}</span>
-            <input
-              type="checkbox"
-              onChange={handleProptypesFilterChange.bind(this)}
-              checked={includes(this.state.categories, 'PROPTYPES')}
-              ref={c => this.proptypesCheckbox = c}
-            />
-          </CategoryLabel>
+            onToggle={handleCategoryChange.bind(this)}
+          />
 
-          <CategoryLabel
+          <CategoryButton
             color={colors.red}
+            name={'Misc'}
             active={includes(this.state.categories, 'MISC')}
-          >
-            <span>Misc{' '}</span>
-            <input
-              type="checkbox"
-              onChange={handleMiscFilterChange.bind(this)}
-              checked={includes(this.state.categories, 'MISC')}
-              ref={c => this.miscCheckbox = c}
-            />
-          </CategoryLabel>
+            onToggle={handleCategoryChange.bind(this)}
+          />
         </CategoryList>
 
         <section>
