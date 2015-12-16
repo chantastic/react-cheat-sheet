@@ -91,14 +91,14 @@ class ReactCheatSheet extends Component {
 
           <CategoryButton
             color={colors.blue}
-            name={'COMPONENT'}
+            name={'Component'}
             active={includes(this.state.categories, 'COMPONENT')}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.olive}
-            name={'SPEC'}
+            name={'Spec'}
             active={includes(this.state.categories, 'SPEC')}
             onToggle={handleCategoryChange.bind(this)}
           />
