@@ -46,7 +46,7 @@ class ReactCheatSheet extends Component {
 
     this.state = {
       predicate: '',
-      categories: [],
+      categories: ['TESTUTILS'],
     };
   }
 
