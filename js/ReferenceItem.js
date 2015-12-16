@@ -5,7 +5,7 @@ import Prism from './vendor/Prism';
 const styles = {
   root: {
     ...articleStyle,
-    borderBottom: '1px solid #e0e0e0'
+    borderBottom: '1px solid #e0e0e0',
   },
   header: {
     overflowX: 'auto',
@@ -15,7 +15,7 @@ const styles = {
     fontSize: '1em',
     color: '#aaa',
     fontWeight: 'normal',
-    marginBottom: '1.5em'
+    marginBottom: '1.5em',
   },
   example: {
     position: 'relative',
@@ -31,17 +31,17 @@ const styles = {
     left: 0,
     top: 0,
     height: '100%',
-    width: 4
+    width: 4,
   },
   code: {
     fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
   },
   reference: {
-    textAlign: 'right'
+    textAlign: 'right',
   },
   referenceLink: {
     paddingLeft: '1.2em',
-  }
+  },
 };
 
 const ReferenceItem = ({
@@ -54,7 +54,7 @@ const ReferenceItem = ({
   notAvailableInComponentClass,
   cannotCallSetState,
   refsNotAvailable,
-  playground
+  playground,
 }) => (
   <article style={styles.root}>
     <h2 style={styles.header}>

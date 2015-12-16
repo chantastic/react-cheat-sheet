@@ -51,7 +51,7 @@ console.log('You mounted a component tree with a ' + componentTree.tagName + ' a
     name: 'isElement',
     example: `expect(TestUtils.isElement(<div />)).toBe(true);`,
     reference: 'https://facebook.github.io/react/docs/test-utils.html#iselement',
-    playground: 'http://jsbin.com/jiyune/edit?html,js,console'
+    playground: 'http://jsbin.com/jiyune/edit?html,js,console',
   },
 
 
@@ -67,7 +67,7 @@ expect(
   TestUtils.isElementOfType(<MyComponent />, MyComponent)
 ).toBe(true);`,
     reference: 'https://facebook.github.io/react/docs/test-utils.html#iselementoftype',
-    playground: 'http://jsbin.com/pasohi/edit?html,js,console'
+    playground: 'http://jsbin.com/pasohi/edit?html,js,console',
   },
 
 

@@ -22,7 +22,7 @@ const CategoryLabel = (props) => (
 );
 
 CategoryLabel.propTypes = {
-  active: React.PropTypes.bool.isRequired
+  active: React.PropTypes.bool.isRequired,
 };
 
 export default CategoryLabel;

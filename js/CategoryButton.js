@@ -12,7 +12,7 @@ export default class CategoryButton extends Component {
       active,
       name,
       nameStyle,
-      onToggle
+      onToggle,
     } = this.props;
 
     return (
@@ -37,6 +37,6 @@ CategoryButton.propTypes = {
   name: PropTypes.string.isRequired,
   onToggle: PropTypes.func.isRequired,
   nameStyle: PropTypes.shape({
-    color: PropTypes.string
-  })
+    color: PropTypes.string,
+  }),
 }

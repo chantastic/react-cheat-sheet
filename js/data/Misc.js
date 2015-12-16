@@ -90,7 +90,7 @@ const Greeting = (props) => (
     reference: 'https://facebook.github.io/react/docs/reusable-components.html#stateless-functions',
     refsNotAvailable: true,
     module: 'react',
-  }
+  },
 ];
 
 export default extendWithDefaults(data, {

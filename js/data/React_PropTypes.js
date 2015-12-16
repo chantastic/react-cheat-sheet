@@ -136,5 +136,5 @@ export default extendWithDefaults(data, {
   module: 'react',
   color: pink,
   category: 'PROPTYPES',
-  reference: 'https://facebook.github.io/react/docs/reusable-components.html#prop-validation'
+  reference: 'https://facebook.github.io/react/docs/reusable-components.html#prop-validation',
 });

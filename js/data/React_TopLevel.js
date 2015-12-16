@@ -76,11 +76,11 @@ React.createFactory(MyComponentClass); // ReactClass type`,
     name: 'Children.toArray',
     example: `none`,
     reference: 'http://facebook.github.io/react/docs/top-level-api.html#react.children.toarray',
-  }
+  },
 ];
 
 export default extendWithDefaults(data, {
   module: 'react',
   color: yellow,
-  category: 'TOPLEVEL'
+  category: 'TOPLEVEL',
 });

@@ -12,5 +12,5 @@ export default {
     border: '1px solid #aaa',
     boxSizing: 'border-box',
     color: 'black',
-  }
+  },
 };

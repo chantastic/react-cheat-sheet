@@ -35,9 +35,7 @@ function handleChange () {
 }
 
 function handleCategoryChange (category, state) {
-  this.setState({
-    categories: toggleCategory(this.state.categories, category, state)
-  });
+  this.setState({ categories: toggleCategory(this.state.categories, category, state) });
 }
 
 class ReactCheatSheet extends Component {

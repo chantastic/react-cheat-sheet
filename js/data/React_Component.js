@@ -16,7 +16,7 @@ this.setState(function(previousState, currentProps) {
 // both uses take a function as an optional second argument.
 // this function fires after setState
 `,
-    reference: 'https://facebook.github.io/react/docs/component-api.html#setstate'
+    reference: 'https://facebook.github.io/react/docs/component-api.html#setstate',
   },
   {
     name: 'replaceState',
@@ -38,12 +38,12 @@ this.replaceState({firstName: 'Spazz'});
 
 // forces component tree to update.
 // AVOID where posible`,
-    reference: 'https://facebook.github.io/react/docs/component-api.html#forceupdate'
+    reference: 'https://facebook.github.io/react/docs/component-api.html#forceupdate',
   },
   {
     name: 'getDOMNode',
     example: `// Deprecated. Use ReactDOM.findDOMNode`,
-    reference: 'https://facebook.github.io/react/docs/component-api.html#getdomnode'
+    reference: 'https://facebook.github.io/react/docs/component-api.html#getdomnode',
   },
   {
     name: 'isMounted',

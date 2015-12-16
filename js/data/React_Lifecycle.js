@@ -59,5 +59,5 @@ const data = [
 export default extendWithDefaults(data, {
   module: 'react',
   color: orange,
-  category: 'LIFECYCLE'
+  category: 'LIFECYCLE',
 });
