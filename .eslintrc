@@ -39,6 +39,7 @@
     "camelcase": [2, {"properties": "never"}],
     "comma-dangle": [2, "always-multiline"],
     "no-underscore-dangle": 0,
+    "quotes": [2, "double", "avoid-escape"],
     "semi": [2, "always"],
     "strict": 0
   }

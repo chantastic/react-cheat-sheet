@@ -1,46 +1,46 @@
-import React from 'react';
-import { article as articleStyle } from './styles';
-import Prism from './vendor/Prism';
+import React from "react";
+import { article as articleStyle } from "./styles";
+import Prism from "./vendor/Prism";
 
 const styles = {
   root: {
     ...articleStyle,
-    borderBottom: '1px solid #e0e0e0',
+    borderBottom: "1px solid #e0e0e0",
   },
   header: {
-    overflowX: 'auto',
+    overflowX: "auto",
     marginBottom: 0,
   },
   module: {
-    fontSize: '1em',
-    color: '#aaa',
-    fontWeight: 'normal',
-    marginBottom: '1.5em',
+    fontSize: "1em",
+    color: "#aaa",
+    fontWeight: "normal",
+    marginBottom: "1.5em",
   },
   example: {
-    position: 'relative',
-    overflow: 'hidden',
-    overflowX: 'auto',
-    backgroundColor: 'rgb(40, 44, 52)',
-    color: 'white',
-    padding: '1.2em',
+    position: "relative",
+    overflow: "hidden",
+    overflowX: "auto",
+    backgroundColor: "rgb(40, 44, 52)",
+    color: "white",
+    padding: "1.2em",
     borderRadius: 2,
   },
   exampleColorCode: {
-    position: 'absolute',
+    position: "absolute",
     left: 0,
     top: 0,
-    height: '100%',
+    height: "100%",
     width: 4,
   },
   code: {
     fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
   },
   reference: {
-    textAlign: 'right',
+    textAlign: "right",
   },
   referenceLink: {
-    paddingLeft: '1.2em',
+    paddingLeft: "1.2em",
   },
 };
 

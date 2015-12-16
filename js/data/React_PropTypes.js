@@ -1,52 +1,52 @@
-import extendWithDefaults from '../assignSharedDefaults';
+import extendWithDefaults from "../assignSharedDefaults";
 
-import { pink } from '../colors';
+import { pink } from "../colors";
 
 const data = [
   {
-    name: 'PropTypes.array',
+    name: "PropTypes.array",
     example: `{
   optionalArray: React.PropTypes.array,
   requiredArray: React.PropTypes.array.isRequired
 }`,
   },
   {
-    name: 'PropTypes.bool',
+    name: "PropTypes.bool",
     example: `{
   optionalBoolean: React.PropTypes.bool,
   requiredBoolean: React.PropTypes.bool.isRequired
 }`,
   },
   {
-    name: 'PropTypes.func',
+    name: "PropTypes.func",
     example: `{
   optionalFunction: React.PropTypes.func,
   requiredFunction: React.PropTypes.func.isRequired
 }`,
   },
   {
-    name: 'PropTypes.number',
+    name: "PropTypes.number",
     example: `{
   optionalNumber: React.PropTypes.number,
   requiredNumber: React.PropTypes.number.isRequired
 }`,
   },
   {
-    name: 'PropTypes.object',
+    name: "PropTypes.object",
     example: `{
   optionalObject: React.PropTypes.object,
   requiredObject: React.PropTypes.object.isRequired
 }`,
   },
   {
-    name: 'PropTypes.string',
+    name: "PropTypes.string",
     example: `{
   optionalString: React.PropTypes.string,
   requiredString: React.PropTypes.string.isRequired
 }`,
   },
   {
-    name: 'PropTypes.node',
+    name: "PropTypes.node",
     example: `{
   optionalNode: React.PropTypes.node,
   requiredNode: React.PropTypes.node.isRequired
@@ -55,28 +55,28 @@ const data = [
 // anything that can be rendered`,
   },
   {
-    name: 'PropTypes.element',
+    name: "PropTypes.element",
     example: `{
   optionalElement: React.PropTypes.element,
   requiredElement: React.PropTypes.element.isRequired
 }`,
   },
   {
-    name: 'PropTypes.instanceOf',
+    name: "PropTypes.instanceOf",
     example: `{
   optionalClass: React.PropTypes.instanceOf(MyClass),
   requiredClass: React.PropTypes.instanceOf(MyClass).isRequired
 }`,
   },
   {
-    name: 'PropTypes.oneOf',
+    name: "PropTypes.oneOf",
     example: `{
   optionalEnum: React.PropTypes.oneOf(['Thing 1', 'Thing 2']),
   optionalEnum: React.PropTypes.oneOf(['Thing 1', 'Thing 2']).isRequired
 }`,
   },
   {
-    name: 'PropTypes.oneOfType',
+    name: "PropTypes.oneOfType",
     example: `{
   optionalUnion: React.PropTypes.oneOfType([
     React.PropTypes.bool,
@@ -90,14 +90,14 @@ const data = [
 }`,
   },
   {
-    name: 'PropTypes.arrayOf',
+    name: "PropTypes.arrayOf",
     example: `{
   optionalArrayOf: React.PropTypes.arrayOf(React.PropTypes.string),
   requiredArrayOf: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
 }`,
   },
   {
-    name: 'PropTypes.objectOf',
+    name: "PropTypes.objectOf",
     example: `{
   optionalObjectOf: React.PropTypes.objectOf(React.PropTypes.string),
   requiredObjectOf: React.PropTypes.objectOf(React.PropTypes.string).isRequired
@@ -106,7 +106,7 @@ const data = [
 // Type of property values`,
   },
   {
-    name: 'PropTypes.shape',
+    name: "PropTypes.shape",
     example: `{
   optionalObjectWithShape: React.PropTypes.shape({
     age: React.PropTypes.number,
@@ -125,7 +125,7 @@ const data = [
 }`,
   },
   {
-    name: 'PropTypes.any',
+    name: "PropTypes.any",
     example: `{
   requiredAny: React.PropTypes.any.isRequired
 }`,
@@ -133,8 +133,8 @@ const data = [
 ];
 
 export default extendWithDefaults(data, {
-  module: 'react',
+  module: "react",
   color: pink,
-  category: 'PROPTYPES',
-  reference: 'https://facebook.github.io/react/docs/reusable-components.html#prop-validation',
+  category: "PROPTYPES",
+  reference: "https://facebook.github.io/react/docs/reusable-components.html#prop-validation",
 });

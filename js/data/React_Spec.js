@@ -1,63 +1,63 @@
-import extendWithDefaults from '../assignSharedDefaults';
+import extendWithDefaults from "../assignSharedDefaults";
 
-import { olive } from '../colors';
+import { olive } from "../colors";
 
 const data = [
   {
-    name: 'render',
+    name: "render",
     example: `render: function () {
   return <div />;
 }`,
-    reference: 'http://facebook.github.io/react/docs/component-specs.html#render',
+    reference: "http://facebook.github.io/react/docs/component-specs.html#render",
   },
   {
-    name: 'getInitialState',
+    name: "getInitialState",
     example: `getInitialState: function () {
   return { key: value };
 }`,
-    reference: 'http://facebook.github.io/react/docs/component-specs.html#getinitialstate',
+    reference: "http://facebook.github.io/react/docs/component-specs.html#getinitialstate",
     notAvailableInComponentClass: true,
   },
   {
-    name: 'getDefaultProps',
+    name: "getDefaultProps",
     example: `getDefaultProps: function () {
   return { key: value };
 }`,
-    reference: 'http://facebook.github.io/react/docs/component-specs.html#getdefaultprops',
+    reference: "http://facebook.github.io/react/docs/component-specs.html#getdefaultprops",
     notAvailableInComponentClass: true,
   },
   {
-    name: 'propTypes',
+    name: "propTypes",
     example: `propTypes: {
   myProp: React.PropTypes.bool
 }`,
-    reference: 'http://facebook.github.io/react/docs/component-specs.html#proptypes',
+    reference: "http://facebook.github.io/react/docs/component-specs.html#proptypes",
     notAvailableInComponentClass: true,
   },
   {
-    name: 'mixins',
+    name: "mixins",
     example: `mixins: [ AMixinObject, AnotherMixinObject ];`,
-    reference: 'http://facebook.github.io/react/docs/component-specs.html#mixins',
+    reference: "http://facebook.github.io/react/docs/component-specs.html#mixins",
     notAvailableInComponentClass: true,
   },
   {
-    name: 'statics',
+    name: "statics",
     example: `statics: {
   customMethod: function(foo) {
     return foo === 'bar';
   }
 }`,
-    reference: 'http://facebook.github.io/react/docs/component-specs.html#statics',
+    reference: "http://facebook.github.io/react/docs/component-specs.html#statics",
   },
   {
-    name: 'displayName',
+    name: "displayName",
     example: `displayName: "MyComponent"`,
-    reference: 'http://facebook.github.io/react/docs/component-specs.html#displayname',
+    reference: "http://facebook.github.io/react/docs/component-specs.html#displayname",
   },
 ];
 
 export default extendWithDefaults(data, {
-  module: 'react',
+  module: "react",
   color: olive,
-  category: 'SPEC',
+  category: "SPEC",
 });

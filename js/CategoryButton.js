@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
-import CategoryLabel from './CategoryLabel';
+import React, { Component, PropTypes } from "react";
+import CategoryLabel from "./CategoryLabel";
 
 function constantizeName (name) {
-  return name.replace(/[^a-z0-9]/gi,'').toUpperCase();
+  return name.replace(/[^a-z0-9]/gi,"").toUpperCase();
 }
 
 export default class CategoryButton extends Component {
@@ -20,7 +20,7 @@ export default class CategoryButton extends Component {
         color={color}
         active={active}
       >
-        <span style={nameStyle}>{name + ' '}</span>
+        <span style={nameStyle}>{name + " "}</span>
         <input
           type="checkbox"
           checked={active}

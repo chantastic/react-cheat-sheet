@@ -1,7 +1,7 @@
-import React from 'react';
-import extendWithDefaults from '../assignSharedDefaults';
+import React from "react";
+import extendWithDefaults from "../assignSharedDefaults";
 
-import { red } from '../colors';
+import { red } from "../colors";
 
 const lifecycleMethods = [
   {
@@ -72,12 +72,12 @@ const LifecycleMethodsChart = (props) => (
 
 const data = [
   {
-    name: 'Lifecycle methods',
+    name: "Lifecycle methods",
     chart: <LifecycleMethodsChart />,
-    example: '',
+    example: "",
   },
   {
-    name: 'Stateless function syntax',
+    name: "Stateless function syntax",
     example: `// ES5
 function Greeting(props) {
   return <div>Hello {props.name}</div>;
@@ -87,13 +87,13 @@ function Greeting(props) {
 const Greeting = (props) => (
   <div>Hello {props.name}</div>
 );`,
-    reference: 'https://facebook.github.io/react/docs/reusable-components.html#stateless-functions',
+    reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
     refsNotAvailable: true,
-    module: 'react',
+    module: "react",
   },
 ];
 
 export default extendWithDefaults(data, {
   color: red,
-  category: 'MISC',
+  category: "MISC",
 });

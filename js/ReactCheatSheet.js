@@ -1,18 +1,18 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from "react";
 
-import data from './data.js';
+import data from "./data.js";
 
-import styles from './styles';
-import colors from './colors';
+import styles from "./styles";
+import colors from "./colors";
 
-import ReferenceItem from './ReferenceItem.js';
-import CategoryList from './CategoryList.js';
-import CategoryButton from './CategoryButton.js';
-import NoResults from './NoResults.js';
+import ReferenceItem from "./ReferenceItem.js";
+import CategoryList from "./CategoryList.js";
+import CategoryButton from "./CategoryButton.js";
+import NoResults from "./NoResults.js";
 
-import includes from 'lodash.includes';
-import filter from 'lodash.filter';
-import without from 'lodash.without';
+import includes from "lodash.includes";
+import filter from "lodash.filter";
+import without from "lodash.without";
 
 function filterByCategory(_data, categories = []) {
   if (!categories.length) return _data;
@@ -20,9 +20,9 @@ function filterByCategory(_data, categories = []) {
   return filter(_data, ({category}) => includes(categories, category));
 }
 
-function filterResults (_data, predicate = '', categories = []) {
+function filterResults (_data, predicate = "", categories = []) {
   return filter(filterByCategory(_data, categories), (({name}) => {
-    return name.match(new RegExp(predicate, 'i'));
+    return name.match(new RegExp(predicate, "i"));
   }));
 }
 
@@ -43,7 +43,7 @@ class ReactCheatSheet extends Component {
     super(props);
 
     this.state = {
-      predicate: '',
+      predicate: "",
       categories: [],
     };
   }
@@ -75,57 +75,57 @@ class ReactCheatSheet extends Component {
           <CategoryButton
             color={colors.purple}
             name={'ReactDOM'}
-            active={includes(this.state.categories, 'REACTDOM')}
+            active={includes(this.state.categories, "REACTDOM")}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.yellow}
             name={'Top-level'}
-            nameStyle={(includes(this.state.categories, 'TOPLEVEL')) ? { color: "#222" } : null}
-            active={includes(this.state.categories, 'TOPLEVEL')}
+            nameStyle={(includes(this.state.categories, "TOPLEVEL")) ? { color: "#222" } : null}
+            active={includes(this.state.categories, "TOPLEVEL")}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.blue}
             name={'Component'}
-            active={includes(this.state.categories, 'COMPONENT')}
+            active={includes(this.state.categories, "COMPONENT")}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.olive}
             name={'Spec'}
-            active={includes(this.state.categories, 'SPEC')}
+            active={includes(this.state.categories, "SPEC")}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.orange}
             name={'Lifecycle'}
-            active={includes(this.state.categories, 'LIFECYCLE')}
+            active={includes(this.state.categories, "LIFECYCLE")}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.pink}
             name={'PropTypes'}
-            active={includes(this.state.categories, 'PROPTYPES')}
+            active={includes(this.state.categories, "PROPTYPES")}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.pink}
             name={'Test-utils'}
-            active={includes(this.state.categories, 'TESTUTILS')}
+            active={includes(this.state.categories, "TESTUTILS")}
             onToggle={handleCategoryChange.bind(this)}
           />
 
           <CategoryButton
             color={colors.red}
             name={'Misc'}
-            active={includes(this.state.categories, 'MISC')}
+            active={includes(this.state.categories, "MISC")}
             onToggle={handleCategoryChange.bind(this)}
           />
         </CategoryList>
