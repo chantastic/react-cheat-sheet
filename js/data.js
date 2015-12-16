@@ -5,6 +5,7 @@ import ReactComponent from './data/React_Component';
 import ReactSpec from './data/React_Spec';
 import ReactLifecycle from './data/React_Lifecycle';
 import ReactPropTypes from './data/React_PropTypes';
+import ReactTestUtils from './data/React_TestUtils';
 import Misc from './data/Misc';
 
 export default [
@@ -15,5 +16,6 @@ export default [
   ...ReactSpec,
   ...ReactLifecycle,
   ...ReactPropTypes,
+  ...ReactTestUtils,
   ...Misc,
 ];

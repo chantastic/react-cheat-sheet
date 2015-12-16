@@ -118,6 +118,13 @@ class ReactCheatSheet extends Component {
           />
 
           <CategoryButton
+            color={colors.pink}
+            name={'Test-utils'}
+            active={includes(this.state.categories, 'TESTUTILS')}
+            onToggle={handleCategoryChange.bind(this)}
+          />
+
+          <CategoryButton
             color={colors.red}
             name={'Misc'}
             active={includes(this.state.categories, 'MISC')}
