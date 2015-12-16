@@ -3,3 +3,5 @@ dist/*
 example/dist/*
 lib/*
 node_modules/*
+./browser-bundle.js
+js/vendor/*

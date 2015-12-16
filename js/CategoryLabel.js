@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes } from "react";
 
 const styles = (props) => {
   return {
@@ -14,7 +14,7 @@ const styles = (props) => {
     MozUserSelect: "none",
     msUserSelect: "none",
     userSelect: "none",
-  }
+  };
 };
 
 const CategoryLabel = (props) => (
@@ -22,7 +22,7 @@ const CategoryLabel = (props) => (
 );
 
 CategoryLabel.propTypes = {
-  active: React.PropTypes.bool.isRequired
+  active: React.PropTypes.bool.isRequired,
 };
 
 export default CategoryLabel;
