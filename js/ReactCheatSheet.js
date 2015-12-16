@@ -34,6 +34,10 @@ function handleChange () {
   this.setState({ predicate: this.searchInput.value });
 }
 
+function handleSearchClear () {
+  this.setState({ predicate: '' });
+}
+
 function handleCategoryChange (category, state) {
   this.setState({
     categories: toggleCategory(this.state.categories, category, state)
@@ -71,6 +75,11 @@ class ReactCheatSheet extends Component {
             ref={c => this.searchInput = c}
             onChange={handleChange.bind(this)}
           />
+        <i
+          className="fa fa-times-circle"
+          style={styles.searchClear}
+          onClick={handleSearchClear.bind(this)}
+        />
         </label>
 
         <CategoryList>
