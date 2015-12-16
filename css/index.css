@@ -63,6 +63,19 @@ table th {
   }
 }
 
+.reference-item,
+.reference-item:active,
+.reference-item:visited {
+  color: #888
+}
+
+.reference-item:hover {
+  color: #444
+}
+
+/* fa extension */
+.fa.my-fa-1\.5x { font-size: 1.6em }
+
 /* prism theme */
 .language-javascript {
   color: #dbdee4;

@@ -38,10 +38,24 @@ const styles = {
   },
   reference: {
     textAlign: 'right'
+  },
+  referenceLink: {
+    paddingLeft: '1.2em',
   }
 };
 
-const ReferenceItem = ({name, module, reference: href, example, chart, color: backgroundColor, notAvailableInComponentClass, cannotCallSetState, refsNotAvailable}) => (
+const ReferenceItem = ({
+  name,
+  module,
+  reference: href,
+  example,
+  chart,
+  color: backgroundColor,
+  notAvailableInComponentClass,
+  cannotCallSetState,
+  refsNotAvailable,
+  playground
+}) => (
   <article style={styles.root}>
     <h2 style={styles.header}>
       {name}
@@ -68,7 +82,26 @@ const ReferenceItem = ({name, module, reference: href, example, chart, color: ba
     </div>
 
     <div style={styles.reference}>
-      {(href) && <a href={href} style={{color: "#56b6c2"}} target="_blank">Go to docs</a>}
+      {(playground) &&
+        <a
+          className="reference-item"
+          style={styles.referenceLink}
+          href={playground}
+          target="_blank"
+        >
+         <i className="my-fa-1.5x my-fa fa fa-code" />
+       </a>
+      }
+      {(href) &&
+        <a
+          className="reference-item"
+          style={styles.referenceLink}
+          href={href}
+          target="_blank"
+        >
+         <i className="my-fa-1.5x my-fa fa fa-file-text-o" />
+       </a>
+      }
     </div>
   </article>
 );
