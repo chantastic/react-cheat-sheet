@@ -35,7 +35,11 @@
   "env": {
     "browser": true
   },
+  "plugins": [
+    "react"
+  ],
   "rules": {
+    "curly": [2, "multi-line"],
     "camelcase": [2, {"properties": "never"}],
     "comma-dangle": [2, "always-multiline"],
     "no-underscore-dangle": 0,
