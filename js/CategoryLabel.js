@@ -14,7 +14,7 @@ const styles = (props) => {
     MozUserSelect: "none",
     msUserSelect: "none",
     userSelect: "none",
-  }
+  };
 };
 
 const CategoryLabel = (props) => (

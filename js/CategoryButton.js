@@ -39,4 +39,4 @@ CategoryButton.propTypes = {
   nameStyle: PropTypes.shape({
     color: PropTypes.string,
   }),
-}
+};
