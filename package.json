@@ -14,14 +14,19 @@
   },
   "scripts": {
     "start": "webpack --progress --colors --watch",
-    "build:p": "NODE_ENV=production webpack -p"
+    "build:p": "NODE_ENV=production webpack -p",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "react"
   ],
   "devDependencies": {
     "babel-core": "^5.8.33",
+    "babel-eslint": "^4.1.6",
     "babel-loader": "^5.3.3",
+    "eslint": "^1.10.3",
+    "eslint-plugin-react": "^3.11.3",
     "lodash.filter": "^3.1.1",
     "lodash.includes": "^3.1.3",
     "lodash.without": "^3.2.1",
