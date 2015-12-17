@@ -1,10 +1,10 @@
 import React from "react";
-import { article as articleStyle } from "./styles";
+import articleStyles from "./styles";
 import Prism from "./vendor/Prism";
 
 const styles = {
   root: {
-    ...articleStyle,
+    ...articleStyles.article,
     borderBottom: "1px solid #e0e0e0",
   },
   header: {
