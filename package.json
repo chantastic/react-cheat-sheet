@@ -16,7 +16,9 @@
     "start": "webpack --progress --colors --watch",
     "build:p": "NODE_ENV=production webpack -p",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "test": "mocha",
+    "test:watch": "./node_modules/mocha/bin/mocha --watch"
   },
   "keywords": [
     "react"
@@ -29,11 +31,13 @@
     "babel-plugin-transform-object-rest-spread": "^6.3.13",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
+    "babel-register": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-plugin-react": "^3.11.3",
     "lodash.filter": "^3.1.1",
     "lodash.includes": "^3.1.3",
     "lodash.without": "^3.2.1",
+    "mocha": "^2.3.4",
     "react": "^0.14.1",
     "react-dom": "^0.14.1",
     "webpack": "^1.12.2"
