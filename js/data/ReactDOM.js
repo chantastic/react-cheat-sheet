@@ -1,6 +1,6 @@
 import extendWithDefaults from "../assignSharedDefaults";
 
-import { purple } from "../colors";
+import colors from "../colors";
 
 const data = [
   {
@@ -22,6 +22,6 @@ const data = [
 
 export default extendWithDefaults(data, {
   module: "react-dom",
-  color: purple,
+  color: colors.purple,
   category: "REACTDOM",
 });

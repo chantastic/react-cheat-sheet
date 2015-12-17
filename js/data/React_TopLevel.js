@@ -1,6 +1,6 @@
 import extendWithDefaults from "../assignSharedDefaults";
 
-import { yellow } from "../colors";
+import colors from "../colors";
 
 const data = [
   {
@@ -81,6 +81,6 @@ React.createFactory(MyComponentClass); // ReactClass type`,
 
 export default extendWithDefaults(data, {
   module: "react",
-  color: yellow,
+  color: colors.yellow,
   category: "TOPLEVEL",
 });

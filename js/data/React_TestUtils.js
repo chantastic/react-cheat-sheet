@@ -1,5 +1,5 @@
 import extendWithDefaults from "../assignSharedDefaults";
-import { pink } from "../colors";
+import colors from "../colors";
 
 const data = [
   {
@@ -449,6 +449,6 @@ expect(clickedResult.props.children).toEqual(1);`,
 
 export default extendWithDefaults(data, {
   module: "react-addons-test-utils",
-  color: pink,
+  color: colors.pink,
   category: "TESTUTILS",
 });

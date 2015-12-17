@@ -2,9 +2,6 @@
  * Prism: Lightweight, robust, elegant syntax highlighting
  * MIT license http://www.opensource.org/licenses/mit-license.php/
  * @author Lea Verou http://lea.verou.me
- *
- * @providesModule Prism
- * @jsx React.DOM
  */
 
 var React = require('react');

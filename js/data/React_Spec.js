@@ -1,6 +1,6 @@
 import extendWithDefaults from "../assignSharedDefaults";
 
-import { olive } from "../colors";
+import colors from "../colors";
 
 const data = [
   {
@@ -58,6 +58,6 @@ const data = [
 
 export default extendWithDefaults(data, {
   module: "react",
-  color: olive,
+  color: colors.olive,
   category: "SPEC",
 });

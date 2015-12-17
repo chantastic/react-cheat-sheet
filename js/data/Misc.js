@@ -1,7 +1,7 @@
 import React from "react";
 import extendWithDefaults from "../assignSharedDefaults";
 
-import { red } from "../colors";
+import colors from "../colors";
 
 const lifecycleMethods = [
   {
@@ -94,6 +94,6 @@ const Greeting = (props) => (
 ];
 
 export default extendWithDefaults(data, {
-  color: red,
+  color: colors.red,
   category: "MISC",
 });
