@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from "react";
 
-import data from "./data.js";
-
 import styles from "./styles";
 import colors from "./colors";
 
@@ -49,7 +47,7 @@ class ReactCheatSheet extends Component {
   }
 
   get filteredResults () {
-    return filterResults(data, this.state.predicate, this.state.categories);
+    return filterResults(this.props.entries, this.state.predicate, this.state.categories);
   }
 
   render () {
@@ -142,3 +140,7 @@ class ReactCheatSheet extends Component {
 }
 
 export default ReactCheatSheet;
+
+ReactCheatSheet.propTypes = {
+  entries: PropTypes.arrayOf(PropTypes.object).isRequired
+};

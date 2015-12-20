@@ -2,4 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ReactCheatSheet from "./ReactCheatSheet.js";
 
-ReactDOM.render(<ReactCheatSheet />, document.getElementById("app"));
+import entries from "./data.js";
+
+ReactDOM.render(<ReactCheatSheet entries={entries} />, document.getElementById("app"));

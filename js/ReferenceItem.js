@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropTypes } from "react";
 import articleStyles from "./styles";
 import Prism from "./vendor/Prism";
 
@@ -107,3 +107,16 @@ const ReferenceItem = ({
 );
 
 export default ReferenceItem;
+
+ReferenceItem.propTypes = {
+  name: PropTypes.string,
+  module: PropTypes.string,
+  reference: PropTypes.string,
+  example: PropTypes.string,
+  chart: PropTypes.element,
+  color: PropTypes.string,
+  notAvailableInComponentClass: PropTypes.bool,
+  cannotCallSetState: PropTypes.bool,
+  refsNotAvailable: PropTypes.bool,
+  playground: PropTypes.string,
+};
