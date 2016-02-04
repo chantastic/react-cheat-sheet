@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from "react";
 import data from "./data.js";
 
 import styles from "./styles";
-import colors from "./colors";
 
 import ReferenceItem from "./ReferenceItem.js";
 import CategoryList from "./CategoryList.js";
@@ -72,62 +71,16 @@ class ReactCheatSheet extends Component {
         </label>
 
         <CategoryList>
-          <CategoryButton
-            color={colors.purple}
-            name={'ReactDOM'}
-            active={includes(this.state.categories, "REACTDOM")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
-
-          <CategoryButton
-            color={colors.yellow}
-            name={'Top-level'}
-            nameStyle={(includes(this.state.categories, "TOPLEVEL")) ? { color: "#222" } : null}
-            active={includes(this.state.categories, "TOPLEVEL")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
-
-          <CategoryButton
-            color={colors.blue}
-            name={'Component'}
-            active={includes(this.state.categories, "COMPONENT")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
-
-          <CategoryButton
-            color={colors.olive}
-            name={'Spec'}
-            active={includes(this.state.categories, "SPEC")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
-
-          <CategoryButton
-            color={colors.orange}
-            name={'Lifecycle'}
-            active={includes(this.state.categories, "LIFECYCLE")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
-
-          <CategoryButton
-            color={colors.pink}
-            name={'PropTypes'}
-            active={includes(this.state.categories, "PROPTYPES")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
-
-          <CategoryButton
-            color={colors.pink}
-            name={'Test-utils'}
-            active={includes(this.state.categories, "TESTUTILS")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
-
-          <CategoryButton
-            color={colors.red}
-            name={'Misc'}
-            active={includes(this.state.categories, "MISC")}
-            onToggle={handleCategoryChange.bind(this)}
-          />
+          {this.props.categories.map(({ color, name, key }, i) => (
+            <CategoryButton
+              color={color}
+              name={name}
+              nameStyle={(includes(this.state.categories, "TOPLEVEL") && key === "TOPLEVEL") ? { color: "#222" } : null} // wow. this is dumb
+              active={includes(this.state.categories, key)}
+              onToggle={handleCategoryChange.bind(this)}
+              key={i}
+            />
+          ))}
         </CategoryList>
 
         <section>
@@ -139,6 +92,16 @@ class ReactCheatSheet extends Component {
       </main>
     );
   }
+}
+
+ReactCheatSheet.propTypes = {
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      color: PropTypes.string.isRequired,
+      key: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  )
 }
 
 export default ReactCheatSheet;

@@ -2,4 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import ReactCheatSheet from "./ReactCheatSheet.js";
 
-ReactDOM.render(<ReactCheatSheet />, document.getElementById("app"));
+import categories from "./categories.js";
+
+ReactDOM.render(
+  <ReactCheatSheet
+    categories={categories}
+  />,
+  document.getElementById("app")
+);
