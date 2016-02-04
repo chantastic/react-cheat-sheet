@@ -1,7 +1,5 @@
 import React, { Component, PropTypes } from "react";
 
-import data from "./data.js";
-
 import styles from "./styles";
 
 import ReferenceItem from "./ReferenceItem.js";
@@ -48,7 +46,7 @@ class ReactCheatSheet extends Component {
   }
 
   get filteredResults () {
-    return filterResults(data, this.state.predicate, this.state.categories);
+    return filterResults(this.props.data, this.state.predicate, this.state.categories);
   }
 
   render () {
@@ -101,7 +99,14 @@ ReactCheatSheet.propTypes = {
       key: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     })
-  )
+  ),
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      example: PropTypes.string.isRequired,
+      reference: PropTypes.string,
+    })
+  ).isRequired,
 }
 
 export default ReactCheatSheet;
