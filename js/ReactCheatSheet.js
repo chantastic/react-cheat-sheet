@@ -100,13 +100,7 @@ ReactCheatSheet.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ),
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      example: PropTypes.string.isRequired,
-      reference: PropTypes.string,
-    })
-  ).isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default ReactCheatSheet;
