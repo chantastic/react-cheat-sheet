@@ -55,6 +55,7 @@ const ReferenceItem = ({
   cannotCallSetState,
   refsNotAvailable,
   playground,
+  notSupported,
 }) => (
   <article style={styles.root}>
     <h2 style={styles.header}>
@@ -79,6 +80,7 @@ const ReferenceItem = ({
       {(notAvailableInComponentClass) && <span style={{color: "#e06c75"}}><strong>{'︎✖︎ React.Component'}</strong></span>}
       {(cannotCallSetState) && <span style={{color: "#e06c75"}}><strong>{'︎✖︎ this.setState()'}</strong></span>}
       {(refsNotAvailable) && <span style={{color: "#e06c75"}}><strong>{'︎✖︎ refs'}</strong></span>}
+      {(notSupported) && <span style={{color: "#e06c75"}}><strong>{`︎✖︎ ${notSupported}`}</strong></span>}
     </div>
 
     <div style={styles.reference}>
@@ -118,6 +120,7 @@ ReferenceItem.propTypes = {
   playground: PropTypes.string,
   reference: PropTypes.string,
   refsNotAvailable: PropTypes.bool,
+  notSupported: PropTypes.string,
 };
 
 export default ReferenceItem;
