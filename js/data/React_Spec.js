@@ -46,6 +46,7 @@ const data = [
   }
 }`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#statics",
+    notSupported: "React.Component",
   },
   {
     name: "displayName",
