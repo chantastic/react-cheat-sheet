@@ -78,13 +78,11 @@ class ReactCheatSheet extends Component {
         </label>
 
         <CategoryList>
-          {this.props.categories.map(({ color, name, key }, i) => (
+          {this.props.categories.map(({ name, key }, i) => (
             <CategoryButton
               active={includes(this.state.categories, key)}
-              color={color}
               key={i}
               name={name}
-              nameStyle={(includes(this.state.categories, "TOPLEVEL") && key === "TOPLEVEL") ? { color: "#222" } : null} // wow. this is dumb
               onToggle={handleCategoryChange.bind(this)}
             />
           ))}
@@ -110,7 +108,6 @@ ReactCheatSheet.propTypes = {
 
   categories: PropTypes.arrayOf(
     PropTypes.shape({
-      color: PropTypes.string.isRequired,
       key: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     })

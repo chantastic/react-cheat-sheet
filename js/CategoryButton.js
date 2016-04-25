@@ -8,19 +8,14 @@ function constantizeName (name) {
 export default class CategoryButton extends Component {
   render () {
     const {
-      color,
       active,
       name,
-      nameStyle,
       onToggle,
     } = this.props;
 
     return (
-      <CategoryLabel
-        active={active}
-        color={color}
-      >
-        <span style={nameStyle}>{name + " "}</span>
+      <CategoryLabel active={active} >
+        <span style={{ color: (active) ? "#222" : "#fff"}}>{name + " "}</span>
         <input
           checked={active}
           onChange={e => onToggle(constantizeName(name), e.target.checked)}
@@ -33,11 +28,6 @@ export default class CategoryButton extends Component {
 
 CategoryButton.propTypes = {
   active: PropTypes.bool.isRequired,
-  color: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onToggle: PropTypes.func.isRequired,
-
-  nameStyle: PropTypes.shape({
-    color: PropTypes.string,
-  }),
 };

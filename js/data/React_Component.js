@@ -1,7 +1,5 @@
 import extendWithDefaults from "../assignSharedDefaults";
 
-import colors from "../colors";
-
 const data = [
   {
     name: "setState",
@@ -72,6 +70,5 @@ this.replaceProps({someKey: 'a new value'}); `,
 
 export default extendWithDefaults(data, {
   module: "react",
-  color: colors.blue,
   category: "COMPONENT",
 });

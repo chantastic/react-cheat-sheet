@@ -6,12 +6,13 @@
 
 .reference-item,
 .reference-item:active,
+.reference-item:hover,
 .reference-item:visited {
-  color: #888
+  color: #2A5DB0
 }
 
 .reference-item:hover {
-  color: #444
+  color: #2200CC
 }
 
 /* fa extension */

@@ -1,7 +1,5 @@
 import extendWithDefaults from "../assignSharedDefaults";
 
-import colors from "../colors";
-
 const data = [
   {
     name: "PropTypes.array",
@@ -134,7 +132,6 @@ const data = [
 
 export default extendWithDefaults(data, {
   module: "react",
-  color: colors.pink,
   category: "PROPTYPES",
   reference: "https://facebook.github.io/react/docs/reusable-components.html#prop-validation",
 });

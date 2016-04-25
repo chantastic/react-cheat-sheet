@@ -1,5 +1,4 @@
 import extendWithDefaults from "../assignSharedDefaults";
-import colors from "../colors";
 
 const data = [
   {
@@ -58,6 +57,5 @@ const data = [
 
 export default extendWithDefaults(data, {
   module: "react",
-  color: colors.orange,
   category: "LIFECYCLE",
 });

@@ -26,13 +26,6 @@ const styles = {
     padding: "1.2em",
     borderRadius: 2,
   },
-  exampleColorCode: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-    height: "100%",
-    width: 4,
-  },
   code: {
     fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
   },
@@ -50,7 +43,6 @@ const ReferenceItem = ({
   reference: href,
   example,
   chart,
-  color: backgroundColor,
   playground,
   notSupported,
 }) => (
@@ -58,12 +50,12 @@ const ReferenceItem = ({
     <h2 style={styles.header}>
       {name}
     </h2>
+
     <div style={styles.module}>{module}</div>
 
     {(example) &&
       <pre style={styles.example}>
         <code style={styles.code}><Prism>{example}</Prism></code>
-        <div style={{backgroundColor, ...styles.exampleColorCode}} />
       </pre>
     }
 
@@ -85,7 +77,7 @@ const ReferenceItem = ({
           style={styles.referenceLink}
           target="_blank"
         >
-         <i className="my-fa-1.5x my-fa fa fa-code" />
+         example
        </a>
       }
       {(href) &&
@@ -95,7 +87,7 @@ const ReferenceItem = ({
           style={styles.referenceLink}
           target="_blank"
         >
-         <i className="my-fa-1.5x my-fa fa fa-file-text-o" />
+         docs
        </a>
       }
     </div>
@@ -107,7 +99,6 @@ ReferenceItem.propTypes = {
   name: PropTypes.string.isRequired,
 
   chart: PropTypes.node,
-  color: PropTypes.string,
   module: PropTypes.string,
   notSupported: PropTypes.string,
   playground: PropTypes.string,

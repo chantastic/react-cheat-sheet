@@ -3,7 +3,7 @@ import React, { PropTypes } from "react";
 const styles = (props) => {
   return {
     display: "inline-block",
-    backgroundColor: (props.active) ? props.color : "#aaa",
+    backgroundColor: (props.active) ? "#ffdc00" : "#aaa",
     marginTop: ".5em",
     marginRight: ".5em",
     padding: "0.25em .5em",
