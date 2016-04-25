@@ -41,6 +41,6 @@ const categories = [
     name: "Misc",
     key: "MISC",
   },
-]
+];
 
 export default categories;

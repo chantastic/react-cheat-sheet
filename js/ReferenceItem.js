@@ -85,8 +85,8 @@ const ReferenceItem = ({
       {(playground) &&
         <a
           className="reference-item"
-          style={styles.referenceLink}
           href={playground}
+          style={styles.referenceLink}
           target="_blank"
         >
          <i className="my-fa-1.5x my-fa fa fa-code" />
@@ -95,8 +95,8 @@ const ReferenceItem = ({
       {(href) &&
         <a
           className="reference-item"
-          style={styles.referenceLink}
           href={href}
+          style={styles.referenceLink}
           target="_blank"
         >
          <i className="my-fa-1.5x my-fa fa fa-file-text-o" />
@@ -109,15 +109,15 @@ const ReferenceItem = ({
 ReferenceItem.propTypes = {
   example: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  notAvailableInComponentClass: PropTypes.bool,
 
   cannotCallSetState: PropTypes.bool,
   chart: PropTypes.node,
   color: PropTypes.string,
   module: PropTypes.string,
+  notAvailableInComponentClass: PropTypes.bool,
   playground: PropTypes.string,
   reference: PropTypes.string,
   refsNotAvailable: PropTypes.bool,
-}
+};
 
 export default ReferenceItem;

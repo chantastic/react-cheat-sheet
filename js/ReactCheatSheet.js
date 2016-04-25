@@ -59,24 +59,24 @@ class ReactCheatSheet extends Component {
         <label>
           <input
             autoFocus
-            type="text"
-            style={styles.searchInput}
-            placeholder="Filter by name"
-            value={this.state.predicate}
-            ref={c => this.searchInput = c}
             onChange={handleChange.bind(this)}
+            placeholder="Filter by name"
+            ref={c => this.searchInput = c}
+            style={styles.searchInput}
+            type="text"
+            value={this.state.predicate}
           />
         </label>
 
         <CategoryList>
           {this.props.categories.map(({ color, name, key }, i) => (
             <CategoryButton
+              active={includes(this.state.categories, key)}
               color={color}
+              key={i}
               name={name}
               nameStyle={(includes(this.state.categories, "TOPLEVEL") && key === "TOPLEVEL") ? { color: "#222" } : null} // wow. this is dumb
-              active={includes(this.state.categories, key)}
               onToggle={handleCategoryChange.bind(this)}
-              key={i}
             />
           ))}
         </CategoryList>
@@ -93,6 +93,8 @@ class ReactCheatSheet extends Component {
 }
 
 ReactCheatSheet.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       color: PropTypes.string.isRequired,
@@ -100,7 +102,6 @@ ReactCheatSheet.propTypes = {
       name: PropTypes.string.isRequired,
     })
   ),
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
-}
+};
 
 export default ReactCheatSheet;

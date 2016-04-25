@@ -48,7 +48,7 @@ const lifecycleMethods = [
   },
 ];
 
-const LifecycleMethodsChart = (props) => (
+const LifecycleMethodsChart = () => (
   <table>
     <thead>
       <tr>

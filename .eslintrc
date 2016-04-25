@@ -1,34 +1,43 @@
 {
   "parser": "babel-eslint",
   "env": {
-    "browser": true
+    "browser": true,
+    "node": true
   },
   "plugins": [
     "react"
   ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "rules": {
-    "curly": [2, "multi-line"],
-    "camelcase": [2, {"properties": "never"}],
-    "comma-dangle": [2, "always-multiline"],
-    "no-underscore-dangle": 0,
-    "quotes": [2, "double", "avoid-escape"],
-    "react/display-name": 0,
+    "curly": ["error", "multi-line"],
+    "camelcase": ["error", {"properties": "never"}],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-underscore-dangle": "off",
+    "quotes": [
+      2,
+      "double",
+      {
+        "avoidEscape": true,
+        "allowTemplateLiterals": true
+      }
+    ],
+    "semi": ["error", "always"],
+    "strict": "off",
+    "react/prop-types": 1,
+    "react/sort-prop-types": [
+      1,
+      {
+        "callbacksLast": true,
+        "requiredFirst": true
+      }
+    ],
     "react/jsx-boolean-value": 1,
-    "react/jsx-quotes": 1,
     "react/jsx-no-undef": 1,
-    "react/jsx-sort-props": 0,
-    "react/jsx-sort-prop-types": 1,
+    "react/jsx-sort-props": 1,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
-    "react/no-did-mount-set-state": 1,
-    "react/no-did-update-set-state": 1,
-    "react/no-multi-comp": 1,
-    "react/no-unknown-property": 1,
-    "react/prop-types": 1,
-    "react/react-in-jsx-scope": 1,
-    "react/self-closing-comp": 1,
-    "react/wrap-multilines": 1,
-    "semi": [2, "always"],
-    "strict": 0
   }
 }

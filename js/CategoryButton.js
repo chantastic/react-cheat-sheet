@@ -17,14 +17,14 @@ export default class CategoryButton extends Component {
 
     return (
       <CategoryLabel
-        color={color}
         active={active}
+        color={color}
       >
         <span style={nameStyle}>{name + " "}</span>
         <input
-          type="checkbox"
           checked={active}
           onChange={e => onToggle(constantizeName(name), e.target.checked)}
+          type="checkbox"
         />
       </CategoryLabel>
     );
@@ -35,8 +35,9 @@ CategoryButton.propTypes = {
   active: PropTypes.bool.isRequired,
   color: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  onToggle: PropTypes.func.isRequired,
+
   nameStyle: PropTypes.shape({
     color: PropTypes.string,
   }),
-  onToggle: PropTypes.func.isRequired,
 };
