@@ -1,5 +1,9 @@
 import React, { Component, PropTypes } from "react";
 
+import normalize from "normalize.css";
+import table from "table.css/table.css";
+import css from "../css/index.css";
+
 import styles from "./styles";
 
 import ReferenceItem from "./ReferenceItem.js";
@@ -56,6 +60,11 @@ class ReactCheatSheet extends Component {
 
     return (
       <main>
+        <h1>
+          <span>React Cheat Sheet</span>{' '}
+          <small style={{color: "#aaa", fontSize: ".5em"}}>v0.15</small>
+        </h1>
+
         <label>
           <input
             autoFocus
@@ -87,6 +96,10 @@ class ReactCheatSheet extends Component {
            : <NoResults />
           }
         </section>
+
+        <div className="footer">
+          Copyright &copy; 2015 Michael Chan. Hit me up: <a href="https://twitter.com/chantastic">@chantastic</a>.
+        </div>
       </main>
     );
   }
