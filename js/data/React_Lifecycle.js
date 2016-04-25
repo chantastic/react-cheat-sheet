@@ -38,7 +38,7 @@ const data = [
   // see componentWillReceiveProps if you need to call setState
 }`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentwillupdate",
-    cannotCallSetState: true,
+    notSupported: "this.setState",
   },
   {
     name: "componentDidUpdate",

@@ -16,7 +16,7 @@ const data = [
   return { key: value };
 }`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#getinitialstate",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
   {
     name: "getDefaultProps",
@@ -24,7 +24,7 @@ const data = [
   return { key: value };
 }`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#getdefaultprops",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
   {
     name: "propTypes",
@@ -32,13 +32,13 @@ const data = [
   myProp: React.PropTypes.bool
 }`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#proptypes",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
   {
     name: "mixins",
     example: `mixins: [ AMixinObject, AnotherMixinObject ];`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#mixins",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
   {
     name: "statics",

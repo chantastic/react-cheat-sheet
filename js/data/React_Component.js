@@ -30,7 +30,7 @@ this.replaceState({firstName: 'Spazz'});
 // (after)
 // this.state => { firstName: 'Spazz' }`,
     reference: "https://facebook.github.io/react/docs/component-api.html#replacestate",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
   {
     name: "forceUpdate",
@@ -49,7 +49,7 @@ this.replaceState({firstName: 'Spazz'});
     name: "isMounted",
     example: `this.isMounted();`,
     reference: "https://facebook.github.io/react/docs/component-api.html#ismounted",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
   {
     name: "setProps",
@@ -58,7 +58,7 @@ this.replaceState({firstName: 'Spazz'});
 // Only available on root-level components
 // Prefer calling ReactDOM.render() again`,
     reference: "https://facebook.github.io/react/docs/component-api.html#setprops",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
   {
     name: "replaceProps",
@@ -66,7 +66,7 @@ this.replaceState({firstName: 'Spazz'});
 
 this.replaceProps({someKey: 'a new value'}); `,
     reference: "https://facebook.github.io/react/docs/component-api.html#replaceprops",
-    notAvailableInComponentClass: true,
+    notSupported: "React.Component",
   },
 ];
 

@@ -104,7 +104,7 @@ const Greeting = (props) => (
   <div>Hello {props.name}</div>
 );`,
     reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
-    refsNotAvailable: true,
+    notSupported: "ref",
     module: "react",
   },
 ];
