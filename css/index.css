@@ -1,5 +1,3 @@
-@import "./prism-theme.css";
-
 .sans-serif {
   font-family: 'avenir next', avenir, helvetica, 'helvetica neue', arial, sans-serif;
 }
@@ -14,6 +12,3 @@
 .reference-item:hover {
   color: #2200CC
 }
-
-/* fa extension */
-.fa.my-fa-1\.5x { font-size: 1.6em }
