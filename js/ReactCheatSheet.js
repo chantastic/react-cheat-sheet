@@ -62,7 +62,7 @@ class ReactCheatSheet extends Component {
       <main>
         <h1>
           <span>React Cheat Sheet</span>{' '}
-          <small style={{color: "#aaa", fontSize: ".5em"}}>v0.15</small>
+          <small style={{color: "#aaa", fontSize: ".5em"}}>v15</small>
         </h1>
 
         <label>
