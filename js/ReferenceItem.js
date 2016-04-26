@@ -96,7 +96,11 @@ const ReferenceItem = ({
     }
 
     <div>
-      {(notSupported) && <span style={{color: "#e06c75"}}><strong>{`︎✖︎ ${notSupported}`}</strong></span>}
+      {(notSupported) && (
+        <span style={{color: "#e06c75"}}>
+          <strong>{`\u2716 ${notSupported}`}</strong>
+        </span>
+      )}
     </div>
   </article>
 );
