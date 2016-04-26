@@ -1,6 +1,5 @@
 import React, { PropTypes } from "react";
 import articleStyles from "./styles";
-import Prism from "./vendor/Prism";
 
 const styles = {
   root: {
@@ -28,8 +27,10 @@ const styles = {
   },
   code: {
     fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+    color: "#ddd",
   },
   reference: {
+    display: "table-cell",
     textAlign: "right",
   },
   referenceLink: {
@@ -51,11 +52,36 @@ const ReferenceItem = ({
       {name}
     </h2>
 
-    <div style={styles.module}>{module}</div>
+    <div style={styles.resources}>
+      <div style={styles.module}>{module}</div>
+
+      <div style={styles.reference}>
+        {(playground) &&
+          <a
+            className="reference-item"
+            href={playground}
+            style={styles.referenceLink}
+            target="_blank"
+          >
+          example
+        </a>
+        }
+        {(href) &&
+          <a
+            className="reference-item"
+            href={href}
+            style={styles.referenceLink}
+            target="_blank"
+          >
+          docs
+        </a>
+        }
+      </div>
+    </div>
 
     {(example) &&
       <pre style={styles.example}>
-        <code style={styles.code}><Prism>{example}</Prism></code>
+        <code style={styles.code}>{example}</code>
       </pre>
     }
 
@@ -67,29 +93,6 @@ const ReferenceItem = ({
 
     <div>
       {(notSupported) && <span style={{color: "#e06c75"}}><strong>{`︎✖︎ ${notSupported}`}</strong></span>}
-    </div>
-
-    <div style={styles.reference}>
-      {(playground) &&
-        <a
-          className="reference-item"
-          href={playground}
-          style={styles.referenceLink}
-          target="_blank"
-        >
-         example
-       </a>
-      }
-      {(href) &&
-        <a
-          className="reference-item"
-          href={href}
-          style={styles.referenceLink}
-          target="_blank"
-        >
-         docs
-       </a>
-      }
     </div>
   </article>
 );
