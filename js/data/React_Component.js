@@ -39,31 +39,9 @@ this.replaceState({firstName: 'Spazz'});
     reference: "https://facebook.github.io/react/docs/component-api.html#forceupdate",
   },
   {
-    name: "getDOMNode",
-    example: `// Deprecated. Use ReactDOM.findDOMNode`,
-    reference: "https://facebook.github.io/react/docs/component-api.html#getdomnode",
-  },
-  {
     name: "isMounted",
     example: `this.isMounted();`,
     reference: "https://facebook.github.io/react/docs/component-api.html#ismounted",
-    notSupported: "React.Component",
-  },
-  {
-    name: "setProps",
-    example: `this.setProps({someKey: 'a new value'});
-
-// Only available on root-level components
-// Prefer calling ReactDOM.render() again`,
-    reference: "https://facebook.github.io/react/docs/component-api.html#setprops",
-    notSupported: "React.Component",
-  },
-  {
-    name: "replaceProps",
-    example: `// Like setProps but replaces props object instead of merging
-
-this.replaceProps({someKey: 'a new value'}); `,
-    reference: "https://facebook.github.io/react/docs/component-api.html#replaceprops",
     notSupported: "React.Component",
   },
 ];
