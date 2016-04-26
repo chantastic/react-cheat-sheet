@@ -10,11 +10,15 @@ const styles = {
     overflowX: "auto",
     marginBottom: 0,
   },
+  resources: {
+    display: "table",
+    width: "100%",
+  },
   module: {
+    display: "table-cell",
     fontSize: "1em",
     color: "#aaa",
     fontWeight: "normal",
-    marginBottom: "1.5em",
   },
   example: {
     position: "relative",

@@ -1,9 +1,5 @@
 import React, { Component, PropTypes } from "react";
 
-import normalize from "normalize.css";
-import table from "table.css/table.css";
-import css from "../css/index.css";
-
 import styles from "./styles";
 
 import ReferenceItem from "./ReferenceItem.js";
@@ -95,7 +91,7 @@ class ReactCheatSheet extends Component {
           }
         </section>
 
-        <div className="footer">
+        <div className="py-1r">
           Copyright &copy; 2015 Michael Chan. Hit me up: <a href="https://twitter.com/chantastic">@chantastic</a>.
         </div>
       </main>
