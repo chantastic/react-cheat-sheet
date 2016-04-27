@@ -1,11 +1,7 @@
 import React, { Component, PropTypes } from "react";
 
-import styles from "./styles";
-
 import ReferenceItem from "./ReferenceItem.js";
-import CategoryList from "./CategoryList.js";
 import CategoryButton from "./CategoryButton.js";
-import NoResults from "./NoResults.js";
 
 import includes from "lodash.includes";
 import filter from "lodash.filter";
@@ -50,30 +46,28 @@ class ReactCheatSheet extends Component {
   }
 
   render () {
-    const results = () => (
-      this.filteredResults.map((item, i) => <ReferenceItem key={i} {...item} />)
-    );
-
     return (
       <main>
-        <h1>
-          <span>React Cheat Sheet</span>{' '}
-          <small style={{color: "#aaa", fontSize: ".5em"}}>v15</small>
-        </h1>
+        <header className="p-1r@mn p-0@md gc-l.96@mn gc-t@md">
+          <h1 className="ta-c@mn @ta-l@md fs-1r m-0 fs-1r@mn fs-2r@md">
+            <span>React Cheat Sheet</span>{' '}
+            <small className="fs-.5 c-l.7">v15</small>
+          </h1>
 
-        <label>
-          <input
-            autoFocus
-            onChange={handleChange.bind(this)}
-            placeholder="Filter by name"
-            ref={c => this.searchInput = c}
-            style={styles.searchInput}
-            type="text"
-            value={this.state.predicate}
-          />
-        </label>
+          <label>
+            <input
+              autoFocus
+              className="p-05r@mn p-1r@md w-100% bs-2p bw-1p bc-l.9 c-l.0"
+              onChange={handleChange.bind(this)}
+              placeholder="Filter by name"
+              ref={c => this.searchInput = c}
+              type="text"
+              value={this.state.predicate}
+            />
+          </label>
+        </header>
 
-        <CategoryList>
+        <div className="d-n@mn d-b@md py-1.5r bbw-1p bc-l.9">
           {this.props.categories.map(({ name, key }, i) => (
             <CategoryButton
               active={includes(this.state.categories, key)}
@@ -82,13 +76,18 @@ class ReactCheatSheet extends Component {
               onToggle={handleCategoryChange.bind(this)}
             />
           ))}
-        </CategoryList>
+        </div>
 
-        <section>
-          {(this.filteredResults.length)
-           ? results()
-           : <NoResults />
-          }
+        <section className="px-05r">
+          {(this.filteredResults.length) ? (
+            this.filteredResults.map((item, i) => (
+              <ReferenceItem key={i} {...item} />
+            ))
+          ) : (
+            <article className="py-1r">
+              <h2>No results</h2>
+            </article>
+          )}
         </section>
 
         <div className="py-1r">

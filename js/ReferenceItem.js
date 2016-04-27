@@ -1,46 +1,4 @@
 import React, { PropTypes } from "react";
-import articleStyles from "./styles";
-
-const styles = {
-  root: {
-    ...articleStyles.article,
-    borderBottom: "1px solid #e0e0e0",
-  },
-  header: {
-    overflowX: "auto",
-    marginBottom: 0,
-  },
-  resources: {
-    display: "table",
-    width: "100%",
-  },
-  module: {
-    display: "table-cell",
-    fontSize: "1em",
-    color: "#aaa",
-    fontWeight: "normal",
-  },
-  example: {
-    position: "relative",
-    overflow: "hidden",
-    overflowX: "auto",
-    backgroundColor: "rgb(40, 44, 52)",
-    color: "white",
-    padding: "1.2em",
-    borderRadius: 2,
-  },
-  code: {
-    fontFamily: "Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
-    color: "#ddd",
-  },
-  reference: {
-    display: "table-cell",
-    textAlign: "right",
-  },
-  referenceLink: {
-    paddingLeft: "1.2em",
-  },
-};
 
 const ReferenceItem = ({
   name,
@@ -51,20 +9,17 @@ const ReferenceItem = ({
   playground,
   notSupported,
 }) => (
-  <article style={styles.root}>
-    <h2 style={styles.header}>
-      {name}
-    </h2>
+  <article className="py-1r bw-0 bc-l.9 bbw-1p">
+    <h2 className="o-a mb-0">{name}</h2>
 
-    <div style={styles.resources}>
-      <div style={styles.module}>{module}</div>
+    <div className="d-t w-100%">
+      <div className="d-tc c-l.6">{module}</div>
 
-      <div style={styles.reference}>
+      <div className="d-tc ta-r">
         {(playground) &&
           <a
-            className="reference-item"
+            className="reference-item pl-1.2r"
             href={playground}
-            style={styles.referenceLink}
             target="_blank"
           >
           example
@@ -72,9 +27,8 @@ const ReferenceItem = ({
         }
         {(href) &&
           <a
-            className="reference-item"
+            className="reference-item pl-1.2r"
             href={href}
-            style={styles.referenceLink}
             target="_blank"
           >
           docs
@@ -84,20 +38,16 @@ const ReferenceItem = ({
     </div>
 
     {(example) &&
-      <pre style={styles.example}>
-        <code style={styles.code}>{example}</code>
+      <pre className="p-r p-1.2 o-h ox-a gc-l.2 c-l bs-2p">
+        <code className="monospace c-l.8">{example}</code>
       </pre>
     }
 
-    {(chart) &&
-      <div>
-        {chart}
-      </div>
-    }
+    {(chart) && <div>{chart}</div>}
 
     <div>
       {(notSupported) && (
-        <span style={{color: "#e06c75"}}>
+        <span className="c-red">
           <strong>{`\u2716 ${notSupported}`}</strong>
         </span>
       )}

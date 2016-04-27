@@ -1,0 +1,22 @@
+.xw-720p { max-width: 720px }
+.p-1\.2 { padding: 1.2em }
+.pl-1\.2r { padding-left: 1.2rem }
+.py-1\.5r { padding-top: 1.5rem; padding-bottom: 1.5rem }
+.c-red { color: "#e06c75" }
+.fs-\.5 { font-size: .5em }
+.us-n {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 0) {
+  .gc-l\.96\@mn { background-color: hsla(0,0%,95%,1) }
+  .fs-1r\@mn { font-size: 1rem }
+}
+
+@media (min-width: 768px) {
+  .gc-t\@md { background-color: transparent }
+  .fs-2r\@mn { font-size: 2rem }
+}

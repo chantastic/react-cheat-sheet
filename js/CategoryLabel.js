@@ -1,24 +1,17 @@
 import React, { PropTypes } from "react";
 
-const styles = (props) => {
+function styles (props) {
   return {
-    display: "inline-block",
     backgroundColor: (props.active) ? "#ffdc00" : "#aaa",
-    marginTop: ".5em",
-    marginRight: ".5em",
-    padding: "0.25em .5em",
-    borderRadius: "2px",
-    color: "white",
-    cursor: "pointer",
-    WebkitUserSelect: "none",
-    MozUserSelect: "none",
-    msUserSelect: "none",
-    userSelect: "none",
   };
 };
 
 const CategoryLabel = (props) => (
-  <label style={styles(props)} {...props} />
+  <label
+    className="d-ib mt-05r mr-05r py-025r px-05r bs-2p c-l c-p us-n"
+    style={styles(props)}
+    {...props}
+  />
 );
 
 CategoryLabel.propTypes = {

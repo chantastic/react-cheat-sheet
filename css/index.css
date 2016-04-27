@@ -1,5 +1,12 @@
+@import url("./minions-extensions.css");
+@import url("./border-box.css");
+
 .sans-serif {
   font-family: 'avenir next', avenir, helvetica, 'helvetica neue', arial, sans-serif;
+}
+
+.monospace {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
 .reference-item,

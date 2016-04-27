@@ -15,7 +15,7 @@ export default class CategoryButton extends Component {
 
     return (
       <CategoryLabel active={active} >
-        <span style={{ color: (active) ? "#222" : "#fff"}}>{name + " "}</span>
+        <span style={{ color: (active) ? "#222" : "#fff" }}>{name + " "}</span>
         <input
           checked={active}
           onChange={e => onToggle(constantizeName(name), e.target.checked)}
