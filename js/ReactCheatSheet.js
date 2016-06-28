@@ -50,10 +50,6 @@ class ReactCheatSheet extends Component {
   }
 
   render () {
-    const results = () => (
-      this.filteredResults.map((item, i) => <ReferenceItem key={i} {...item} />)
-    );
-
     return (
       <main>
         <h1>
@@ -85,10 +81,13 @@ class ReactCheatSheet extends Component {
         </CategoryList>
 
         <section>
-          {(this.filteredResults.length)
-           ? results()
-           : <NoResults />
-          }
+          {(this.filteredResults.length) ? (
+            this.filteredResults.map((item, i) => (
+              <ReferenceItem key={i} {...item} />
+            ))
+          ) : (
+            <NoResults />
+          )}
         </section>
 
         <div className="py-1r">
