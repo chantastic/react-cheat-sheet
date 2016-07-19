@@ -37,8 +37,8 @@
     "lodash.without": "^3.2.1",
     "minions.css": "0.0.3",
     "normalize.css": "^4.1.1",
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
     "style-loader": "^0.13.1",
     "table.css": "0.0.1",
     "webpack": "^1.13.0"
