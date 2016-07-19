@@ -41,6 +41,6 @@
     "react-dom": "^15.2.1",
     "style-loader": "^0.13.1",
     "table.css": "0.0.1",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.1"
   }
 }
