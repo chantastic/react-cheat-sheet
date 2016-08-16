@@ -15,6 +15,7 @@
   "scripts": {
     "start": "webpack --progress --colors --watch",
     "build:p": "NODE_ENV=production webpack -p",
+    "build-dist": "webpack --progress --colors --config webpack-dist.config.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

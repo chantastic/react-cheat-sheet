@@ -9,7 +9,6 @@ const CategoryButton = ({
   active,
   name,
   onToggle,
-  ...props,
 }) =>
   <Label active={active}>
     <Description active={active}>

@@ -8,7 +8,7 @@ module.exports = {
   entry: "./example/src/example.js",
   output: {
     path: __dirname + "/example",
-    filename: "browser-bundle.js",
+    filename: "example-bundle.js",
   },
   plugins: [definePlugin],
   module: {
