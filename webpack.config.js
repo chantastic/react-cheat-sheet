@@ -5,8 +5,9 @@ var definePlugin = new webpack.DefinePlugin({
 });
 
 module.exports = {
-  entry: "./js/index.js",
+  entry: "./example/src/example.js",
   output: {
+    path: __dirname + "/example",
     filename: "browser-bundle.js",
   },
   plugins: [definePlugin],
