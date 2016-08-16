@@ -177,23 +177,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var _this2 = this;
 
 	      return _react2.default.createElement(
-	        "main",
+	        "div",
 	        null,
-	        _react2.default.createElement(
-	          "h1",
-	          null,
-	          _react2.default.createElement(
-	            "span",
-	            null,
-	            "React Cheat Sheet"
-	          ),
-	          ' ',
-	          _react2.default.createElement(
-	            SubHeading,
-	            null,
-	            "v15"
-	          )
-	        ),
 	        _react2.default.createElement(
 	          "label",
 	          null,
@@ -236,17 +221,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	              "No results"
 	            )
 	          )
-	        ),
-	        _react2.default.createElement(
-	          Footer,
-	          null,
-	          "Copyright © 2015 Michael Chan. Hit me up: ",
-	          _react2.default.createElement(
-	            "a",
-	            { href: "https://twitter.com/chantastic" },
-	            "@chantastic"
-	          ),
-	          "."
 	        )
 	      );
 	    }
@@ -270,23 +244,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	// private
-
-	var Footer = function Footer(props) {
-	  return _react2.default.createElement("div", _extends({}, props, {
-	    style: {
-	      padding: "1rem 0"
-	    }
-	  }));
-	};
-
-	var SubHeading = function SubHeading(props) {
-	  return _react2.default.createElement("small", _extends({}, props, {
-	    style: {
-	      color: _colors2.default.gray,
-	      fontSize: ".5em"
-	    }
-	  }));
-	};
 
 	var CategoryList = function CategoryList(props) {
 	  return _react2.default.createElement("div", _extends({}, props, {
