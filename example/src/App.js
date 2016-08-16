@@ -1,5 +1,5 @@
 import React from "react"
-import ReactCheatSheet from "../../dist/ReactCheatSheet.js"
+import ReactCheatSheet from "../../lib/index.js"
 
 import categories from "./data/categories.js"
 import data from "./data/data.js"
