@@ -144,7 +144,7 @@ const TextInput = props =>
   <input {...props} type="text" />
 
 const AutofocusedTextInput = props =>
-  <TextInput {...props} autofocus />
+  <TextInput {...props} autoFocus />
 
 const SearchInput = ({
   onChange,

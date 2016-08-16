@@ -288,7 +288,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 	var AutofocusedTextInput = function AutofocusedTextInput(props) {
-	  return _react2.default.createElement(TextInput, _extends({}, props, { autofocus: true }));
+	  return _react2.default.createElement(TextInput, _extends({}, props, { autoFocus: true }));
 	};
 
 	var SearchInput = function SearchInput(_ref7) {
