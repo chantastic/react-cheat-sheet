@@ -49,12 +49,7 @@ class ReactCheatSheet extends Component {
 
   render () {
     return (
-      <main>
-        <h1>
-          <span>React Cheat Sheet</span>{' '}
-          <SubHeading>v15</SubHeading>
-        </h1>
-
+      <div>
         <label>
           <SearchInput
             onChange={handleChange.bind(this)}
@@ -89,11 +84,7 @@ class ReactCheatSheet extends Component {
             </Article>
           )}
         </section>
-
-        <Footer>
-          Copyright &copy; 2015 Michael Chan. Hit me up: <a href="https://twitter.com/chantastic">@chantastic</a>.
-        </Footer>
-      </main>
+      </div>
     );
   }
 }
@@ -110,23 +101,6 @@ ReactCheatSheet.propTypes = {
 };
 
 // private
-
-const Footer = props =>
-  <div
-    {...props}
-    style={{
-      padding: "1rem 0",
-    }}
-  />
-
-const SubHeading = props =>
-  <small
-    {...props}
-    style={{
-      color: colors.gray,
-      fontSize: ".5em",
-    }}
-  />
 
 const CategoryList = props =>
   <div
