@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "webpack --progress --colors --watch",
-    "build:p": "NODE_ENV=production webpack -p",
+    "prepublish": "npm run build-dist && npm run build-lib",
     "build-dist": "webpack --progress --colors --config webpack-dist.config.js",
     "build-lib": "webpack --progress --colors --config webpack-lib.config.js",
     "lint": "eslint .",
