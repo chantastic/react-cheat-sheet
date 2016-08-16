@@ -1,15 +1,13 @@
 import React, { Component, PropTypes } from "react";
 
-import styles from "./styles";
-
-import ReferenceItem from "./ReferenceItem.js";
-import CategoryList from "./CategoryList.js";
-import CategoryButton from "./CategoryButton.js";
-import NoResults from "./NoResults.js";
+import CategoryButton from "./CategoryButton";
+import ReferenceItem from "./ReferenceItem";
 
 import includes from "lodash.includes";
 import filter from "lodash.filter";
 import without from "lodash.without";
+
+import colors from "./colors";
 
 function filterByCategory(_data, categories = []) {
   if (!categories.length) return _data;
@@ -27,8 +25,8 @@ function toggleCategory(arr, item, cond) {
   return (cond) ? arr.concat([item]) : without(arr, item);
 }
 
-function handleChange () {
-  this.setState({ predicate: this.searchInput.value });
+function handleChange ({target}) {
+  this.setState({ predicate: target.value });
 }
 
 function handleCategoryChange (category, state) {
@@ -54,45 +52,47 @@ class ReactCheatSheet extends Component {
       <main>
         <h1>
           <span>React Cheat Sheet</span>{' '}
-          <small style={{color: "#aaa", fontSize: ".5em"}}>v15</small>
+          <SubHeading>v15</SubHeading>
         </h1>
 
         <label>
-          <input
-            autoFocus
+          <SearchInput
             onChange={handleChange.bind(this)}
-            placeholder="Filter by name"
-            ref={c => this.searchInput = c}
-            style={styles.searchInput}
-            type="text"
-            value={this.state.predicate}
+            predicate={this.state.predicate}
           />
         </label>
 
         <CategoryList>
-          {this.props.categories.map(({ name, key }, i) => (
+          {this.props.categories.map(({ name, key }, i) =>
             <CategoryButton
               active={includes(this.state.categories, key)}
               key={i}
               name={name}
               onToggle={handleCategoryChange.bind(this)}
             />
-          ))}
+          )}
         </CategoryList>
 
         <section>
-          {(this.filteredResults.length) ? (
-            this.filteredResults.map((item, i) => (
-              <ReferenceItem key={i} {...item} />
-            ))
+          {this.filteredResults.length ? (
+            this.filteredResults.map((item, i) =>
+              <ReferenceArticle>
+                <ReferenceItem
+                  key={i}
+                  {...item}
+                />
+              </ReferenceArticle>
+            )
           ) : (
-            <NoResults />
+            <Article>
+              <h2>No results</h2>
+            </Article>
           )}
         </section>
 
-        <div className="py-1r">
+        <Footer>
           Copyright &copy; 2015 Michael Chan. Hit me up: <a href="https://twitter.com/chantastic">@chantastic</a>.
-        </div>
+        </Footer>
       </main>
     );
   }
@@ -108,5 +108,89 @@ ReactCheatSheet.propTypes = {
     })
   ),
 };
+
+// private
+
+const Footer = props =>
+  <div
+    {...props}
+    style={{
+      padding: "1rem 0",
+    }}
+  />
+
+const SubHeading = props =>
+  <small
+    {...props}
+    style={{
+      color: colors.gray,
+      fontSize: ".5em",
+    }}
+  />
+
+const CategoryList = props =>
+  <div
+    {...props}
+    style={{
+      padding: "1.5em 0",
+      borderColor: colors.zircon,
+      borderStyle: "solid",
+      borderWidth: "0 0 1px 0",
+    }}
+  />
+
+const ReferenceArticle = ({
+  style,
+  ...props,
+}) =>
+  <article
+    {...props}
+    style={{
+      borderBottomWidth: "1px",
+      borderBottomStyle: "solid",
+      borderBottomColor: colors.zircon,
+      ...style,
+    }}
+  />
+
+const Article = ({
+  style,
+  ...props,
+}) =>
+  <article
+    {...props}
+    style={{
+      paddingTop: "1em",
+      paddingBottom: "1em",
+      ...style,
+    }}
+  />
+
+const TextInput = props =>
+  <input {...props} type="text" />
+
+const AutofocusedTextInput = props =>
+  <TextInput {...props} autofocus />
+
+const SearchInput = ({
+  onChange,
+  predicate,
+})=>
+  <AutofocusedTextInput
+    onChange={onChange}
+    placeholder="Filter by name"
+    style={{
+      width: "100%",
+      padding: "1em",
+      fontSize: "1em",
+      borderRadius: 2,
+      borderColor: colors.lightGray,
+      borderStyle: "solid",
+      borderWidth: "1px",
+      boxSizing: "border-box",
+      color: "black",
+    }}
+    value={predicate}
+  />
 
 export default ReactCheatSheet;

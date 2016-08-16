@@ -8,7 +8,6 @@ import data from "./data.js";
 /* styles via style-loader */
 require("normalize.css");
 require("table.css/table.css");
-require("./custom-minions");
 require("../css/index.css");
 
 ReactDOM.render(
