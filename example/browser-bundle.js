@@ -19762,23 +19762,23 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _ReactCheatSheet = __webpack_require__(168);
+	var _ReactCheatSheet = __webpack_require__(183);
 
 	var _ReactCheatSheet2 = _interopRequireDefault(_ReactCheatSheet);
 
-	var _categories = __webpack_require__(201);
+	var _categories = __webpack_require__(162);
 
 	var _categories2 = _interopRequireDefault(_categories);
 
-	var _data = __webpack_require__(202);
+	var _data = __webpack_require__(163);
 
 	var _data2 = _interopRequireDefault(_data);
 
-	__webpack_require__(162);
+	__webpack_require__(175);
 
-	__webpack_require__(166);
+	__webpack_require__(179);
 
-	__webpack_require__(199);
+	__webpack_require__(181);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19793,15 +19793,817 @@
 
 /***/ },
 /* 162 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	var categories = [{
+	  name: "ReactDOM",
+	  key: "REACTDOM"
+	}, {
+	  name: "Top-level",
+	  key: "TOPLEVEL"
+	}, {
+	  name: "Component",
+	  key: "COMPONENT"
+	}, {
+	  name: "Spec",
+	  key: "SPEC"
+	}, {
+	  name: "Lifecycle",
+	  key: "LIFECYCLE"
+	}, {
+	  name: "PropTypes",
+	  key: "PROPTYPES"
+	}, {
+	  name: "Context",
+	  key: "CONTEXT"
+	}, {
+	  name: "Test-utils",
+	  key: "TESTUTILS"
+	}, {
+	  name: "Misc",
+	  key: "MISC"
+	}];
+
+	exports.default = categories;
+
+/***/ },
+/* 163 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _ReactDOM = __webpack_require__(164);
+
+	var _ReactDOM2 = _interopRequireDefault(_ReactDOM);
+
+	var _ReactDOM_Server = __webpack_require__(166);
+
+	var _ReactDOM_Server2 = _interopRequireDefault(_ReactDOM_Server);
+
+	var _React_TopLevel = __webpack_require__(167);
+
+	var _React_TopLevel2 = _interopRequireDefault(_React_TopLevel);
+
+	var _React_Component = __webpack_require__(168);
+
+	var _React_Component2 = _interopRequireDefault(_React_Component);
+
+	var _React_Context = __webpack_require__(169);
+
+	var _React_Context2 = _interopRequireDefault(_React_Context);
+
+	var _React_Spec = __webpack_require__(170);
+
+	var _React_Spec2 = _interopRequireDefault(_React_Spec);
+
+	var _React_Lifecycle = __webpack_require__(171);
+
+	var _React_Lifecycle2 = _interopRequireDefault(_React_Lifecycle);
+
+	var _React_PropTypes = __webpack_require__(172);
+
+	var _React_PropTypes2 = _interopRequireDefault(_React_PropTypes);
+
+	var _React_TestUtils = __webpack_require__(173);
+
+	var _React_TestUtils2 = _interopRequireDefault(_React_TestUtils);
+
+	var _Misc = __webpack_require__(174);
+
+	var _Misc2 = _interopRequireDefault(_Misc);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	exports.default = [].concat(_toConsumableArray(_ReactDOM2.default), _toConsumableArray(_ReactDOM_Server2.default), _toConsumableArray(_React_TopLevel2.default), _toConsumableArray(_React_Component2.default), _toConsumableArray(_React_Context2.default), _toConsumableArray(_React_Spec2.default), _toConsumableArray(_React_Lifecycle2.default), _toConsumableArray(_React_PropTypes2.default), _toConsumableArray(_React_TestUtils2.default), _toConsumableArray(_Misc2.default));
+
+/***/ },
+/* 164 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "render",
+	  example: "ReactDOM.render(<MyComponent />, document.getElementById('MyComponent'));",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.render"
+	}, {
+	  name: "findDOMNode",
+	  example: "ReactDOM.findDOMNode(componentRef);",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.finddomnode"
+	}, {
+	  name: "unmountComponentAtNode",
+	  example: "ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react-dom",
+	  category: "REACTDOM"
+	});
+
+/***/ },
+/* 165 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+	exports.default = function (collection, defaults) {
+	  return collection.map(function (el) {
+	    return _extends({}, el, defaults);
+	  });
+	};
+
+/***/ },
+/* 166 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "renderToString",
+	  example: "ReactDOMServer.renderToString(<MyComponent />);",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostring"
+	}, {
+	  name: "renderStaticMarkup",
+	  example: "ReactDOMServer.renderToStaticMarkup(<MyComponent />);",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostaticmarkup"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react-dom",
+	  category: "REACTDOM"
+	});
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "Component",
+	  example: "// ES2015\n\nclass MyComponent extends React.Component {\n  render () {\n    return <div />;\n  }\n}\n",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.component"
+	}, {
+	  name: "createClass",
+	  example: "var MyComponent = React.createClass({\n  render: function () {\n    return <div />;\n  }\n});",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.createclass"
+	}, {
+	  name: "createElement",
+	  example: "React.createElement('div', props, ...children); // String\n\nReact.createElement(MyComponent, props, ...children); // ReactClass type",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.createelement"
+	}, {
+	  name: "cloneElement",
+	  example: "React.cloneElement(element, props, ...children);",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.cloneelement"
+	}, {
+	  name: "createFactory",
+	  example: "React.createFactory('div'); // String;\n\nReact.createFactory(MyComponentClass); // ReactClass type",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.createfactory"
+	}, {
+	  name: "isValidElement",
+	  example: "React.isValidElement(MyComponent);",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.isvalidelement"
+	}, {
+	  name: "Children.map",
+	  example: "React.Children.map(this.props.children, (child, i) => {\n    return child;\n})",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.map"
+	}, {
+	  name: "Children.forEach",
+	  example: "React.Children.forEach(this.props.children, (child, i) => {\n  console.log(child + ' at index: ' + i);\n})",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.foreach"
+	}, {
+	  name: "Children.count",
+	  example: "React.Children.count(this.props.children);",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.count"
+	}, {
+	  name: "Children.only",
+	  example: "none",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.only"
+	}, {
+	  name: "Children.toArray",
+	  example: "none",
+	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.toarray"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react",
+	  category: "TOPLEVEL"
+	});
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "setState",
+	  example: "// object usage\nthis.setState({someKey: 'a new value'});\n\n// function usage\nthis.setState(function(previousState, currentProps) {\n  return {counter: previousState.counter + 1};\n});\n\n// both uses take a function as an optional second argument.\n// this function fires after setState\n",
+	  reference: "https://facebook.github.io/react/docs/component-api.html#setstate"
+	}, {
+	  name: "replaceState",
+	  example: "// Like setState but replaces state object instead of merging\n\n// (before)\n// state => { firstName: 'Michael', lastName: 'Chan' }\n\nthis.replaceState({firstName: 'Spazz'});\n\n// (after)\n// this.state => { firstName: 'Spazz' }",
+	  reference: "https://facebook.github.io/react/docs/component-api.html#replacestate",
+	  notSupported: "React.Component"
+	}, {
+	  name: "forceUpdate",
+	  example: "this.forceUpdate();\n\n// forces component tree to update.\n// AVOID where posible",
+	  reference: "https://facebook.github.io/react/docs/component-api.html#forceupdate"
+	}, {
+	  name: "isMounted",
+	  example: "this.isMounted();",
+	  reference: "https://facebook.github.io/react/docs/component-api.html#ismounted",
+	  notSupported: "React.Component"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react",
+	  category: "COMPONENT"
+	});
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "Context (example)",
+	  example: "var Cowboy = React.createClass({\n  childContextTypes: {\n    greeting: React.PropTypes.string\n  },\n\n  getChildContext: function () {\n    return { greeting: \"Howdy\"};\n  },\n\n  render: function () {\n    return <div>{this.props.children}</div>\n  }\n});\n\nvar Greeting = React.createClass({\n  contextTypes: {\n    greeting: React.PropTypes.string\n  },\n\n  render: function () {\n    return <div>{this.context.greeting} {this.props.name}.</div>\n  }\n});\n\n// <Greeting name=\"Michael\" />\n// => Michael.\n\n// <Cowboy><Greeting name=\"Michael\" /></Cowboy>\n// => Howdy Michael.\n",
+	  reference: "https://facebook.github.io/react/docs/context.html"
+	}, {
+	  name: "contextTypes",
+	  example: "// add to the context-aware component\n\ncontextTypes: {\n  color: React.PropTypes.string\n},",
+	  reference: "https://facebook.github.io/react/docs/context.html"
+	}, {
+	  name: "childContextTypes",
+	  example: "// add to the context provider\n\nchildContextTypes: {\n  color: React.PropTypes.string\n},",
+	  reference: "https://facebook.github.io/react/docs/context.html"
+	}, {
+	  name: "getChildContext",
+	  example: "// add to the context provider\n\ngetChildContext: function() {\n  return {color: \"purple\"};\n}",
+	  reference: "https://facebook.github.io/react/docs/context.html"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react",
+	  category: "CONTEXT"
+	});
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "render",
+	  example: "render: function () {\n  return <div />;\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#render"
+	}, {
+	  name: "getInitialState",
+	  example: "getInitialState: function () {\n  return { key: value };\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#getinitialstate",
+	  notSupported: "React.Component"
+	}, {
+	  name: "getDefaultProps",
+	  example: "getDefaultProps: function () {\n  return { key: value };\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#getdefaultprops",
+	  notSupported: "React.Component"
+	}, {
+	  name: "propTypes",
+	  example: "propTypes: {\n  myProp: React.PropTypes.bool\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#proptypes",
+	  notSupported: "React.Component"
+	}, {
+	  name: "mixins",
+	  example: "mixins: [ AMixinObject, AnotherMixinObject ];",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#mixins",
+	  notSupported: "React.Component"
+	}, {
+	  name: "statics",
+	  example: "statics: {\n  customMethod: function(foo) {\n    return foo === 'bar';\n  }\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#statics",
+	  notSupported: "React.Component"
+	}, {
+	  name: "displayName",
+	  example: "displayName: \"MyComponent\"",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#displayname"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react",
+	  category: "SPEC"
+	});
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var lifecycleMethods = [{
+	  name: "componentWillMount",
+	  setStateTriggersUpdate: "no",
+	  calledFor: "initial render()",
+	  useFor: ".",
+	  receivesContext: "no"
+	}, {
+	  name: "componentDidMount",
+	  setStateTriggersUpdate: "no",
+	  calledFor: "initial render()",
+	  useFor: "async setup, refs, DOM manipulation",
+	  receivesContext: "no"
+	}, {
+	  name: "componentWillReceiveProps",
+	  setStateTriggersUpdate: "no",
+	  calledFor: "new props",
+	  useFor: "respond to props before update",
+	  receivesContext: "yes"
+	}, {
+	  name: "shouldComponentUpdate",
+	  setStateTriggersUpdate: "yes",
+	  calledFor: "new props/state",
+	  useFor: "performance. return false to skip update",
+	  receivesContext: "yes"
+	}, {
+	  name: "componentWillUpdate",
+	  setStateTriggersUpdate: "n/a",
+	  calledFor: "new props/state",
+	  useFor: "preparation before update",
+	  receivesContext: "yes"
+	}, {
+	  name: "componentDidUpdate",
+	  setStateTriggersUpdate: "yes",
+	  calledFor: "new props/state",
+	  useFor: "DOM manipulation after update",
+	  receivesContext: "no"
+	}, {
+	  name: "componentWillUnmount",
+	  setStateTriggersUpdate: "n/a",
+	  calledFor: "unmounting",
+	  useFor: "cleanup of componentDidMount setup",
+	  receivesContext: "no"
+	}];
+
+	var LifecycleMethodsChart = function LifecycleMethodsChart() {
+	  return _react2.default.createElement(
+	    "table",
+	    null,
+	    _react2.default.createElement(
+	      "thead",
+	      null,
+	      _react2.default.createElement(
+	        "tr",
+	        null,
+	        _react2.default.createElement(
+	          "th",
+	          null,
+	          "name"
+	        ),
+	        _react2.default.createElement(
+	          "th",
+	          null,
+	          "called for"
+	        ),
+	        _react2.default.createElement(
+	          "th",
+	          null,
+	          "receives context"
+	        ),
+	        _react2.default.createElement(
+	          "th",
+	          null,
+	          "setState() triggers an update"
+	        )
+	      )
+	    ),
+	    _react2.default.createElement(
+	      "tbody",
+	      null,
+	      lifecycleMethods.map(function (event, i) {
+	        return _react2.default.createElement(
+	          "tr",
+	          { key: i },
+	          _react2.default.createElement(
+	            "td",
+	            { "data-label": "name" },
+	            event.name
+	          ),
+	          _react2.default.createElement(
+	            "td",
+	            { "data-label": "called for" },
+	            event.calledFor
+	          ),
+	          _react2.default.createElement(
+	            "td",
+	            { "data-label": "receives context" },
+	            event.receivesContext
+	          ),
+	          _react2.default.createElement(
+	            "td",
+	            { "data-label": "setState() triggers an update" },
+	            event.setStateTriggersUpdate
+	          )
+	        );
+	      })
+	    )
+	  );
+	};
+
+	var data = [{
+	  name: "Lifecycle methods",
+	  chart: _react2.default.createElement(LifecycleMethodsChart, null),
+	  example: ""
+	}, {
+	  name: "componentWillMount",
+	  example: "componentWillMount: function () {\n  // invoked once, before initial 'render'\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#mounting-componentwillmount"
+	}, {
+	  name: "componentDidMount",
+	  example: "componentDidMount: function () {\n  // invoked once (client-only), after initial 'render'\n  // good for AJAX, setTimeout, setInterval\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount"
+	}, {
+	  name: "componentWillReceiveProps",
+	  example: "componentWillReceiveProps: function (nextProps) {\n  // invoked when component is receiving props, not for initial 'render'\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops"
+	}, {
+	  name: "shouldComponentUpdate",
+	  example: "shouldComponentUpdate: function (nextProps, nextState) {\n  // invoked before rendering with new props, not for initial 'render'\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-shouldcomponentupdate"
+	}, {
+	  name: "componentWillUpdate",
+	  example: "componentWillUpdate: function (nextProps, nextState) {\n  // invoked immediately before rendering with new props or state, not for initial 'render'\n  // see componentWillReceiveProps if you need to call setState\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentwillupdate",
+	  notSupported: "this.setState"
+	}, {
+	  name: "componentDidUpdate",
+	  example: "componentDidUpdate: function (prevProps, prevState) {\n  // invoked immediately after DOM updates, not for initial 'render'\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentdidupdate"
+	}, {
+	  name: "componentWillUnmount",
+	  example: "componentWillUnmount: function () {\n  // invoked immediately before a component is unmounted from the DOM\n}",
+	  reference: "http://facebook.github.io/react/docs/component-specs.html#unmounting-componentwillunmount"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react",
+	  category: "LIFECYCLE"
+	});
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "PropTypes.array",
+	  example: "{\n  optionalArray: React.PropTypes.array,\n  requiredArray: React.PropTypes.array.isRequired\n}"
+	}, {
+	  name: "PropTypes.bool",
+	  example: "{\n  optionalBoolean: React.PropTypes.bool,\n  requiredBoolean: React.PropTypes.bool.isRequired\n}"
+	}, {
+	  name: "PropTypes.func",
+	  example: "{\n  optionalFunction: React.PropTypes.func,\n  requiredFunction: React.PropTypes.func.isRequired\n}"
+	}, {
+	  name: "PropTypes.number",
+	  example: "{\n  optionalNumber: React.PropTypes.number,\n  requiredNumber: React.PropTypes.number.isRequired\n}"
+	}, {
+	  name: "PropTypes.object",
+	  example: "{\n  optionalObject: React.PropTypes.object,\n  requiredObject: React.PropTypes.object.isRequired\n}"
+	}, {
+	  name: "PropTypes.string",
+	  example: "{\n  optionalString: React.PropTypes.string,\n  requiredString: React.PropTypes.string.isRequired\n}"
+	}, {
+	  name: "PropTypes.node",
+	  example: "{\n  optionalNode: React.PropTypes.node,\n  requiredNode: React.PropTypes.node.isRequired\n};\n\n// anything that can be rendered"
+	}, {
+	  name: "PropTypes.element",
+	  example: "{\n  optionalElement: React.PropTypes.element,\n  requiredElement: React.PropTypes.element.isRequired\n}"
+	}, {
+	  name: "PropTypes.instanceOf",
+	  example: "{\n  optionalClass: React.PropTypes.instanceOf(MyClass),\n  requiredClass: React.PropTypes.instanceOf(MyClass).isRequired\n}"
+	}, {
+	  name: "PropTypes.oneOf",
+	  example: "{\n  optionalEnum: React.PropTypes.oneOf(['Thing 1', 'Thing 2']),\n  optionalEnum: React.PropTypes.oneOf(['Thing 1', 'Thing 2']).isRequired\n}"
+	}, {
+	  name: "PropTypes.oneOfType",
+	  example: "{\n  optionalUnion: React.PropTypes.oneOfType([\n    React.PropTypes.bool,\n    React.PropTypes.string\n  ]),\n\n  requiredUnion: React.PropTypes.oneOfType([\n    React.PropTypes.bool,\n    React.PropTypes.string\n  ]).isRequired,\n}"
+	}, {
+	  name: "PropTypes.arrayOf",
+	  example: "{\n  optionalArrayOf: React.PropTypes.arrayOf(React.PropTypes.string),\n  requiredArrayOf: React.PropTypes.arrayOf(React.PropTypes.string).isRequired\n}"
+	}, {
+	  name: "PropTypes.objectOf",
+	  example: "{\n  optionalObjectOf: React.PropTypes.objectOf(React.PropTypes.string),\n  requiredObjectOf: React.PropTypes.objectOf(React.PropTypes.string).isRequired\n}\n\n// Type of property values"
+	}, {
+	  name: "PropTypes.shape",
+	  example: "{\n  optionalObjectWithShape: React.PropTypes.shape({\n    age: React.PropTypes.number,\n    name: React.PropTypes.string\n  }),\n\n  requiredObjectWithShape: React.PropTypes.shape({\n    age: React.PropTypes.number,\n    name: React.PropTypes.string\n  }).isRequired,\n\n  requiredObjectWithRequiredShape: React.PropTypes.shape({\n    age: React.PropTypes.number.isRequired,\n    name: React.PropTypes.string.isRequired\n  }).isRequired,\n}"
+	}, {
+	  name: "PropTypes.any",
+	  example: "{\n  requiredAny: React.PropTypes.any.isRequired\n}"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react",
+	  category: "PROPTYPES",
+	  reference: "https://facebook.github.io/react/docs/reusable-components.html#prop-validation"
+	});
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "Simulate (basic)",
+	  example: "var subject = TestUtils.renderIntoDocument(\n  <div onClick={handleClick} />\n);\n\nTestUtils.Simulate.click(subject);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#simulate",
+	  playground: "http://jsbin.com/foxini/edit?html,js,console"
+	}, {
+	  name: "Simulate (with data)",
+	  example: "function handleChange (event) {\n  console.log('A change was simulated with key: ' + event.key);\n}\n\nvar subject = TestUtils.renderIntoDocument(\n  <input type=\"text\" onChange={handleChange} />\n);\n\nTestUtils.Simulate.change(subject, { key: \"Enter\" });",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#simulate",
+	  playground: "http://jsbin.com/wiqile/edit?html,js,console"
+	}, {
+	  name: "renderIntoDocument",
+	  example: "var componentTree = TestUtils.renderIntoDocument(<div><span /></div>);\n\nconsole.log('You mounted a component tree with a ' + componentTree.tagName + ' at the root!');",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#renderintodocument",
+	  playground: "http://jsbin.com/buzigo/edit?html,js,console"
+	}, {
+	  name: "mockComponent",
+	  example: "// no example",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#mockcomponent"
+	}, {
+	  name: "isElement",
+	  example: "expect(TestUtils.isElement(<div />)).toBe(true);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#iselement",
+	  playground: "http://jsbin.com/jiyune/edit?html,js,console"
+	}, {
+	  name: "isElementOfType",
+	  example: "var MyComponent = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nexpect(\n  TestUtils.isElementOfType(<MyComponent />, MyComponent)\n).toBe(true);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#iselementoftype",
+	  playground: "http://jsbin.com/pasohi/edit?html,js,console"
+	}, {
+	  name: "isDOMComponent",
+	  example: "var subject = TestUtils.renderIntoDocument(<div />);\n\nexpect(\n  TestUtils.isDOMComponent(subject)\n).toBe(true);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#isdomcomponent",
+	  playground: "http://jsbin.com/fadoka/edit?html,js,console"
+	}, {
+	  name: "isCompositeComponent",
+	  example: "var subject = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nexpect(\n  TestUtils.isCompositeComponent(subject)\n).toBe(true);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponent",
+	  playground: "http://jsbin.com/vocofa/edit?html,js,console"
+	}, {
+	  name: "isCompositeComponentWithType",
+	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nvar subject = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nexpect(\n  TestUtils.isCompositeComponentWithType(\n    subject,\n    CompositeComponent\n  )\n).toBe(true);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponentwithtype",
+	  playground: "http://jsbin.com/kegoqe/edit?html,js,console"
+	}, {
+	  name: "findAllInRenderedTree",
+	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return <div><div /></div>;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nvar allDivs = TestUtils.findAllInRenderedTree(\n  componentTree,\n  (c) => c.tagName === 'DIV'\n)\n\nexpect(allDivs).toBeAn('array');\nexpect(allDivs.length).toBe(2);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#findallinrenderedtree",
+	  playground: "http://jsbin.com/dozevu/edit?html,js,console"
+	}, {
+	  name: "scryRenderedDOMComponentsWithClass",
+	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return (\n      <div className=\"target\">\n        <div className=\"not-target\">\n          <div className=\"target\" />\n        </div>\n      </div>\n    );\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nvar allDOMComponentsWithMatchingClass = TestUtils.scryRenderedDOMComponentsWithClass(\n  componentTree,\n  'target'\n);\n\nexpect(allDOMComponentsWithMatchingClass).toBeAn('array');\nexpect(allDOMComponentsWithMatchingClass.length).toBe(2);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithclass",
+	  playground: "http://jsbin.com/kujeda/edit?html,js,console"
+	}, {
+	  name: "findRenderedDOMComponentWithClass",
+	  example: "var MyCompositeComponent = React.createClass({\n  render () {\n    return <MyNestedComponent />;\n  }\n});\n\nvar MyNestedComponent = React.createClass({\n  render () {\n    return <div className=\"nested\"/>;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(<MyCompositeComponent />);\n\nvar singleComponentWithMatchedClass = TestUtils.findRenderedDOMComponentWithClass(\n  componentTree,\n  'nested'\n);\n\nexpect(singleComponentWithMatchedClass).toBeAn('object');\nexpect(singleComponentWithMatchedClass).toNotBeAn('array');\nexpect(singleComponentWithMatchedClass.className).toBe('nested');",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithclass",
+	  playground: "http://jsbin.com/kuteve/edit?html,js,console"
+	}, {
+	  name: "scryRenderedDOMComponentsWithTag",
+	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return <div><div /></div>;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nvar allDivs = TestUtils.scryRenderedDOMComponentsWithTag(\n  componentTree,\n  'DIV'\n);\n\nexpect(allDivs).toBeAn('array');\nexpect(allDivs.length).toBe(2);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithtag",
+	  playground: "http://jsbin.com/hehede/edit?html,js,console"
+	}, {
+	  name: "findRenderedDOMComponentWithTag",
+	  example: "var MyCompositeComponent = React.createClass({\n  render () {\n    return <MyNestedComponent />;\n  }\n});\n\nvar MyNestedComponent = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(<MyCompositeComponent />);\n\nvar onlyDiv = TestUtils.findRenderedDOMComponentWithTag(\n  componentTree,\n  'div'\n);\n\nexpect(onlyDiv).toBeAn('object');\nexpect(onlyDiv).toNotBeAn('array');\nexpect(onlyDiv.tagName).toBe('DIV');",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithtag",
+	  playground: "http://jsbin.com/puhule/edit?html,js,console"
+	}, {
+	  name: "scryRenderedComponentsWithType",
+	  example: "var MyCompositeComponent = React.createClass({\n  render () {\n    return (\n      <div>\n        <Target />\n        <br />\n        <Target />\n      </div>\n    )\n  }\n});\n\nvar Target = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <MyCompositeComponent />\n);\n\nvar allTargetComponents = TestUtils.scryRenderedComponentsWithType(\n  componentTree,\n  Target\n);\n\nexpect(allTargetComponents).toBeAn('array');\nexpect(allTargetComponents.length).toBe(2);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#scryrenderedcomponentswithtype",
+	  playground: "http://jsbin.com/lesowo/edit?html,js,console"
+	}, {
+	  name: "findRenderedComponentWithType",
+	  example: "var MyCompositeComponent = React.createClass({\n  render () { return <TargetComponent /> }\n});\n\nvar TargetComponent = React.createClass({\n  render () { return <div /> }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <MyCompositeComponent />\n);\n\nvar onlyTargetComponent = TestUtils.findRenderedComponentWithType(\n  componentTree,\n  TargetComponent\n);\n\nexpect(onlyTargetComponent).toBeAn('object');\nexpect(onlyTargetComponent).toNotBeAn('array');\nexpect(TestUtils.isCompositeComponentWithType(\n  onlyTargetComponent,\n  TargetComponent\n)).toBe(true);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#findrenderedcomponentwithtype",
+	  playground: "http://jsbin.com/wosane/edit?html,js,console"
+	}, {
+	  name: "Shallow rendering (basics)",
+	  example: "// 1. create a renderer\nvar renderer = TestUtils.createRenderer();\n\n// 2. render component into renderer\nrenderer.render(<MyComponent />);\n\n// 3. capture renderer output\nvar subject = renderer.getRenderOutput();\n\n// 4. make assertions\nexpect(subject.type).toBe('div');",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+	  playground: "http://jsbin.com/raloqu/edit?html,js,console"
+	}, {
+	  name: "Shallow rendering (type example)",
+	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(<MyComponent />);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(subject.type).toBe('div');  // => true",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+	  playground: "http://jsbin.com/xojudi/edit?html,js,console"
+	}, {
+	  name: "Shallow rendering (props example)",
+	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(<MyComponent className=\"my-component\" />);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(subject.props.className).toBe('my-component'); // => true",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+	  playground: "http://jsbin.com/najubu/edit?html,js,console"
+	}, {
+	  name: "Shallow rendering (child-count example)",
+	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(\n  <MyList items={[1, 2, 3]} />\n);\n\nvar subject = renderer.getRenderOutput();\n\nvar childCount = React.Children.count(subject.props.children);\n\nexpect(childCount).toBe(3); // => true",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+	  playground: "http://jsbin.com/dayomi/edit?html,js,console"
+	}, {
+	  name: "Shallow rendering (child-equality example)",
+	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(\n  <MyComponent>\n    <div>Thing 1</div>\n    <div>Thing 2</div>\n  </MyComponent>\n);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(subject.props.children).toEqual([\n  <div>Thing 1</div>,\n  <div>Thing 2</div>\n]); // => true",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+	  playground: "http://jsbin.com/sexeve/edit?html,js,console"
+	}, {
+	  name: "Shallow rendering (events example)",
+	  example: "var renderer = TestUtils.createRenderer();\n\nvar spy = expect.createSpy();\n\nrenderer.render(<MyComponent onClick={spy} />);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(spy.call.length).toEqual(1); // => true",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+	  playground: "http://jsbin.com/quzeya/edit?html,js,console"
+	}, {
+	  name: "Shallow rendering (state changes example)",
+	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(<ClickCounter />);\n\n// test initial rendering\nvar result = renderer.getRenderOutput();\n\nexpect(result.props.children).toEqual(0);\n\n\n// test post-click rendering\nresult.props.onClick();\n\nvar clickedResult = renderer.getRenderOutput();\n\nexpect(clickedResult.props.children).toEqual(1);",
+	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+	  playground: "http://jsbin.com/nobavu/edit?html,js,console"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  module: "react-addons-test-utils",
+	  category: "TESTUTILS"
+	});
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _assignSharedDefaults = __webpack_require__(165);
+
+	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var data = [{
+	  name: "ref (callback)",
+	  example: "// Accessed as this.myInput\n<input ref={(ref) => this.myInput = ref} />\n",
+	  reference: "https://facebook.github.io/react/docs/more-about-refs.html#the-ref-callback-attribute",
+	  notSupported: "Stateless function syntax"
+	}, {
+	  name: "ref (string)",
+	  example: "// Accessed as this.refs.myInput\n<input ref=\"myInput\" />\n",
+	  reference: "https://facebook.github.io/react/docs/more-about-refs.html#the-ref-string-attribute",
+	  notSupported: "Stateless function syntax"
+	}, {
+	  name: "Stateless function syntax",
+	  example: "// ES5\nfunction Greeting (props) {\n  return <div>Hello {props.name}</div>;\n}\n\n// ES2015\nconst Greeting = (props) => (\n  <div>Hello {props.name}</div>\n);",
+	  reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
+	  notSupported: "ref",
+	  module: "react"
+	}, {
+	  name: "Stateless function syntax (with context)",
+	  example: "// ES5\nfunction Greeting (props, context) {\n  return <div>{context.greeting} {props.name}.</div>;\n}\nGreeting.contextTypes = { greeting: React.PropTypes.string };\n\n// ES2015\nconst Greeting = (props, context) => (\n  <div>Hello {props.name}</div>\n);\nGreeting.contextTypes = { greeting: React.PropTypes.string };",
+	  reference: "https://facebook.github.io/react/docs/context.html#referencing-context-in-stateless-functional-components",
+	  notSupported: "ref",
+	  module: "react"
+	}];
+
+	exports.default = (0, _assignSharedDefaults2.default)(data, {
+	  category: "MISC"
+	});
+
+/***/ },
+/* 175 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(163);
+	var content = __webpack_require__(176);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(165)(content, {});
+	var update = __webpack_require__(178)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -19818,10 +20620,10 @@
 	}
 
 /***/ },
-/* 163 */
+/* 176 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(164)();
+	exports = module.exports = __webpack_require__(177)();
 	// imports
 
 
@@ -19832,7 +20634,7 @@
 
 
 /***/ },
-/* 164 */
+/* 177 */
 /***/ function(module, exports) {
 
 	/*
@@ -19888,7 +20690,7 @@
 
 
 /***/ },
-/* 165 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -20140,16 +20942,16 @@
 
 
 /***/ },
-/* 166 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(167);
+	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(165)(content, {});
+	var update = __webpack_require__(178)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -20166,10 +20968,10 @@
 	}
 
 /***/ },
-/* 167 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(164)();
+	exports = module.exports = __webpack_require__(177)();
 	// imports
 
 
@@ -20180,7 +20982,47 @@
 
 
 /***/ },
-/* 168 */
+/* 181 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(182);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(178)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./App.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./App.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(177)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".sans-serif {\n  font-family: 'avenir next', avenir, helvetica, 'helvetica neue', arial, sans-serif;\n}\n\n.reference-item,\n.reference-item:active,\n.reference-item:hover,\n.reference-item:visited {\n  color: #2A5DB0\n}\n\n.reference-item:hover {\n  color: #2200CC\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 183 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20197,27 +21039,27 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _CategoryButton = __webpack_require__(169);
+	var _CategoryButton = __webpack_require__(184);
 
 	var _CategoryButton2 = _interopRequireDefault(_CategoryButton);
 
-	var _ReferenceItem = __webpack_require__(171);
+	var _ReferenceItem = __webpack_require__(186);
 
 	var _ReferenceItem2 = _interopRequireDefault(_ReferenceItem);
 
-	var _lodash = __webpack_require__(172);
+	var _lodash = __webpack_require__(187);
 
 	var _lodash2 = _interopRequireDefault(_lodash);
 
-	var _lodash3 = __webpack_require__(181);
+	var _lodash3 = __webpack_require__(196);
 
 	var _lodash4 = _interopRequireDefault(_lodash3);
 
-	var _lodash5 = __webpack_require__(193);
+	var _lodash5 = __webpack_require__(208);
 
 	var _lodash6 = _interopRequireDefault(_lodash5);
 
-	var _colors = __webpack_require__(170);
+	var _colors = __webpack_require__(185);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -20469,7 +21311,7 @@
 	exports.default = ReactCheatSheet;
 
 /***/ },
-/* 169 */
+/* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20484,7 +21326,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(170);
+	var _colors = __webpack_require__(185);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -20572,7 +21414,7 @@
 	exports.default = CategoryButton;
 
 /***/ },
-/* 170 */
+/* 185 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -20600,7 +21442,7 @@
 	exports.default = _extends({}, color, grayscale);
 
 /***/ },
-/* 171 */
+/* 186 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20615,7 +21457,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _colors = __webpack_require__(170);
+	var _colors = __webpack_require__(185);
 
 	var _colors2 = _interopRequireDefault(_colors);
 
@@ -20780,7 +21622,7 @@
 	exports.default = ReferenceItem;
 
 /***/ },
-/* 172 */
+/* 187 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20791,12 +21633,12 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseIndexOf = __webpack_require__(173),
-	    baseValues = __webpack_require__(174),
-	    isIterateeCall = __webpack_require__(175),
-	    isArray = __webpack_require__(176),
-	    isString = __webpack_require__(177),
-	    keys = __webpack_require__(178);
+	var baseIndexOf = __webpack_require__(188),
+	    baseValues = __webpack_require__(189),
+	    isIterateeCall = __webpack_require__(190),
+	    isArray = __webpack_require__(191),
+	    isString = __webpack_require__(192),
+	    keys = __webpack_require__(193);
 
 	/* Native method references for those with the same name as other `lodash` methods. */
 	var nativeMax = Math.max;
@@ -20923,7 +21765,7 @@
 
 
 /***/ },
-/* 173 */
+/* 188 */
 /***/ function(module, exports) {
 
 	/**
@@ -20986,7 +21828,7 @@
 
 
 /***/ },
-/* 174 */
+/* 189 */
 /***/ function(module, exports) {
 
 	/**
@@ -21023,7 +21865,7 @@
 
 
 /***/ },
-/* 175 */
+/* 190 */
 /***/ function(module, exports) {
 
 	/**
@@ -21161,7 +22003,7 @@
 
 
 /***/ },
-/* 176 */
+/* 191 */
 /***/ function(module, exports) {
 
 	/**
@@ -21347,7 +22189,7 @@
 
 
 /***/ },
-/* 177 */
+/* 192 */
 /***/ function(module, exports) {
 
 	/**
@@ -21406,7 +22248,7 @@
 
 
 /***/ },
-/* 178 */
+/* 193 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -21417,9 +22259,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(179),
-	    isArguments = __webpack_require__(180),
-	    isArray = __webpack_require__(176);
+	var getNative = __webpack_require__(194),
+	    isArguments = __webpack_require__(195),
+	    isArray = __webpack_require__(191);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -21648,7 +22490,7 @@
 
 
 /***/ },
-/* 179 */
+/* 194 */
 /***/ function(module, exports) {
 
 	/**
@@ -21791,7 +22633,7 @@
 
 
 /***/ },
-/* 180 */
+/* 195 */
 /***/ function(module, exports) {
 
 	/**
@@ -22040,7 +22882,7 @@
 
 
 /***/ },
-/* 181 */
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22051,10 +22893,10 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var arrayFilter = __webpack_require__(182),
-	    baseCallback = __webpack_require__(183),
-	    baseFilter = __webpack_require__(190),
-	    isArray = __webpack_require__(176);
+	var arrayFilter = __webpack_require__(197),
+	    baseCallback = __webpack_require__(198),
+	    baseFilter = __webpack_require__(205),
+	    isArray = __webpack_require__(191);
 
 	/**
 	 * Iterates over elements of `collection`, returning an array of all elements
@@ -22115,7 +22957,7 @@
 
 
 /***/ },
-/* 182 */
+/* 197 */
 /***/ function(module, exports) {
 
 	/**
@@ -22155,7 +22997,7 @@
 
 
 /***/ },
-/* 183 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22166,10 +23008,10 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseIsEqual = __webpack_require__(184),
-	    bindCallback = __webpack_require__(187),
-	    isArray = __webpack_require__(176),
-	    pairs = __webpack_require__(188);
+	var baseIsEqual = __webpack_require__(199),
+	    bindCallback = __webpack_require__(202),
+	    isArray = __webpack_require__(191),
+	    pairs = __webpack_require__(203);
 
 	/** Used to match property names within property paths. */
 	var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\n\\]|\\.)*?\1)\]/,
@@ -22583,7 +23425,7 @@
 
 
 /***/ },
-/* 184 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -22594,9 +23436,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var isArray = __webpack_require__(176),
-	    isTypedArray = __webpack_require__(185),
-	    keys = __webpack_require__(186);
+	var isArray = __webpack_require__(191),
+	    isTypedArray = __webpack_require__(200),
+	    keys = __webpack_require__(201);
 
 	/** `Object#toString` result references. */
 	var argsTag = '[object Arguments]',
@@ -22931,7 +23773,7 @@
 
 
 /***/ },
-/* 185 */
+/* 200 */
 /***/ function(module, exports) {
 
 	/**
@@ -23085,7 +23927,7 @@
 
 
 /***/ },
-/* 186 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23096,9 +23938,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(179),
-	    isArguments = __webpack_require__(180),
-	    isArray = __webpack_require__(176);
+	var getNative = __webpack_require__(194),
+	    isArguments = __webpack_require__(195),
+	    isArray = __webpack_require__(191);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -23327,7 +24169,7 @@
 
 
 /***/ },
-/* 187 */
+/* 202 */
 /***/ function(module, exports) {
 
 	/**
@@ -23398,7 +24240,7 @@
 
 
 /***/ },
-/* 188 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23409,7 +24251,7 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var keys = __webpack_require__(189);
+	var keys = __webpack_require__(204);
 
 	/**
 	 * Converts `value` to an object if it's not one.
@@ -23482,7 +24324,7 @@
 
 
 /***/ },
-/* 189 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23493,9 +24335,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(179),
-	    isArguments = __webpack_require__(180),
-	    isArray = __webpack_require__(176);
+	var getNative = __webpack_require__(194),
+	    isArguments = __webpack_require__(195),
+	    isArray = __webpack_require__(191);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -23724,7 +24566,7 @@
 
 
 /***/ },
-/* 190 */
+/* 205 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23735,7 +24577,7 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseEach = __webpack_require__(191);
+	var baseEach = __webpack_require__(206);
 
 	/**
 	 * The base implementation of `_.filter` without support for callback
@@ -23760,7 +24602,7 @@
 
 
 /***/ },
-/* 191 */
+/* 206 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23771,7 +24613,7 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var keys = __webpack_require__(192);
+	var keys = __webpack_require__(207);
 
 	/**
 	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
@@ -23947,7 +24789,7 @@
 
 
 /***/ },
-/* 192 */
+/* 207 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -23958,9 +24800,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(179),
-	    isArguments = __webpack_require__(180),
-	    isArray = __webpack_require__(176);
+	var getNative = __webpack_require__(194),
+	    isArguments = __webpack_require__(195),
+	    isArray = __webpack_require__(191);
 
 	/** Used to detect unsigned integer values. */
 	var reIsUint = /^\d+$/;
@@ -24189,7 +25031,7 @@
 
 
 /***/ },
-/* 193 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24200,8 +25042,8 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseDifference = __webpack_require__(194),
-	    restParam = __webpack_require__(197);
+	var baseDifference = __webpack_require__(209),
+	    restParam = __webpack_require__(212);
 
 	/**
 	 * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
@@ -24284,7 +25126,7 @@
 
 
 /***/ },
-/* 194 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -24295,9 +25137,9 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var baseIndexOf = __webpack_require__(173),
-	    cacheIndexOf = __webpack_require__(195),
-	    createCache = __webpack_require__(196);
+	var baseIndexOf = __webpack_require__(188),
+	    cacheIndexOf = __webpack_require__(210),
+	    createCache = __webpack_require__(211);
 
 	/** Used as the size to enable large array optimizations. */
 	var LARGE_ARRAY_SIZE = 200;
@@ -24353,7 +25195,7 @@
 
 
 /***/ },
-/* 195 */
+/* 210 */
 /***/ function(module, exports) {
 
 	/**
@@ -24412,7 +25254,7 @@
 
 
 /***/ },
-/* 196 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/**
@@ -24423,7 +25265,7 @@
 	 * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 	 * Available under MIT license <https://lodash.com/license>
 	 */
-	var getNative = __webpack_require__(179);
+	var getNative = __webpack_require__(194);
 
 	/** Native method references. */
 	var Set = getNative(global, 'Set');
@@ -24510,7 +25352,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 197 */
+/* 212 */
 /***/ function(module, exports) {
 
 	/**
@@ -24581,850 +25423,6 @@
 
 	module.exports = restParam;
 
-
-/***/ },
-/* 198 */,
-/* 199 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(200);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(165)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./App.css", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./App.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 200 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(164)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".sans-serif {\n  font-family: 'avenir next', avenir, helvetica, 'helvetica neue', arial, sans-serif;\n}\n\n.reference-item,\n.reference-item:active,\n.reference-item:hover,\n.reference-item:visited {\n  color: #2A5DB0\n}\n\n.reference-item:hover {\n  color: #2200CC\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 201 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var categories = [{
-	  name: "ReactDOM",
-	  key: "REACTDOM"
-	}, {
-	  name: "Top-level",
-	  key: "TOPLEVEL"
-	}, {
-	  name: "Component",
-	  key: "COMPONENT"
-	}, {
-	  name: "Spec",
-	  key: "SPEC"
-	}, {
-	  name: "Lifecycle",
-	  key: "LIFECYCLE"
-	}, {
-	  name: "PropTypes",
-	  key: "PROPTYPES"
-	}, {
-	  name: "Context",
-	  key: "CONTEXT"
-	}, {
-	  name: "Test-utils",
-	  key: "TESTUTILS"
-	}, {
-	  name: "Misc",
-	  key: "MISC"
-	}];
-
-	exports.default = categories;
-
-/***/ },
-/* 202 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _ReactDOM = __webpack_require__(203);
-
-	var _ReactDOM2 = _interopRequireDefault(_ReactDOM);
-
-	var _ReactDOM_Server = __webpack_require__(204);
-
-	var _ReactDOM_Server2 = _interopRequireDefault(_ReactDOM_Server);
-
-	var _React_TopLevel = __webpack_require__(205);
-
-	var _React_TopLevel2 = _interopRequireDefault(_React_TopLevel);
-
-	var _React_Component = __webpack_require__(206);
-
-	var _React_Component2 = _interopRequireDefault(_React_Component);
-
-	var _React_Context = __webpack_require__(207);
-
-	var _React_Context2 = _interopRequireDefault(_React_Context);
-
-	var _React_Spec = __webpack_require__(208);
-
-	var _React_Spec2 = _interopRequireDefault(_React_Spec);
-
-	var _React_Lifecycle = __webpack_require__(209);
-
-	var _React_Lifecycle2 = _interopRequireDefault(_React_Lifecycle);
-
-	var _React_PropTypes = __webpack_require__(210);
-
-	var _React_PropTypes2 = _interopRequireDefault(_React_PropTypes);
-
-	var _React_TestUtils = __webpack_require__(211);
-
-	var _React_TestUtils2 = _interopRequireDefault(_React_TestUtils);
-
-	var _Misc = __webpack_require__(212);
-
-	var _Misc2 = _interopRequireDefault(_Misc);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
-	exports.default = [].concat(_toConsumableArray(_ReactDOM2.default), _toConsumableArray(_ReactDOM_Server2.default), _toConsumableArray(_React_TopLevel2.default), _toConsumableArray(_React_Component2.default), _toConsumableArray(_React_Context2.default), _toConsumableArray(_React_Spec2.default), _toConsumableArray(_React_Lifecycle2.default), _toConsumableArray(_React_PropTypes2.default), _toConsumableArray(_React_TestUtils2.default), _toConsumableArray(_Misc2.default));
-
-/***/ },
-/* 203 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "render",
-	  example: "ReactDOM.render(<MyComponent />, document.getElementById('MyComponent'));",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.render"
-	}, {
-	  name: "findDOMNode",
-	  example: "ReactDOM.findDOMNode(componentRef);",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.finddomnode"
-	}, {
-	  name: "unmountComponentAtNode",
-	  example: "ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react-dom",
-	  category: "REACTDOM"
-	});
-
-/***/ },
-/* 204 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "renderToString",
-	  example: "ReactDOMServer.renderToString(<MyComponent />);",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostring"
-	}, {
-	  name: "renderStaticMarkup",
-	  example: "ReactDOMServer.renderToStaticMarkup(<MyComponent />);",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostaticmarkup"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react-dom",
-	  category: "REACTDOM"
-	});
-
-/***/ },
-/* 205 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "Component",
-	  example: "// ES2015\n\nclass MyComponent extends React.Component {\n  render () {\n    return <div />;\n  }\n}\n",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.component"
-	}, {
-	  name: "createClass",
-	  example: "var MyComponent = React.createClass({\n  render: function () {\n    return <div />;\n  }\n});",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.createclass"
-	}, {
-	  name: "createElement",
-	  example: "React.createElement('div', props, ...children); // String\n\nReact.createElement(MyComponent, props, ...children); // ReactClass type",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.createelement"
-	}, {
-	  name: "cloneElement",
-	  example: "React.cloneElement(element, props, ...children);",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.cloneelement"
-	}, {
-	  name: "createFactory",
-	  example: "React.createFactory('div'); // String;\n\nReact.createFactory(MyComponentClass); // ReactClass type",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.createfactory"
-	}, {
-	  name: "isValidElement",
-	  example: "React.isValidElement(MyComponent);",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.isvalidelement"
-	}, {
-	  name: "Children.map",
-	  example: "React.Children.map(this.props.children, (child, i) => {\n    return child;\n})",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.map"
-	}, {
-	  name: "Children.forEach",
-	  example: "React.Children.forEach(this.props.children, (child, i) => {\n  console.log(child + ' at index: ' + i);\n})",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.foreach"
-	}, {
-	  name: "Children.count",
-	  example: "React.Children.count(this.props.children);",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.count"
-	}, {
-	  name: "Children.only",
-	  example: "none",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.only"
-	}, {
-	  name: "Children.toArray",
-	  example: "none",
-	  reference: "http://facebook.github.io/react/docs/top-level-api.html#react.children.toarray"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react",
-	  category: "TOPLEVEL"
-	});
-
-/***/ },
-/* 206 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "setState",
-	  example: "// object usage\nthis.setState({someKey: 'a new value'});\n\n// function usage\nthis.setState(function(previousState, currentProps) {\n  return {counter: previousState.counter + 1};\n});\n\n// both uses take a function as an optional second argument.\n// this function fires after setState\n",
-	  reference: "https://facebook.github.io/react/docs/component-api.html#setstate"
-	}, {
-	  name: "replaceState",
-	  example: "// Like setState but replaces state object instead of merging\n\n// (before)\n// state => { firstName: 'Michael', lastName: 'Chan' }\n\nthis.replaceState({firstName: 'Spazz'});\n\n// (after)\n// this.state => { firstName: 'Spazz' }",
-	  reference: "https://facebook.github.io/react/docs/component-api.html#replacestate",
-	  notSupported: "React.Component"
-	}, {
-	  name: "forceUpdate",
-	  example: "this.forceUpdate();\n\n// forces component tree to update.\n// AVOID where posible",
-	  reference: "https://facebook.github.io/react/docs/component-api.html#forceupdate"
-	}, {
-	  name: "isMounted",
-	  example: "this.isMounted();",
-	  reference: "https://facebook.github.io/react/docs/component-api.html#ismounted",
-	  notSupported: "React.Component"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react",
-	  category: "COMPONENT"
-	});
-
-/***/ },
-/* 207 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "Context (example)",
-	  example: "var Cowboy = React.createClass({\n  childContextTypes: {\n    greeting: React.PropTypes.string\n  },\n\n  getChildContext: function () {\n    return { greeting: \"Howdy\"};\n  },\n\n  render: function () {\n    return <div>{this.props.children}</div>\n  }\n});\n\nvar Greeting = React.createClass({\n  contextTypes: {\n    greeting: React.PropTypes.string\n  },\n\n  render: function () {\n    return <div>{this.context.greeting} {this.props.name}.</div>\n  }\n});\n\n// <Greeting name=\"Michael\" />\n// => Michael.\n\n// <Cowboy><Greeting name=\"Michael\" /></Cowboy>\n// => Howdy Michael.\n",
-	  reference: "https://facebook.github.io/react/docs/context.html"
-	}, {
-	  name: "contextTypes",
-	  example: "// add to the context-aware component\n\ncontextTypes: {\n  color: React.PropTypes.string\n},",
-	  reference: "https://facebook.github.io/react/docs/context.html"
-	}, {
-	  name: "childContextTypes",
-	  example: "// add to the context provider\n\nchildContextTypes: {\n  color: React.PropTypes.string\n},",
-	  reference: "https://facebook.github.io/react/docs/context.html"
-	}, {
-	  name: "getChildContext",
-	  example: "// add to the context provider\n\ngetChildContext: function() {\n  return {color: \"purple\"};\n}",
-	  reference: "https://facebook.github.io/react/docs/context.html"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react",
-	  category: "CONTEXT"
-	});
-
-/***/ },
-/* 208 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "render",
-	  example: "render: function () {\n  return <div />;\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#render"
-	}, {
-	  name: "getInitialState",
-	  example: "getInitialState: function () {\n  return { key: value };\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#getinitialstate",
-	  notSupported: "React.Component"
-	}, {
-	  name: "getDefaultProps",
-	  example: "getDefaultProps: function () {\n  return { key: value };\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#getdefaultprops",
-	  notSupported: "React.Component"
-	}, {
-	  name: "propTypes",
-	  example: "propTypes: {\n  myProp: React.PropTypes.bool\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#proptypes",
-	  notSupported: "React.Component"
-	}, {
-	  name: "mixins",
-	  example: "mixins: [ AMixinObject, AnotherMixinObject ];",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#mixins",
-	  notSupported: "React.Component"
-	}, {
-	  name: "statics",
-	  example: "statics: {\n  customMethod: function(foo) {\n    return foo === 'bar';\n  }\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#statics",
-	  notSupported: "React.Component"
-	}, {
-	  name: "displayName",
-	  example: "displayName: \"MyComponent\"",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#displayname"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react",
-	  category: "SPEC"
-	});
-
-/***/ },
-/* 209 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var lifecycleMethods = [{
-	  name: "componentWillMount",
-	  setStateTriggersUpdate: "no",
-	  calledFor: "initial render()",
-	  useFor: ".",
-	  receivesContext: "no"
-	}, {
-	  name: "componentDidMount",
-	  setStateTriggersUpdate: "no",
-	  calledFor: "initial render()",
-	  useFor: "async setup, refs, DOM manipulation",
-	  receivesContext: "no"
-	}, {
-	  name: "componentWillReceiveProps",
-	  setStateTriggersUpdate: "no",
-	  calledFor: "new props",
-	  useFor: "respond to props before update",
-	  receivesContext: "yes"
-	}, {
-	  name: "shouldComponentUpdate",
-	  setStateTriggersUpdate: "yes",
-	  calledFor: "new props/state",
-	  useFor: "performance. return false to skip update",
-	  receivesContext: "yes"
-	}, {
-	  name: "componentWillUpdate",
-	  setStateTriggersUpdate: "n/a",
-	  calledFor: "new props/state",
-	  useFor: "preparation before update",
-	  receivesContext: "yes"
-	}, {
-	  name: "componentDidUpdate",
-	  setStateTriggersUpdate: "yes",
-	  calledFor: "new props/state",
-	  useFor: "DOM manipulation after update",
-	  receivesContext: "no"
-	}, {
-	  name: "componentWillUnmount",
-	  setStateTriggersUpdate: "n/a",
-	  calledFor: "unmounting",
-	  useFor: "cleanup of componentDidMount setup",
-	  receivesContext: "no"
-	}];
-
-	var LifecycleMethodsChart = function LifecycleMethodsChart() {
-	  return _react2.default.createElement(
-	    "table",
-	    null,
-	    _react2.default.createElement(
-	      "thead",
-	      null,
-	      _react2.default.createElement(
-	        "tr",
-	        null,
-	        _react2.default.createElement(
-	          "th",
-	          null,
-	          "name"
-	        ),
-	        _react2.default.createElement(
-	          "th",
-	          null,
-	          "called for"
-	        ),
-	        _react2.default.createElement(
-	          "th",
-	          null,
-	          "receives context"
-	        ),
-	        _react2.default.createElement(
-	          "th",
-	          null,
-	          "setState() triggers an update"
-	        )
-	      )
-	    ),
-	    _react2.default.createElement(
-	      "tbody",
-	      null,
-	      lifecycleMethods.map(function (event, i) {
-	        return _react2.default.createElement(
-	          "tr",
-	          { key: i },
-	          _react2.default.createElement(
-	            "td",
-	            { "data-label": "name" },
-	            event.name
-	          ),
-	          _react2.default.createElement(
-	            "td",
-	            { "data-label": "called for" },
-	            event.calledFor
-	          ),
-	          _react2.default.createElement(
-	            "td",
-	            { "data-label": "receives context" },
-	            event.receivesContext
-	          ),
-	          _react2.default.createElement(
-	            "td",
-	            { "data-label": "setState() triggers an update" },
-	            event.setStateTriggersUpdate
-	          )
-	        );
-	      })
-	    )
-	  );
-	};
-
-	var data = [{
-	  name: "Lifecycle methods",
-	  chart: _react2.default.createElement(LifecycleMethodsChart, null),
-	  example: ""
-	}, {
-	  name: "componentWillMount",
-	  example: "componentWillMount: function () {\n  // invoked once, before initial 'render'\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#mounting-componentwillmount"
-	}, {
-	  name: "componentDidMount",
-	  example: "componentDidMount: function () {\n  // invoked once (client-only), after initial 'render'\n  // good for AJAX, setTimeout, setInterval\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount"
-	}, {
-	  name: "componentWillReceiveProps",
-	  example: "componentWillReceiveProps: function (nextProps) {\n  // invoked when component is receiving props, not for initial 'render'\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops"
-	}, {
-	  name: "shouldComponentUpdate",
-	  example: "shouldComponentUpdate: function (nextProps, nextState) {\n  // invoked before rendering with new props, not for initial 'render'\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-shouldcomponentupdate"
-	}, {
-	  name: "componentWillUpdate",
-	  example: "componentWillUpdate: function (nextProps, nextState) {\n  // invoked immediately before rendering with new props or state, not for initial 'render'\n  // see componentWillReceiveProps if you need to call setState\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentwillupdate",
-	  notSupported: "this.setState"
-	}, {
-	  name: "componentDidUpdate",
-	  example: "componentDidUpdate: function (prevProps, prevState) {\n  // invoked immediately after DOM updates, not for initial 'render'\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentdidupdate"
-	}, {
-	  name: "componentWillUnmount",
-	  example: "componentWillUnmount: function () {\n  // invoked immediately before a component is unmounted from the DOM\n}",
-	  reference: "http://facebook.github.io/react/docs/component-specs.html#unmounting-componentwillunmount"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react",
-	  category: "LIFECYCLE"
-	});
-
-/***/ },
-/* 210 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "PropTypes.array",
-	  example: "{\n  optionalArray: React.PropTypes.array,\n  requiredArray: React.PropTypes.array.isRequired\n}"
-	}, {
-	  name: "PropTypes.bool",
-	  example: "{\n  optionalBoolean: React.PropTypes.bool,\n  requiredBoolean: React.PropTypes.bool.isRequired\n}"
-	}, {
-	  name: "PropTypes.func",
-	  example: "{\n  optionalFunction: React.PropTypes.func,\n  requiredFunction: React.PropTypes.func.isRequired\n}"
-	}, {
-	  name: "PropTypes.number",
-	  example: "{\n  optionalNumber: React.PropTypes.number,\n  requiredNumber: React.PropTypes.number.isRequired\n}"
-	}, {
-	  name: "PropTypes.object",
-	  example: "{\n  optionalObject: React.PropTypes.object,\n  requiredObject: React.PropTypes.object.isRequired\n}"
-	}, {
-	  name: "PropTypes.string",
-	  example: "{\n  optionalString: React.PropTypes.string,\n  requiredString: React.PropTypes.string.isRequired\n}"
-	}, {
-	  name: "PropTypes.node",
-	  example: "{\n  optionalNode: React.PropTypes.node,\n  requiredNode: React.PropTypes.node.isRequired\n};\n\n// anything that can be rendered"
-	}, {
-	  name: "PropTypes.element",
-	  example: "{\n  optionalElement: React.PropTypes.element,\n  requiredElement: React.PropTypes.element.isRequired\n}"
-	}, {
-	  name: "PropTypes.instanceOf",
-	  example: "{\n  optionalClass: React.PropTypes.instanceOf(MyClass),\n  requiredClass: React.PropTypes.instanceOf(MyClass).isRequired\n}"
-	}, {
-	  name: "PropTypes.oneOf",
-	  example: "{\n  optionalEnum: React.PropTypes.oneOf(['Thing 1', 'Thing 2']),\n  optionalEnum: React.PropTypes.oneOf(['Thing 1', 'Thing 2']).isRequired\n}"
-	}, {
-	  name: "PropTypes.oneOfType",
-	  example: "{\n  optionalUnion: React.PropTypes.oneOfType([\n    React.PropTypes.bool,\n    React.PropTypes.string\n  ]),\n\n  requiredUnion: React.PropTypes.oneOfType([\n    React.PropTypes.bool,\n    React.PropTypes.string\n  ]).isRequired,\n}"
-	}, {
-	  name: "PropTypes.arrayOf",
-	  example: "{\n  optionalArrayOf: React.PropTypes.arrayOf(React.PropTypes.string),\n  requiredArrayOf: React.PropTypes.arrayOf(React.PropTypes.string).isRequired\n}"
-	}, {
-	  name: "PropTypes.objectOf",
-	  example: "{\n  optionalObjectOf: React.PropTypes.objectOf(React.PropTypes.string),\n  requiredObjectOf: React.PropTypes.objectOf(React.PropTypes.string).isRequired\n}\n\n// Type of property values"
-	}, {
-	  name: "PropTypes.shape",
-	  example: "{\n  optionalObjectWithShape: React.PropTypes.shape({\n    age: React.PropTypes.number,\n    name: React.PropTypes.string\n  }),\n\n  requiredObjectWithShape: React.PropTypes.shape({\n    age: React.PropTypes.number,\n    name: React.PropTypes.string\n  }).isRequired,\n\n  requiredObjectWithRequiredShape: React.PropTypes.shape({\n    age: React.PropTypes.number.isRequired,\n    name: React.PropTypes.string.isRequired\n  }).isRequired,\n}"
-	}, {
-	  name: "PropTypes.any",
-	  example: "{\n  requiredAny: React.PropTypes.any.isRequired\n}"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react",
-	  category: "PROPTYPES",
-	  reference: "https://facebook.github.io/react/docs/reusable-components.html#prop-validation"
-	});
-
-/***/ },
-/* 211 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "Simulate (basic)",
-	  example: "var subject = TestUtils.renderIntoDocument(\n  <div onClick={handleClick} />\n);\n\nTestUtils.Simulate.click(subject);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#simulate",
-	  playground: "http://jsbin.com/foxini/edit?html,js,console"
-	}, {
-	  name: "Simulate (with data)",
-	  example: "function handleChange (event) {\n  console.log('A change was simulated with key: ' + event.key);\n}\n\nvar subject = TestUtils.renderIntoDocument(\n  <input type=\"text\" onChange={handleChange} />\n);\n\nTestUtils.Simulate.change(subject, { key: \"Enter\" });",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#simulate",
-	  playground: "http://jsbin.com/wiqile/edit?html,js,console"
-	}, {
-	  name: "renderIntoDocument",
-	  example: "var componentTree = TestUtils.renderIntoDocument(<div><span /></div>);\n\nconsole.log('You mounted a component tree with a ' + componentTree.tagName + ' at the root!');",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#renderintodocument",
-	  playground: "http://jsbin.com/buzigo/edit?html,js,console"
-	}, {
-	  name: "mockComponent",
-	  example: "// no example",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#mockcomponent"
-	}, {
-	  name: "isElement",
-	  example: "expect(TestUtils.isElement(<div />)).toBe(true);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#iselement",
-	  playground: "http://jsbin.com/jiyune/edit?html,js,console"
-	}, {
-	  name: "isElementOfType",
-	  example: "var MyComponent = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nexpect(\n  TestUtils.isElementOfType(<MyComponent />, MyComponent)\n).toBe(true);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#iselementoftype",
-	  playground: "http://jsbin.com/pasohi/edit?html,js,console"
-	}, {
-	  name: "isDOMComponent",
-	  example: "var subject = TestUtils.renderIntoDocument(<div />);\n\nexpect(\n  TestUtils.isDOMComponent(subject)\n).toBe(true);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#isdomcomponent",
-	  playground: "http://jsbin.com/fadoka/edit?html,js,console"
-	}, {
-	  name: "isCompositeComponent",
-	  example: "var subject = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nexpect(\n  TestUtils.isCompositeComponent(subject)\n).toBe(true);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponent",
-	  playground: "http://jsbin.com/vocofa/edit?html,js,console"
-	}, {
-	  name: "isCompositeComponentWithType",
-	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nvar subject = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nexpect(\n  TestUtils.isCompositeComponentWithType(\n    subject,\n    CompositeComponent\n  )\n).toBe(true);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponentwithtype",
-	  playground: "http://jsbin.com/kegoqe/edit?html,js,console"
-	}, {
-	  name: "findAllInRenderedTree",
-	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return <div><div /></div>;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nvar allDivs = TestUtils.findAllInRenderedTree(\n  componentTree,\n  (c) => c.tagName === 'DIV'\n)\n\nexpect(allDivs).toBeAn('array');\nexpect(allDivs.length).toBe(2);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#findallinrenderedtree",
-	  playground: "http://jsbin.com/dozevu/edit?html,js,console"
-	}, {
-	  name: "scryRenderedDOMComponentsWithClass",
-	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return (\n      <div className=\"target\">\n        <div className=\"not-target\">\n          <div className=\"target\" />\n        </div>\n      </div>\n    );\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nvar allDOMComponentsWithMatchingClass = TestUtils.scryRenderedDOMComponentsWithClass(\n  componentTree,\n  'target'\n);\n\nexpect(allDOMComponentsWithMatchingClass).toBeAn('array');\nexpect(allDOMComponentsWithMatchingClass.length).toBe(2);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithclass",
-	  playground: "http://jsbin.com/kujeda/edit?html,js,console"
-	}, {
-	  name: "findRenderedDOMComponentWithClass",
-	  example: "var MyCompositeComponent = React.createClass({\n  render () {\n    return <MyNestedComponent />;\n  }\n});\n\nvar MyNestedComponent = React.createClass({\n  render () {\n    return <div className=\"nested\"/>;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(<MyCompositeComponent />);\n\nvar singleComponentWithMatchedClass = TestUtils.findRenderedDOMComponentWithClass(\n  componentTree,\n  'nested'\n);\n\nexpect(singleComponentWithMatchedClass).toBeAn('object');\nexpect(singleComponentWithMatchedClass).toNotBeAn('array');\nexpect(singleComponentWithMatchedClass.className).toBe('nested');",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithclass",
-	  playground: "http://jsbin.com/kuteve/edit?html,js,console"
-	}, {
-	  name: "scryRenderedDOMComponentsWithTag",
-	  example: "var CompositeComponent = React.createClass({\n  render () {\n    return <div><div /></div>;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <CompositeComponent />\n);\n\nvar allDivs = TestUtils.scryRenderedDOMComponentsWithTag(\n  componentTree,\n  'DIV'\n);\n\nexpect(allDivs).toBeAn('array');\nexpect(allDivs.length).toBe(2);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithtag",
-	  playground: "http://jsbin.com/hehede/edit?html,js,console"
-	}, {
-	  name: "findRenderedDOMComponentWithTag",
-	  example: "var MyCompositeComponent = React.createClass({\n  render () {\n    return <MyNestedComponent />;\n  }\n});\n\nvar MyNestedComponent = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(<MyCompositeComponent />);\n\nvar onlyDiv = TestUtils.findRenderedDOMComponentWithTag(\n  componentTree,\n  'div'\n);\n\nexpect(onlyDiv).toBeAn('object');\nexpect(onlyDiv).toNotBeAn('array');\nexpect(onlyDiv.tagName).toBe('DIV');",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithtag",
-	  playground: "http://jsbin.com/puhule/edit?html,js,console"
-	}, {
-	  name: "scryRenderedComponentsWithType",
-	  example: "var MyCompositeComponent = React.createClass({\n  render () {\n    return (\n      <div>\n        <Target />\n        <br />\n        <Target />\n      </div>\n    )\n  }\n});\n\nvar Target = React.createClass({\n  render () {\n    return <div />;\n  }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <MyCompositeComponent />\n);\n\nvar allTargetComponents = TestUtils.scryRenderedComponentsWithType(\n  componentTree,\n  Target\n);\n\nexpect(allTargetComponents).toBeAn('array');\nexpect(allTargetComponents.length).toBe(2);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#scryrenderedcomponentswithtype",
-	  playground: "http://jsbin.com/lesowo/edit?html,js,console"
-	}, {
-	  name: "findRenderedComponentWithType",
-	  example: "var MyCompositeComponent = React.createClass({\n  render () { return <TargetComponent /> }\n});\n\nvar TargetComponent = React.createClass({\n  render () { return <div /> }\n});\n\nvar componentTree = TestUtils.renderIntoDocument(\n  <MyCompositeComponent />\n);\n\nvar onlyTargetComponent = TestUtils.findRenderedComponentWithType(\n  componentTree,\n  TargetComponent\n);\n\nexpect(onlyTargetComponent).toBeAn('object');\nexpect(onlyTargetComponent).toNotBeAn('array');\nexpect(TestUtils.isCompositeComponentWithType(\n  onlyTargetComponent,\n  TargetComponent\n)).toBe(true);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#findrenderedcomponentwithtype",
-	  playground: "http://jsbin.com/wosane/edit?html,js,console"
-	}, {
-	  name: "Shallow rendering (basics)",
-	  example: "// 1. create a renderer\nvar renderer = TestUtils.createRenderer();\n\n// 2. render component into renderer\nrenderer.render(<MyComponent />);\n\n// 3. capture renderer output\nvar subject = renderer.getRenderOutput();\n\n// 4. make assertions\nexpect(subject.type).toBe('div');",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
-	  playground: "http://jsbin.com/raloqu/edit?html,js,console"
-	}, {
-	  name: "Shallow rendering (type example)",
-	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(<MyComponent />);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(subject.type).toBe('div');  // => true",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
-	  playground: "http://jsbin.com/xojudi/edit?html,js,console"
-	}, {
-	  name: "Shallow rendering (props example)",
-	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(<MyComponent className=\"my-component\" />);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(subject.props.className).toBe('my-component'); // => true",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
-	  playground: "http://jsbin.com/najubu/edit?html,js,console"
-	}, {
-	  name: "Shallow rendering (child-count example)",
-	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(\n  <MyList items={[1, 2, 3]} />\n);\n\nvar subject = renderer.getRenderOutput();\n\nvar childCount = React.Children.count(subject.props.children);\n\nexpect(childCount).toBe(3); // => true",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
-	  playground: "http://jsbin.com/dayomi/edit?html,js,console"
-	}, {
-	  name: "Shallow rendering (child-equality example)",
-	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(\n  <MyComponent>\n    <div>Thing 1</div>\n    <div>Thing 2</div>\n  </MyComponent>\n);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(subject.props.children).toEqual([\n  <div>Thing 1</div>,\n  <div>Thing 2</div>\n]); // => true",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
-	  playground: "http://jsbin.com/sexeve/edit?html,js,console"
-	}, {
-	  name: "Shallow rendering (events example)",
-	  example: "var renderer = TestUtils.createRenderer();\n\nvar spy = expect.createSpy();\n\nrenderer.render(<MyComponent onClick={spy} />);\n\nvar subject = renderer.getRenderOutput();\n\nexpect(spy.call.length).toEqual(1); // => true",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
-	  playground: "http://jsbin.com/quzeya/edit?html,js,console"
-	}, {
-	  name: "Shallow rendering (state changes example)",
-	  example: "var renderer = TestUtils.createRenderer();\n\nrenderer.render(<ClickCounter />);\n\n// test initial rendering\nvar result = renderer.getRenderOutput();\n\nexpect(result.props.children).toEqual(0);\n\n\n// test post-click rendering\nresult.props.onClick();\n\nvar clickedResult = renderer.getRenderOutput();\n\nexpect(clickedResult.props.children).toEqual(1);",
-	  reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
-	  playground: "http://jsbin.com/nobavu/edit?html,js,console"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  module: "react-addons-test-utils",
-	  category: "TESTUTILS"
-	});
-
-/***/ },
-/* 212 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _assignSharedDefaults = __webpack_require__(214);
-
-	var _assignSharedDefaults2 = _interopRequireDefault(_assignSharedDefaults);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var data = [{
-	  name: "ref (callback)",
-	  example: "// Accessed as this.myInput\n<input ref={(ref) => this.myInput = ref} />\n",
-	  reference: "https://facebook.github.io/react/docs/more-about-refs.html#the-ref-callback-attribute",
-	  notSupported: "Stateless function syntax"
-	}, {
-	  name: "ref (string)",
-	  example: "// Accessed as this.refs.myInput\n<input ref=\"myInput\" />\n",
-	  reference: "https://facebook.github.io/react/docs/more-about-refs.html#the-ref-string-attribute",
-	  notSupported: "Stateless function syntax"
-	}, {
-	  name: "Stateless function syntax",
-	  example: "// ES5\nfunction Greeting (props) {\n  return <div>Hello {props.name}</div>;\n}\n\n// ES2015\nconst Greeting = (props) => (\n  <div>Hello {props.name}</div>\n);",
-	  reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
-	  notSupported: "ref",
-	  module: "react"
-	}, {
-	  name: "Stateless function syntax (with context)",
-	  example: "// ES5\nfunction Greeting (props, context) {\n  return <div>{context.greeting} {props.name}.</div>;\n}\nGreeting.contextTypes = { greeting: React.PropTypes.string };\n\n// ES2015\nconst Greeting = (props, context) => (\n  <div>Hello {props.name}</div>\n);\nGreeting.contextTypes = { greeting: React.PropTypes.string };",
-	  reference: "https://facebook.github.io/react/docs/context.html#referencing-context-in-stateless-functional-components",
-	  notSupported: "ref",
-	  module: "react"
-	}];
-
-	exports.default = (0, _assignSharedDefaults2.default)(data, {
-	  category: "MISC"
-	});
-
-/***/ },
-/* 213 */,
-/* 214 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-	exports.default = function (collection, defaults) {
-	  return collection.map(function (el) {
-	    return _extends({}, el, defaults);
-	  });
-	};
 
 /***/ }
 /******/ ]);
