@@ -1,24 +1,11 @@
 var webpack = require("webpack")
+var options = require("./sharedWebpackConfig")
 
-var options = {
-  externals: { "react": "React" },
-
-  entry: "./src/index.js",
-
-  module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: "babel"
-      }
-    ]
-  }
-}
+var externals = { "react": "React" }
 
 module.exports = [
   {
-    externals: options.externals,
+    externals: externals,
     entry: options.entry,
     output: {
       library: "ReactCheatSheet",
@@ -30,7 +17,7 @@ module.exports = [
   },
 
   {
-    externals: options.externals,
+    externals: externals,
     entry: options.entry,
     output: {
       library: "ReactCheatSheet",
