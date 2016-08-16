@@ -1,8 +1,8 @@
 {
   "name": "react-cheat-sheet",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Cheat Sheet",
-  "main": "js/index.js",
+  "main": "lib/index.js",
   "author": "Michael Chan",
   "homepage": "https://github.com/chantastic/react-cheat-sheet",
   "repository": {
