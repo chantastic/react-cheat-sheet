@@ -7,7 +7,7 @@ const data = [
     reference: `http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostring`,
   },
   {
-    name: "renderStaticMarkup",
+    name: "renderToStaticMarkup",
     example: `ReactDOMServer.renderToStaticMarkup(<MyComponent />);`,
     reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostaticmarkup",
   },
