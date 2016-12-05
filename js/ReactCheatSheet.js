@@ -1,112 +1,74 @@
-import React, { Component, PropTypes } from "react";
+import React, {
+  Children,
+  Component,
+  PropTypes
+} from "react"
 
-import styles from "./styles";
+import filter from "lodash.filter"
+import includes from "lodash.includes"
+import without from "lodash.without"
 
-import ReferenceItem from "./ReferenceItem.js";
-import CategoryList from "./CategoryList.js";
-import CategoryButton from "./CategoryButton.js";
-import NoResults from "./NoResults.js";
-
-import includes from "lodash.includes";
-import filter from "lodash.filter";
-import without from "lodash.without";
-
-function filterByCategory(_data, categories = []) {
-  if (!categories.length) return _data;
-
-  return filter(_data, ({category}) => includes(categories, category));
-}
-
-function filterResults (_data, predicate = "", categories = []) {
-  return filter(filterByCategory(_data, categories), (({name}) => {
-    return name.match(new RegExp(predicate, "i"));
-  }));
-}
-
-function toggleCategory(arr, item, cond) {
-  return (cond) ? arr.concat([item]) : without(arr, item);
-}
-
-function handleChange () {
-  this.setState({ predicate: this.searchInput.value });
-}
-
-function handleCategoryChange (category, state) {
-  this.setState({ categories: toggleCategory(this.state.categories, category, state) });
-}
+const filterByCategory = (_data, categories = []) =>
+  (categories.length)
+    ? filter(_data, ({category}) => includes(categories, category))
+    : _data
 
 class ReactCheatSheet extends Component {
-  constructor (props) {
-    super(props);
+  constructor() {
+    super()
 
     this.state = {
       predicate: "",
       categories: [],
-    };
-  }
-
-  get filteredResults () {
-    return filterResults(this.props.data, this.state.predicate, this.state.categories);
+    }
   }
 
   render () {
-    return (
-      <main>
-        <h1>
-          <span>React Cheat Sheet</span>{' '}
-          <small style={{color: "#aaa", fontSize: ".5em"}}>v15</small>
-        </h1>
+    const {
+      children,
+      data,
+    } = this.props
 
-        <label>
-          <input
-            autoFocus
-            onChange={handleChange.bind(this)}
-            placeholder="Filter by name"
-            ref={c => this.searchInput = c}
-            style={styles.searchInput}
-            type="text"
-            value={this.state.predicate}
-          />
-        </label>
+    const {
+      categories,
+      predicate,
+    } = this.state
 
-        <CategoryList>
-          {this.props.categories.map(({ name, key }, i) => (
-            <CategoryButton
-              active={includes(this.state.categories, key)}
-              key={i}
-              name={name}
-              onToggle={handleCategoryChange.bind(this)}
-            />
-          ))}
-        </CategoryList>
-
-        <section>
-          {(this.filteredResults.length) ? (
-            this.filteredResults.map((item, i) => (
-              <ReferenceItem key={i} {...item} />
-            ))
-          ) : (
-            <NoResults />
-          )}
-        </section>
-
-        <div className="py-1r">
-          Copyright &copy; 2015 Michael Chan. Hit me up: <a href="https://twitter.com/chantastic">@chantastic</a>.
-        </div>
-      </main>
-    );
+    return Children.only(
+      children({
+        selectedCategories: categories,
+        filteredResults: filter(
+          filterByCategory(data, categories),
+          ({name}) => name.match(new RegExp(predicate, "i"))
+        ),
+        handleCategoryChange: (category, checked) => (
+          this.setState({
+            categories: checked
+              ? categories.concat([category])
+              : without(categories, category)
+          })),
+        searchPredicate: predicate,
+        handleSearchChange: newValue => this.setState({predicate: newValue}),
+      })
+    )
   }
 }
 
-ReactCheatSheet.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+const {
+  arrayOf,
+  object,
+  shape,
+  string,
+} = PropTypes
 
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      key: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
+ReactCheatSheet.propTypes = {
+  categories: arrayOf(
+    shape({
+      key: string.isRequired,
+      name: string.isRequired,
     })
   ),
-};
+  data: arrayOf(object).isRequired,
+}
 
-export default ReactCheatSheet;
+export default ReactCheatSheet

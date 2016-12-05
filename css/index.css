@@ -1,14 +1,12 @@
-.sans-serif {
-  font-family: 'avenir next', avenir, helvetica, 'helvetica neue', arial, sans-serif;
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .reference-item,
-.reference-item:active,
-.reference-item:hover,
-.reference-item:visited {
-  color: #2A5DB0
-}
+.reference-item:visited{color:#228ae6} /* blue6 */
+.reference-item:hover  {color:#1b6ec2} /* blue8 */
+.reference-item:active {color:#1862ab} /* blue9 */
 
-.reference-item:hover {
-  color: #2200CC
-}
+.ff-system-mono{font-family:'Roboto Mono', Menlo, monospace}
+.fs-\.5e{font-size:.5em}
