@@ -108,7 +108,7 @@ const data = [
   {
     name: "shouldComponentUpdate",
     example: `shouldComponentUpdate: function (nextProps, nextState) {
-  // invoked before rendering with new props, not for initial 'render'
+  // invoked before rendering with new props or new state, not for initial 'render'
 }`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#updating-shouldcomponentupdate",
   },
