@@ -11,14 +11,14 @@ const lifecycleMethods = [
   },
   {
     name: "componentDidMount",
-    setStateTriggersUpdate: "no",
+    setStateTriggersUpdate: "yes",
     calledFor: "initial render()",
     useFor: "async setup, refs, DOM manipulation",
     receivesContext: "no",
   },
   {
     name: "componentWillReceiveProps",
-    setStateTriggersUpdate: "no",
+    setStateTriggersUpdate: "yes",
     calledFor: "new props",
     useFor: "respond to props before update",
     receivesContext: "yes",
