@@ -1,3 +1,11 @@
-import ReactCheatSheet from "./ReactCheatSheet"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-export default ReactCheatSheet
+require('normalize-css');
+import './base.css';
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
