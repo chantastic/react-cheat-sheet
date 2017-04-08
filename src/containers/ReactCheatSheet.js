@@ -1,19 +1,31 @@
-import React, {
+import {
   Children,
   Component,
-  PropTypes
-} from "react"
+} from 'react';
+import PropTypes from 'prop-types';
 
-import filter from "lodash.filter"
-import includes from "lodash.includes"
-import without from "lodash.without"
+const {
+  arrayOf,
+  object,
+  shape,
+  string,
+} = PropTypes;
 
-const filterByCategory = (_data, categories = []) =>
-  (categories.length)
-    ? filter(_data, ({category}) => includes(categories, category))
-    : _data
+import { filter, without } from 'lodash';
+import filterByCategory from '../helpers/filterByCategory';
 
 class ReactCheatSheet extends Component {
+
+  static propTypes = {
+    categories: arrayOf(
+      shape({
+        key: string.isRequired,
+        name: string.isRequired,
+      })
+    ),
+    data: arrayOf(object).isRequired,
+  }
+
   constructor() {
     super()
 
@@ -24,6 +36,7 @@ class ReactCheatSheet extends Component {
   }
 
   render () {
+
     const {
       children,
       data,
@@ -54,21 +67,4 @@ class ReactCheatSheet extends Component {
   }
 }
 
-const {
-  arrayOf,
-  object,
-  shape,
-  string,
-} = PropTypes
-
-ReactCheatSheet.propTypes = {
-  categories: arrayOf(
-    shape({
-      key: string.isRequired,
-      name: string.isRequired,
-    })
-  ),
-  data: arrayOf(object).isRequired,
-}
-
-export default ReactCheatSheet
+export default ReactCheatSheet;
