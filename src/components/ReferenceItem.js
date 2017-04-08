@@ -38,6 +38,7 @@ const DocsLink = styled.a`
 
 const Example = styled.pre`
   padding: 1rem;
+  clear: both;
   margin: 1rem 0;
   border-radius: 2px;
   background-color: #212529;

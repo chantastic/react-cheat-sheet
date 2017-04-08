@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { union } from 'lodash';
+import { Link as UnstyledLink } from 'react-router-dom';
 
-const Button = styled.label`
+const Button = styled.span`
   margin-right: .5rem;
   margin-top: .5rem;
   border-radius: 2px;
@@ -21,6 +23,10 @@ const Button = styled.label`
   outline: none;
 `;
 
+const Link = styled(UnstyledLink)`
+  outline: none;
+`;
+
 const Label = styled.span`
   color: ${props => props.active ? '#212529' : '#fff'};
 `;
@@ -36,6 +42,22 @@ class CategoryFilter extends Component {
     active: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired,
     onToggle: PropTypes.func.isRequired,
+    categories: PropTypes.array.isRequired,
+  }
+
+  transformCategoryName = (name) => {
+    return name.replace(/[^a-z0-9]/gi,"").toUpperCase();
+  }
+
+  createFilterQuery = (categories = []) => {
+    return {
+      pathname: '/filter',
+      search: `?categories=${union(this.props.categories.map((category) => {
+        return this.transformCategoryName(category);
+      }), categories.map((category) => {
+        return this.transformCategoryName(category);
+      })).join(',')}`
+    }
   }
 
   render () {
@@ -47,15 +69,32 @@ class CategoryFilter extends Component {
     } = this.props;
 
     return (
-      <Button active={active}>
+      <Link
+        to={this.createFilterQuery([ name ])}
+        onClick={e => onToggle(this.transformCategoryName(name), !active)}
+        replace
+      >
+        <Button active={active}>
         <Label active={active}>{name + " "}</Label>
         <CheckBox
           checked={active}
-          onChange={e => onToggle(name.replace(/[^a-z0-9]/gi,"").toUpperCase(), e.target.checked)}
           type="checkbox"
+          readOnly
         />
-      </Button>
-    )
+        </Button>
+      </Link>
+    );
+
+    // return (
+    //   <Button active={active}>
+    //     <Label active={active}>{name + " "}</Label>
+    //     <CheckBox
+    //       checked={active}
+    //       onChange={e => onToggle(name.replace(/[^a-z0-9]/gi,"").toUpperCase(), e.target.checked)}
+    //       type="checkbox"
+    //     />
+    //   </Button>
+    // )
   }
 
 }
