@@ -38,13 +38,13 @@ const Greeting = (props) => (
 function Greeting (props, context) {
   return <div>{context.greeting} {props.name}.</div>;
 }
-Greeting.contextTypes = { greeting: React.PropTypes.string };
+Greeting.contextTypes = { greeting: PropTypes.string };
 
 // ES2015
 const Greeting = (props, context) => (
   <div>Hello {props.name}</div>
 );
-Greeting.contextTypes = { greeting: React.PropTypes.string };`,
+Greeting.contextTypes = { greeting: PropTypes.string };`,
     reference: "https://facebook.github.io/react/docs/context.html#referencing-context-in-stateless-functional-components",
     notSupported: "ref",
     module: "react",

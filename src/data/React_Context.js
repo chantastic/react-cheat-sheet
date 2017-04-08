@@ -5,7 +5,7 @@ const data = [
     name: "Context (example)",
     example: `var Cowboy = React.createClass({
   childContextTypes: {
-    greeting: React.PropTypes.string
+    greeting: PropTypes.string
   },
 
   getChildContext: function () {
@@ -19,7 +19,7 @@ const data = [
 
 var Greeting = React.createClass({
   contextTypes: {
-    greeting: React.PropTypes.string
+    greeting: PropTypes.string
   },
 
   render: function () {
@@ -40,7 +40,7 @@ var Greeting = React.createClass({
     example: `// add to the context-aware component
 
 contextTypes: {
-  color: React.PropTypes.string
+  color: PropTypes.string
 },`,
     reference: "https://facebook.github.io/react/docs/context.html",
   },
@@ -49,7 +49,7 @@ contextTypes: {
     example: `// add to the context provider
 
 childContextTypes: {
-  color: React.PropTypes.string
+  color: PropTypes.string
 },`,
     reference: "https://facebook.github.io/react/docs/context.html",
   },

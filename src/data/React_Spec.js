@@ -27,7 +27,7 @@ const data = [
   {
     name: "propTypes",
     example: `propTypes: {
-  myProp: React.PropTypes.bool
+  myProp: PropTypes.bool
 }`,
     reference: "http://facebook.github.io/react/docs/component-specs.html#proptypes",
     notSupported: "React.Component",
