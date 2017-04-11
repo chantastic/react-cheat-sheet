@@ -3,27 +3,31 @@ import extendWithDefaults from "../assignSharedDefaults";
 const data = [
   {
     name: "Context (example)",
-    example: `var Cowboy = React.createClass({
+    example: `// requires 'prop-types' library
+
+import { string } from "prop-types";
+
+class Cowboy extends React.Component {
   childContextTypes: {
-    greeting: PropTypes.string
-  },
-
-  getChildContext: function () {
-    return { greeting: "Howdy"};
-  },
-
-  render: function () {
-    return <div>{this.props.children}</div>
+    salutation: string
   }
-});
+
+  getChildContext() {
+    return { salutation: "Howdy" };
+  }
+
+  render() {
+    return React.Children.only(this.props.children);
+  }
+}
 
 var Greeting = React.createClass({
   contextTypes: {
-    greeting: PropTypes.string
+    salutation: string
   },
 
   render: function () {
-    return <div>{this.context.greeting} {this.props.name}.</div>
+    return <div>{this.context.salutation} {this.props.name}.</div>
   }
 });
 
@@ -38,6 +42,7 @@ var Greeting = React.createClass({
   {
     name: "contextTypes",
     example: `// add to the context-aware component
+// requires 'prop-types' library
 
 contextTypes: {
   color: PropTypes.string
@@ -47,6 +52,7 @@ contextTypes: {
   {
     name: "childContextTypes",
     example: `// add to the context provider
+// requires 'prop-types' library
 
 childContextTypes: {
   color: PropTypes.string
@@ -57,7 +63,7 @@ childContextTypes: {
     name: "getChildContext",
     example: `// add to the context provider
 
-getChildContext: function() {
+getChildContext() {
   return {color: "purple"};
 }`,
     reference: "https://facebook.github.io/react/docs/context.html",
