@@ -87,55 +87,63 @@ const data = [
   },
   {
     name: "componentWillMount",
-    example: `componentWillMount: function () {
-  // invoked once, before initial 'render'
+    example: `componentWillMount() {
+  // invoked once.
+  // fires before initial 'render'
 }`,
-    reference: "http://facebook.github.io/react/docs/component-specs.html#mounting-componentwillmount",
+    reference: "https://facebook.github.io/react/docs/react-component.html#componentwillmount",
   },
   {
     name: "componentDidMount",
-    example: `componentDidMount: function () {
-  // invoked once (client-only), after initial 'render'
-  // good for AJAX, setTimeout, setInterval
+    example: `componentDidMount() {
+  // good for AJAX: fetch, ajax, or subscriptions.
+
+  // invoked once (client-side only).
+  // fires before initial 'render'
 }`,
-    reference: "http://facebook.github.io/react/docs/component-specs.html#mounting-componentdidmount",
+    reference: "https://facebook.github.io/react/docs/react-component.html#componentdidmount",
   },
   {
     name: "componentWillReceiveProps",
-    example: `componentWillReceiveProps: function (nextProps) {
-  // invoked when component is receiving props, not for initial 'render'
+    example: `componentWillReceiveProps(nextProps) {
+  // invoked every time component is recieves new props.
+  // does not before initial 'render'
 }`,
-    reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentwillreceiveprops",
+    reference: "https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops",
   },
   {
     name: "shouldComponentUpdate",
-    example: `shouldComponentUpdate: function (nextProps, nextState) {
-  // invoked before rendering with new props or new state, not for initial 'render'
+    example: `shouldComponentUpdate(nextProps, nextState) {
+  // invoked before every update (new props or state).
+  // does not fire before initial 'render'.
 }`,
-    reference: "http://facebook.github.io/react/docs/component-specs.html#updating-shouldcomponentupdate",
+    reference: "https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate",
   },
   {
     name: "componentWillUpdate",
-    example: `componentWillUpdate: function (nextProps, nextState) {
-  // invoked immediately before rendering with new props or state, not for initial 'render'
-  // see componentWillReceiveProps if you need to call setState
+    example: `componentWillUpdate(nextProps, nextState) {
+  // invoked immediately before update (new props or state).
+  // does not fire before initial 'render'.
+
+  // (see componentWillReceiveProps if you need to call setState)
 }`,
-    reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentwillupdate",
+    reference: "https://facebook.github.io/react/docs/react-component.html#componentwillupdate",
     notSupported: "this.setState",
   },
   {
     name: "componentDidUpdate",
-    example: `componentDidUpdate: function (prevProps, prevState) {
-  // invoked immediately after DOM updates, not for initial 'render'
+    example: `componentDidUpdate(prevProps, prevState) {
+  // invoked immediately after DOM updates
+  // does not fire after initial 'render'
 }`,
-    reference: "http://facebook.github.io/react/docs/component-specs.html#updating-componentdidupdate",
+    reference: "https://facebook.github.io/react/docs/react-component.html#componentdidupdate",
   },
   {
     name: "componentWillUnmount",
-    example: `componentWillUnmount: function () {
-  // invoked immediately before a component is unmounted from the DOM
+    example: `componentWillUnmount() {
+  // invoked immediately before a component is unmounted.
 }`,
-    reference: "http://facebook.github.io/react/docs/component-specs.html#unmounting-componentwillunmount",
+    reference: "https://facebook.github.io/react/docs/react-component.html#componentwillunmount",
   },
 ];
 
