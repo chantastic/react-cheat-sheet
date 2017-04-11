@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import { string, node } from "prop-types";
+import styled from "styled-components";
 
 const Container = styled.article`
   padding-top: 1rem;
@@ -61,69 +61,60 @@ const Chart = styled.div`
   margin: 1rem 0;
 `;
 
-const ReferenceItem = ({
-  name,
-  module,
-  reference: href,
-  example,
-  chart,
-  playground,
-  notSupported,
-}) => (
+const ReferenceItem = (
+  {
+    name,
+    module,
+    reference: href,
+    example,
+    chart,
+    playground,
+    notSupported,
+  }
+) => (
   <Container>
     <Title>{name}</Title>
 
     <Details>
       <DetailsRight>
-        {(playground) &&
-          <DocsLink
-            href={playground}
-            target="_blank"
-            >
-              example
-            </DocsLink>
-          }
-          {(href) &&
-            <DocsLink
-              href={href}
-              target="_blank"
-              >
-                docs
-              </DocsLink>
-            }
+        {playground &&
+          <DocsLink href={playground} target="_blank">
+            example
+          </DocsLink>}
+        {href &&
+          <DocsLink href={href} target="_blank">
+            docs
+          </DocsLink>}
       </DetailsRight>
       <Module>{module}</Module>
     </Details>
 
-    {(example) &&
+    {example &&
       <Example>
         <Code>{example}</Code>
-      </Example>
-    }
+      </Example>}
 
-    {(chart) &&
+    {chart &&
       <Chart>
         {chart}
-      </Chart>
-    }
+      </Chart>}
 
-    {(notSupported) && (
+    {notSupported &&
       <NotSupported>
         <strong>{`\u2716 ${notSupported}`}</strong>
-      </NotSupported>
-    )}
+      </NotSupported>}
   </Container>
 );
 
 ReferenceItem.propTypes = {
-  example: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  example: string.isRequired,
+  name: string.isRequired,
 
-  chart: PropTypes.node,
-  module: PropTypes.string,
-  notSupported: PropTypes.string,
-  playground: PropTypes.string,
-  reference: PropTypes.string,
-}
+  chart: node,
+  module: string,
+  notSupported: string,
+  playground: string,
+  reference: string,
+};
 
 export default ReferenceItem;

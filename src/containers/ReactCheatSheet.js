@@ -1,21 +1,10 @@
-import {
-  Children,
-  Component,
-} from 'react';
-import PropTypes from 'prop-types';
+import { Children, Component } from "react";
+import { arrayOf, object, shape, string } from "prop-types";
 
-const {
-  arrayOf,
-  object,
-  shape,
-  string,
-} = PropTypes;
-
-import { filter, without } from 'lodash';
-import filterByCategory from '../helpers/filterByCategory';
+import { filter, without } from "lodash";
+import filterByCategory from "../helpers/filterByCategory";
 
 class ReactCheatSheet extends Component {
-
   static propTypes = {
     categories: arrayOf(
       shape({
@@ -24,46 +13,44 @@ class ReactCheatSheet extends Component {
       })
     ),
     data: arrayOf(object).isRequired,
-  }
+  };
 
   constructor() {
-    super()
+    super();
 
     this.state = {
       predicate: "",
       categories: [],
-    }
+    };
   }
 
-  render () {
-
+  render() {
     const {
       children,
       data,
-    } = this.props
+    } = this.props;
 
     const {
       categories,
       predicate,
-    } = this.state
+    } = this.state;
 
     return Children.only(
       children({
         selectedCategories: categories,
-        filteredResults: filter(
-          filterByCategory(data, categories),
-          ({name}) => name.match(new RegExp(predicate, "i"))
-        ),
-        handleCategoryChange: (category, checked) => (
+        filteredResults: filter(filterByCategory(data, categories), ({
+          name,
+        }) => name.match(new RegExp(predicate, "i"))),
+        handleCategoryChange: (category, checked) =>
           this.setState({
             categories: checked
               ? categories.concat([category])
-              : without(categories, category)
-          })),
+              : without(categories, category),
+          }),
         searchPredicate: predicate,
-        handleSearchChange: newValue => this.setState({predicate: newValue}),
+        handleSearchChange: newValue => this.setState({ predicate: newValue }),
       })
-    )
+    );
   }
 }
 
