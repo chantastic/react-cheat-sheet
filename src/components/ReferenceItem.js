@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, node } from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.article`
@@ -116,14 +116,14 @@ const ReferenceItem = ({
 );
 
 ReferenceItem.propTypes = {
-  example: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
+  example: string.isRequired,
+  name: string.isRequired,
 
-  chart: PropTypes.node,
-  module: PropTypes.string,
-  notSupported: PropTypes.string,
-  playground: PropTypes.string,
-  reference: PropTypes.string,
+  chart: node,
+  module: string,
+  notSupported: string,
+  playground: string,
+  reference: string,
 }
 
 export default ReferenceItem;

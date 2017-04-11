@@ -2,14 +2,12 @@ import {
   Children,
   Component,
 } from 'react';
-import PropTypes from 'prop-types';
-
-const {
+import {
   arrayOf,
   object,
   shape,
   string,
-} = PropTypes;
+} from 'prop-types';
 
 import { filter, without } from 'lodash';
 import filterByCategory from '../helpers/filterByCategory';
