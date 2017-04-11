@@ -23,7 +23,7 @@ yarn start
 | `start` | starts a webpacks sever at [`localhost:3000`](localhost:3000) |
 | `test` | runs tests using [Jest](https://facebook.github.io/jest/) |
 | `prettier`| reformats all code using [prettier](https://github.com/prettier/prettier) |
-| `add-contribs` | adds a contributer to [all-contributorsrc](./all-contributersrc) |
+| `add-contribs` | adds a contributer to [all-contributorsrc](./.all-contributorsrc) |
 | `generate-contribs` | generates a list of contributors on the [README](./README.md) |
 
 ### Minor changes
