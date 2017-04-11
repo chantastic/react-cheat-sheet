@@ -1,0 +1,60 @@
+{
+  "projectName": "react-cheat-sheet",
+  "projectOwner": "Michael Chan",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 64,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "chantastic",
+      "name": "Michael Chan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/658360?v=3",
+      "profile": "http://twitter.com/chantastic",
+      "contributions": []
+    },
+    {
+      "login": "jonstuebe",
+      "name": "Jon Stuebe",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/156722?v=3",
+      "profile": "http://jonstuebe.com",
+      "contributions": []
+    },
+    {
+      "login": "tedpennings",
+      "name": "Ted Pennings",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/310323?v=3",
+      "profile": "http://ted.pennin.gs/",
+      "contributions": []
+    },
+    {
+      "login": "bensie",
+      "name": "James Miller",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4595?v=3",
+      "profile": "http://www.bensie.com",
+      "contributions": []
+    },
+    {
+      "login": "ezhlobo",
+      "name": "Eugene Zhlobo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/974552?v=3",
+      "profile": "https://github.com/ezhlobo",
+      "contributions": []
+    },
+    {
+      "login": "gaearon",
+      "name": "Dan Abramov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/810438?v=3",
+      "profile": "http://twitter.com/dan_abramov",
+      "contributions": []
+    },
+    {
+      "login": "albburtsev",
+      "name": "Alexander Burtsev",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/576455?v=3",
+      "profile": "http://burtsev.me",
+      "contributions": []
+    }
+  ]
+}

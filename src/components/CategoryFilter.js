@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { union } from 'lodash';
-import { Link as UnstyledLink } from 'react-router-dom';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { concat, uniq, remove } from "lodash";
+import { withRouter } from "react-router-dom";
 
 const Button = styled.span`
   margin-right: .5rem;
   margin-top: .5rem;
   border-radius: 2px;
-  background-color: ${props => props.active ? '#ffd43b' : '#adb5bd'};
+  background-color: ${props => props.active ? "#ffd43b" : "#adb5bd"};
   color: #fff;
   font-size: 1em;
   line-height: 2em;
@@ -23,45 +23,45 @@ const Button = styled.span`
   outline: none;
 `;
 
-const Link = styled(UnstyledLink)`
+const Link = styled.label`
   outline: none;
 `;
 
 const Label = styled.span`
-  color: ${props => props.active ? '#212529' : '#fff'};
+  color: ${props => props.active ? "#212529" : "#fff"};
 `;
 
 const CheckBox = styled.input`
   position: relative;
   top: -2px;
+  outline: none;
 `;
 
 class CategoryFilter extends Component {
-
   static propTypes = {
     active: PropTypes.bool.isRequired,
     name: PropTypes.string.isRequired,
     onToggle: PropTypes.func.isRequired,
     categories: PropTypes.array.isRequired,
-  }
+  };
 
-  transformCategoryName = (name) => {
-    return name.replace(/[^a-z0-9]/gi,"").toUpperCase();
-  }
+  transformCategoryName = name => {
+    return name.replace(/[^a-z0-9]/gi, "").toUpperCase();
+  };
 
-  createFilterQuery = (categories = []) => {
+  createFilterQuery = (active, category) => {
+
+    const categories = (active) ? uniq(concat(this.props.categories, category)) : remove(this.props.categories, (c) => {
+      return c === category;
+    });
+
     return {
-      pathname: '/filter',
-      search: `?categories=${union(this.props.categories.map((category) => {
-        return this.transformCategoryName(category);
-      }), categories.map((category) => {
-        return this.transformCategoryName(category);
-      })).join(',')}`
-    }
-  }
+      pathname: "/filter",
+      search: `?categories=${categories.join(",")}`,
+    };
+  };
 
-  render () {
-
+  render() {
     const {
       active,
       name,
@@ -69,34 +69,18 @@ class CategoryFilter extends Component {
     } = this.props;
 
     return (
-      <Link
-        to={this.createFilterQuery([ name ])}
-        onClick={e => onToggle(this.transformCategoryName(name), !active)}
-        replace
-      >
+      <Link>
         <Button active={active}>
-        <Label active={active}>{name + " "}</Label>
-        <CheckBox
-          checked={active}
-          type="checkbox"
-          readOnly
-        />
+          <Label active={active}>{name + " "}</Label>
+          <CheckBox
+            checked={active}
+            type="checkbox"
+            onChange={e => onToggle(this.transformCategoryName(name), !active)}
+          />
         </Button>
       </Link>
     );
-
-    // return (
-    //   <Button active={active}>
-    //     <Label active={active}>{name + " "}</Label>
-    //     <CheckBox
-    //       checked={active}
-    //       onChange={e => onToggle(name.replace(/[^a-z0-9]/gi,"").toUpperCase(), e.target.checked)}
-    //       type="checkbox"
-    //     />
-    //   </Button>
-    // )
   }
-
 }
 
-export default CategoryFilter;
+export default withRouter(CategoryFilter);

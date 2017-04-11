@@ -12,7 +12,6 @@ TestUtils.Simulate.click(subject);`,
     playground: "http://jsbin.com/foxini/edit?html,js,console",
   },
 
-
   {
     name: "Simulate (with data)",
     example: `function handleChange (event) {
@@ -28,7 +27,6 @@ TestUtils.Simulate.change(subject, { key: "Enter" });`,
     playground: "http://jsbin.com/wiqile/edit?html,js,console",
   },
 
-
   {
     name: "renderIntoDocument",
     example: `var componentTree = TestUtils.renderIntoDocument(<div><span /></div>);
@@ -38,13 +36,11 @@ console.log('You mounted a component tree with a ' + componentTree.tagName + ' a
     playground: "http://jsbin.com/buzigo/edit?html,js,console",
   },
 
-
   {
     name: "mockComponent",
     example: `// no example`,
     reference: "https://facebook.github.io/react/docs/test-utils.html#mockcomponent",
   },
-
 
   {
     name: "isElement",
@@ -52,7 +48,6 @@ console.log('You mounted a component tree with a ' + componentTree.tagName + ' a
     reference: "https://facebook.github.io/react/docs/test-utils.html#iselement",
     playground: "http://jsbin.com/jiyune/edit?html,js,console",
   },
-
 
   {
     name: "isElementOfType",
@@ -69,7 +64,6 @@ expect(
     playground: "http://jsbin.com/pasohi/edit?html,js,console",
   },
 
-
   {
     name: "isDOMComponent",
     example: `var subject = TestUtils.renderIntoDocument(<div />);
@@ -80,7 +74,6 @@ expect(
     reference: "https://facebook.github.io/react/docs/test-utils.html#isdomcomponent",
     playground: "http://jsbin.com/fadoka/edit?html,js,console",
   },
-
 
   {
     name: "isCompositeComponent",
@@ -94,7 +87,6 @@ expect(
     reference: "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponent",
     playground: "http://jsbin.com/vocofa/edit?html,js,console",
   },
-
 
   {
     name: "isCompositeComponentWithType",
@@ -118,7 +110,6 @@ expect(
     playground: "http://jsbin.com/kegoqe/edit?html,js,console",
   },
 
-
   {
     name: "findAllInRenderedTree",
     example: `var CompositeComponent = React.createClass({
@@ -141,7 +132,6 @@ expect(allDivs.length).toBe(2);`,
     reference: "https://facebook.github.io/react/docs/test-utils.html#findallinrenderedtree",
     playground: "http://jsbin.com/dozevu/edit?html,js,console",
   },
-
 
   {
     name: "scryRenderedDOMComponentsWithClass",
@@ -172,7 +162,6 @@ expect(allDOMComponentsWithMatchingClass.length).toBe(2);`,
     playground: "http://jsbin.com/kujeda/edit?html,js,console",
   },
 
-
   {
     name: "findRenderedDOMComponentWithClass",
     example: `var MyCompositeComponent = React.createClass({
@@ -201,7 +190,6 @@ expect(singleComponentWithMatchedClass.className).toBe('nested');`,
     playground: "http://jsbin.com/kuteve/edit?html,js,console",
   },
 
-
   {
     name: "scryRenderedDOMComponentsWithTag",
     example: `var CompositeComponent = React.createClass({
@@ -224,7 +212,6 @@ expect(allDivs.length).toBe(2);`,
     reference: "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithtag",
     playground: "http://jsbin.com/hehede/edit?html,js,console",
   },
-
 
   {
     name: "findRenderedDOMComponentWithTag",
@@ -253,7 +240,6 @@ expect(onlyDiv.tagName).toBe('DIV');`,
     reference: "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithtag",
     playground: "http://jsbin.com/puhule/edit?html,js,console",
   },
-
 
   {
     name: "scryRenderedComponentsWithType",
@@ -290,7 +276,6 @@ expect(allTargetComponents.length).toBe(2);`,
     playground: "http://jsbin.com/lesowo/edit?html,js,console",
   },
 
-
   {
     name: "findRenderedComponentWithType",
     example: `var MyCompositeComponent = React.createClass({
@@ -320,7 +305,6 @@ expect(TestUtils.isCompositeComponentWithType(
     playground: "http://jsbin.com/wosane/edit?html,js,console",
   },
 
-
   {
     name: "Shallow rendering (basics)",
     example: `// 1. create a renderer
@@ -338,7 +322,6 @@ expect(subject.type).toBe('div');`,
     playground: "http://jsbin.com/raloqu/edit?html,js,console",
   },
 
-
   {
     name: "Shallow rendering (type example)",
     example: `var renderer = TestUtils.createRenderer();
@@ -352,7 +335,6 @@ expect(subject.type).toBe('div');  // => true`,
     playground: "http://jsbin.com/xojudi/edit?html,js,console",
   },
 
-
   {
     name: "Shallow rendering (props example)",
     example: `var renderer = TestUtils.createRenderer();
@@ -365,7 +347,6 @@ expect(subject.props.className).toBe('my-component'); // => true`,
     reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/najubu/edit?html,js,console",
   },
-
 
   {
     name: "Shallow rendering (child-count example)",
@@ -383,7 +364,6 @@ expect(childCount).toBe(3); // => true`,
     reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/dayomi/edit?html,js,console",
   },
-
 
   {
     name: "Shallow rendering (child-equality example)",
@@ -406,7 +386,6 @@ expect(subject.props.children).toEqual([
     playground: "http://jsbin.com/sexeve/edit?html,js,console",
   },
 
-
   {
     name: "Shallow rendering (events example)",
     example: `var renderer = TestUtils.createRenderer();
@@ -421,7 +400,6 @@ expect(spy.call.length).toEqual(1); // => true`,
     reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/quzeya/edit?html,js,console",
   },
-
 
   {
     name: "Shallow rendering (state changes example)",

@@ -13,6 +13,7 @@
     "url": "https://github.com/chantastic/react-cheat-sheet/issues"
   },
   "devDependencies": {
+    "all-contributors-cli": "^4.1.0",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "gh-pages": "^0.12.0",
     "lodash": "^4.17.4",
     "normalize-css": "^2.3.1",
+    "prettier": "^0.22.0",
     "prop-types": "^15.5.4",
     "query-string": "^4.3.2",
     "react": "^15.5.3",
@@ -33,6 +35,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "node_modules/.bin/gh-pages -d build"
+    "prettier": "prettier --trailing-comma es5 --write \"src/**/*.js\"",
+    "deploy": "node_modules/.bin/gh-pages -d build",
+    "add-contribs": "all-contributors add",
+    "generate-contribs": "all-contributors generate"
   }
 }
