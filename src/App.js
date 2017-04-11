@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { HashRouter as Router } from "react-router-dom";
 
 import { includes } from "lodash";
 
@@ -50,59 +51,65 @@ const Contributor = styled.a`
 class App extends Component {
   render() {
     return (
-      <AppWrapper>
-        <AppPadding>
-          <MainHeading>
-            React Cheat Sheet{" "}
-            <MainHeadingVersion>v15</MainHeadingVersion>
-          </MainHeading>
+      <Router>
+        <AppWrapper>
+          <AppPadding>
+            <MainHeading>
+              React Cheat Sheet{" "}
+              <MainHeadingVersion>v15</MainHeadingVersion>
+            </MainHeading>
 
-          <ReactCheatSheet categories={categories} data={data}>
-            {(
-              {
-                selectedCategories,
-                filteredResults,
-                handleCategoryChange,
-                searchPredicate,
-                handleSearchChange,
-              }
-            ) => (
-              <div className="my-2">
-                <SearchInput
-                  searchPredicate={searchPredicate}
-                  handleSearchChange={handleSearchChange}
-                />
+            <ReactCheatSheet categories={categories} data={data}>
+              {(
+                {
+                  selectedCategories,
+                  filteredResults,
+                  handleCategoryChange,
+                  searchPredicate,
+                  handleSearchChange,
+                }
+              ) => (
+                <div className="my-2">
+                  <SearchInput
+                    searchPredicate={searchPredicate}
+                    handleSearchChange={handleSearchChange}
+                  />
 
-                <div>
-                  {categories.map(({ name, key }, i) => (
-                    <CategoryFilter
-                      active={includes(selectedCategories, key)}
-                      key={i}
-                      name={name}
-                      onToggle={(category, checked) =>
-                        handleCategoryChange(category, checked)}
-                    />
-                  ))}
+                  <div>
+                    {categories.map(({ name, key }, i) => (
+                      <CategoryFilter
+                        active={includes(selectedCategories, key)}
+                        key={i}
+                        name={name}
+                        categories={selectedCategories}
+                        onToggle={(category, checked) =>
+                          handleCategoryChange(category, checked)}
+                      />
+                    ))}
+                  </div>
+
+                  <section>
+                    {filteredResults.length
+                      ? filteredResults.map((item, i) => (
+                          <ReferenceItem key={i} {...item} />
+                        ))
+                      : <NoResults />}
+                  </section>
                 </div>
+              )}
+            </ReactCheatSheet>
 
-                <section>
-                  {filteredResults.length
-                    ? filteredResults.map((item, i) => (
-                        <ReferenceItem key={i} {...item} />
-                      ))
-                    : <NoResults />}
-                </section>
-              </div>
-            )}
-          </ReactCheatSheet>
-
-          <Footer>
-            <Contributor href="https://twitter.com/chantastic" target="_blank">
-              ❤ @chantastic
-            </Contributor>
-          </Footer>
-        </AppPadding>
-      </AppWrapper>
+            <Footer>
+              <Contributor
+                href="https://twitter.com/chantastic"
+                target="_blank"
+              >
+                ❤ @chantastic
+              </Contributor>
+            </Footer>
+          </AppPadding>
+        </AppWrapper>
+      </Router>
     );
   }
 }

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
-import { bool, string, func } from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { concat, uniq, remove } from "lodash";
+import { withRouter } from "react-router-dom";
 
-const Button = styled.label`
+const Button = styled.span`
   margin-right: .5rem;
   margin-top: .5rem;
   border-radius: 2px;
@@ -21,6 +23,10 @@ const Button = styled.label`
   outline: none;
 `;
 
+const Link = styled.label`
+  outline: none;
+`;
+
 const Label = styled.span`
   color: ${props => props.active ? "#212529" : "#fff"};
 `;
@@ -28,13 +34,31 @@ const Label = styled.span`
 const CheckBox = styled.input`
   position: relative;
   top: -2px;
+  outline: none;
 `;
 
 class CategoryFilter extends Component {
   static propTypes = {
-    active: bool.isRequired,
-    name: string.isRequired,
-    onToggle: func.isRequired,
+    active: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    onToggle: PropTypes.func.isRequired,
+    categories: PropTypes.array.isRequired,
+  };
+
+  transformCategoryName = name => {
+    return name.replace(/[^a-z0-9]/gi, "").toUpperCase();
+  };
+
+  createFilterQuery = (active, category) => {
+
+    const categories = (active) ? uniq(concat(this.props.categories, category)) : remove(this.props.categories, (c) => {
+      return c === category;
+    });
+
+    return {
+      pathname: "/filter",
+      search: `?categories=${categories.join(",")}`,
+    };
   };
 
   render() {
@@ -45,20 +69,18 @@ class CategoryFilter extends Component {
     } = this.props;
 
     return (
-      <Button active={active}>
-        <Label active={active}>{name + " "}</Label>
-        <CheckBox
-          checked={active}
-          onChange={e =>
-            onToggle(
-              name.replace(/[^a-z0-9]/gi, "").toUpperCase(),
-              e.target.checked
-            )}
-          type="checkbox"
-        />
-      </Button>
+      <Link>
+        <Button active={active}>
+          <Label active={active}>{name + " "}</Label>
+          <CheckBox
+            checked={active}
+            type="checkbox"
+            onChange={e => onToggle(this.transformCategoryName(name), !active)}
+          />
+        </Button>
+      </Link>
     );
   }
 }
 
-export default CategoryFilter;
+export default withRouter(CategoryFilter);

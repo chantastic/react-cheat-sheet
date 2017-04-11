@@ -23,8 +23,10 @@
     "normalize-css": "^2.3.1",
     "prettier": "^0.22.0",
     "prop-types": "^15.5.4",
+    "query-string": "^4.3.2",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
+    "react-router-dom": "^4.0.0",
     "styled-components": "^1.4.4"
   },
   "scripts": {
