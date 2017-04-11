@@ -2,51 +2,61 @@ import extendWithDefaults from "../assignSharedDefaults";
 
 const data = [
   {
-    name: "ref (callback)",
-    example: `// Accessed as this.myInput
-<input ref={(ref) => this.myInput = ref} />
-`,
-    reference: "https://facebook.github.io/react/docs/more-about-refs.html#the-ref-callback-attribute",
-    notSupported: "Stateless function syntax",
-  },
-  {
-    name: "ref (string)",
-    example: `// Accessed as this.refs.myInput
-<input ref="myInput" />
-`,
-    reference: "https://facebook.github.io/react/docs/more-about-refs.html#the-ref-string-attribute",
-    notSupported: "Stateless function syntax",
-  },
-  {
-    name: "Stateless function syntax",
-    example: `// ES5
-function Greeting (props) {
-  return <div>Hello {props.name}</div>;
-}
+    name: "ref (class component)",
+    example: `class AutoFocusTextInput extends React.Component {
+  componentDidMount() {
+    this.textInput.focus();
+  }
 
-// ES2015
-const Greeting = (props) => (
-  <div>Hello {props.name}</div>
-);`,
+  render() {
+    return (
+      <CustomTextInput
+        ref={(input) => { this.textInput = input; }} />
+    );
+  }
+}`,
+    reference: "https://facebook.github.io/react/docs/refs-and-the-dom.html#adding-a-ref-to-a-class-component",
+  },
+  {
+    name: "ref (functional component)",
+    example: `function CustomTextInput(props) {
+  let textInput = null;
+
+  function handleClick() {
+    textInput.focus();
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        ref={(input) => { textInput = input; }} />
+      <input
+        type="button"
+        value="Focus the text input"
+        onClick={handleClick}
+      />
+    </div>
+  );  
+}`,
+    reference: "https://facebook.github.io/react/docs/refs-and-the-dom.html#refs-and-functional-components",
+  },
+  {
+    name: "functional component",
+    example: `const Greeting = props => <div>Hello {props.name}</div>;`,
     reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
-    notSupported: "ref",
     module: "react",
   },
   {
-    name: "Stateless function syntax (with context)",
-    example: `// ES5
-function Greeting (props, context) {
-  return <div>{context.greeting} {props.name}.</div>;
-}
-Greeting.contextTypes = { greeting: PropTypes.string };
+    name: "functional component (with context)",
+    example: `import { string } from "prop-types";
 
-// ES2015
 const Greeting = (props, context) => (
-  <div>Hello {props.name}</div>
+  <div>{context.salutation} {props.name}</div>
 );
-Greeting.contextTypes = { greeting: PropTypes.string };`,
-    reference: "https://facebook.github.io/react/docs/context.html#referencing-context-in-stateless-functional-components",
-    notSupported: "ref",
+
+Greeting.contextTypes = { salutation: string };`,
+    reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
     module: "react",
   },
 ];
