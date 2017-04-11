@@ -87,6 +87,7 @@ class App extends Component {
               margin: "1rem 0",
             })}
           >
+            A free{' '}
             <a
               className={cxs({
                 color: "#228ae6",
@@ -95,8 +96,9 @@ class App extends Component {
               rel="noopener"
               target="_blank"
             >
-              ❤ @chantastic
+              learnreact.com
             </a>
+            {' '}resource.
           </footer>
         </div>
       </main>
