@@ -1,28 +1,44 @@
 # React Cheat Sheet
 [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
 
-Hi! Thanks for wanting to contribute. I hope your experience is pretty painless.
-
 ## Contributing
 
 ### Setup
 
-#### Clone the and setup the project
+`react-cheat-sheet` is a pretty standard [create-react-app](https://github.com/facebookincubator/create-react-app) app. If you're fimiliar with a CRA app, everything should make sense.
 
-    git clone https://github.com/chantastic/react-cheat-sheet.git
-    cd react-cheat-sheet
-    yarn
-    yarn start
+#### Clone, setup, and run the project
+```bash
+git clone https://github.com/chantastic/react-cheat-sheet.git
+cd react-cheat-sheet
+yarn
+yarn start
+```
 
-`start` will setup a webpack server and open your browser to the local url.
+### Yarn scripts
 
-#### PR
+| Command | Description |
+| --- | --- |
+| `start` | starts a webpacks sever at [`localhost:3000`](localhost:3000) |
+| `test` | runs tests using [Jest](https://facebook.github.io/jest/) |
+| `prettier`| reformats all code using [prettier](https://github.com/prettier/prettier) |
+| `add-contribs` | adds a contributer to [all-contributorsrc](./all-contributersrc) |
+| `generate-contribs` | generates a list of contributors on the [README](./README.md) |
 
-If everything looks good, I'll merge it. Once merged, Github will update the page.
+### Minor changes
+Changing an example is easy.
 
-Cheers!
+Find the file with the error and click the Pencil button (`Edit this file`).
+Make your changes and commit in the browser.
+Github will do the rest for you.
+I'll get notified and the change will be fixed on the next deploy.
 
-Chan
+### Major changes
+* Fork
+* Make Change
+* Run `yarn  add-contribs` add yourself as a contributer.
+* Run `yarn  generate-contribs` to generate an updated README.
+* PR back into `chantastic:master`
 
 ## Contributors
 
