@@ -92,6 +92,7 @@ class App extends Component {
                 color: "#228ae6",
               })}
               href="https://twitter.com/chantastic"
+              rel="noopener"
               target="_blank"
             >
               ❤ @chantastic

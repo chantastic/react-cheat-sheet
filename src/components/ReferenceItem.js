@@ -47,6 +47,7 @@ const ReferenceItem = (
               },
             })}
             href={playground}
+            rel="noopener"
             target="_blank"
           >
             example
@@ -60,6 +61,7 @@ const ReferenceItem = (
               },
             })}
             href={href}
+            rel="noopener"
             target="_blank"
           >
             docs
