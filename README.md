@@ -1,5 +1,5 @@
 # React Cheat Sheet
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 Hi! Thanks for wanting to contribute. I hope your experience is pretty painless.
 
@@ -43,8 +43,8 @@ Chan
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars1.githubusercontent.com/u/658360?v=3" width="64px;"/><br /><sub>Michael Chan</sub>](http://twitter.com/chantastic)<br />💬 [🐛](https://github.com/Michael Chan/react-cheat-sheet/issues?q=author%3Achantastic) [💻](https://github.com/Michael Chan/react-cheat-sheet/commits?author=chantastic) 🎨 [📖](https://github.com/Michael Chan/react-cheat-sheet/commits?author=chantastic) 💡 👀 |
-| :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/658360?v=3" width="64px;"/><br /><sub>Michael Chan</sub>](http://twitter.com/chantastic)<br />💬 [🐛](https://github.com/Michael Chan/react-cheat-sheet/issues?q=author%3Achantastic) [💻](https://github.com/Michael Chan/react-cheat-sheet/commits?author=chantastic) 🎨 [📖](https://github.com/Michael Chan/react-cheat-sheet/commits?author=chantastic) 💡 👀 | [<img src="https://avatars3.githubusercontent.com/u/156722?v=3" width="64px;"/><br /><sub>Jon Stuebe</sub>](http://jonstuebe.com)<br />[💻](https://github.com/Michael Chan/react-cheat-sheet/commits?author=jonstuebe) |
+| :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
