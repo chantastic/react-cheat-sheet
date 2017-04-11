@@ -2,47 +2,38 @@ import extendWithDefaults from "../assignSharedDefaults";
 
 const data = [
   {
-    name: "setState",
-    example: `// object usage
-this.setState({someKey: 'a new value'});
+    name: "setState (object)",
+    example: `// good for static values
 
-// function usage
-this.setState(function(previousState, currentProps) {
-  return {counter: previousState.counter + 1};
-});
-
-// both uses take a function as an optional second argument.
-// this function fires after setState
-`,
-    reference: "https://facebook.github.io/react/docs/component-api.html#setstate",
+this.setState({mykey: 'my new value'});`,
+    reference: "https://facebook.github.io/react/docs/react-component.html#setstate",
   },
   {
-    name: "replaceState",
-    example: `// Like setState but replaces state object instead of merging
+    name: "setState (function)",
+    example: `// good for state transitions
 
-// (before)
-// state => { firstName: 'Michael', lastName: 'Chan' }
+this.setState((prevState, props) => {
+  return {count: prevState.count + props.step};
+});`,
+    reference: "https://facebook.github.io/react/docs/react-component.html#setstate",
+  },
+  {
+    name: "setState (optional callback)",
+    example: `// fires after setState
+// prefer componentDidUpdate
 
-this.replaceState({firstName: 'Spazz'});
-
-// (after)
-// this.state => { firstName: 'Spazz' }`,
-    reference: "https://facebook.github.io/react/docs/component-api.html#replacestate",
-    notSupported: "React.Component",
+this.setState(
+  (prevState, props) => ({ count: prevState.count + props.step }),
+  () => console.log(this.state.count)
+);`,
+    reference: "https://facebook.github.io/react/docs/react-component.html#setstate",
   },
   {
     name: "forceUpdate",
-    example: `this.forceUpdate();
+    example: `// forces a re-render; AVOID if possible
 
-// forces component tree to update.
-// AVOID where posible`,
-    reference: "https://facebook.github.io/react/docs/component-api.html#forceupdate",
-  },
-  {
-    name: "isMounted",
-    example: `this.isMounted();`,
-    reference: "https://facebook.github.io/react/docs/component-api.html#ismounted",
-    notSupported: "React.Component",
+this.forceUpdate();`,
+    reference: "https://facebook.github.io/react/docs/react-component.html#forceupdate",
   },
 ];
 
