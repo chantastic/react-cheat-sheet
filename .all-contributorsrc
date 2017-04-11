@@ -1,0 +1,26 @@
+{
+  "projectName": "react-cheat-sheet",
+  "projectOwner": "Michael Chan",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 64,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "chantastic",
+      "name": "Michael Chan",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/658360?v=3",
+      "profile": "http://twitter.com/chantastic",
+      "contributions": [
+        "question",
+        "bug",
+        "code",
+        "design",
+        "doc",
+        "example",
+        "review"
+      ]
+    }
+  ]
+}
