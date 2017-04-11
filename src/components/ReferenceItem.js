@@ -70,7 +70,7 @@ const ReferenceItem = (
       <div
         className={cxs({
           fontWeight: 400,
-          color: "#adb5bd",
+          color: "#6a7884",
         })}
       >
         {module}

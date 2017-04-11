@@ -8,6 +8,10 @@ const SearchInput = (
   }
 ) => (
   <label>
+    <span className={cxs({
+      position: "absolute !important",
+      clip: "rect(1px, 1px, 1px, 1px)"
+    })}>Filter Search</span>
     <input
       autoFocus
       placeholder="Filter by name"

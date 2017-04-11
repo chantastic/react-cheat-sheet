@@ -29,13 +29,11 @@ class CategoryFilter extends Component {
           userSelect: "none",
           outline: "none",
         })}
-        active={active}
       >
         <span
           className={cxs({
             color: active ? "#212529" : "#fff",
           })}
-          active={active}
         >
           {name + " "}
         </span>

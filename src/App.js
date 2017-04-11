@@ -88,7 +88,7 @@ class App extends Component {
             })}
           >
             <a
-              classname={cxs({
+              className={cxs({
                 color: "#228ae6",
               })}
               href="https://twitter.com/chantastic"
