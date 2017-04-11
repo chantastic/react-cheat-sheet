@@ -12,24 +12,14 @@
       "name": "Michael Chan",
       "avatar_url": "https://avatars1.githubusercontent.com/u/658360?v=3",
       "profile": "http://twitter.com/chantastic",
-      "contributions": [
-        "question",
-        "bug",
-        "code",
-        "design",
-        "doc",
-        "example",
-        "review"
-      ]
+      "contributions": []
     },
     {
       "login": "jonstuebe",
       "name": "Jon Stuebe",
       "avatar_url": "https://avatars3.githubusercontent.com/u/156722?v=3",
       "profile": "http://jonstuebe.com",
-      "contributions": [
-        "code"
-      ]
+      "contributions": []
     },
     {
       "login": "tedpennings",
