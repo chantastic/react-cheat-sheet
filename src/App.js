@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styled from "styled-components";
+import cxs from "cxs";
 
 import { includes } from "lodash";
 
@@ -12,50 +12,35 @@ import ReferenceItem from "./components/ReferenceItem";
 import SearchInput from "./components/SearchInput";
 import NoResults from "./components/NoResults";
 
-const AppWrapper = styled.main`
-  font-family: -apple-system,BlinkMacSystemFont,sans-serif;
-  margin: 0 auto;
-  max-width: 720px;
-`;
-
-const AppPadding = styled.div`
-  padding: 1rem;
-`;
-
-const MainHeading = styled.h1`
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-
-  color: #212529;
-  font-weight: 900;
-  font-size: 2em;
-`;
-
-const MainHeadingVersion = styled.small`
-  color: #adb5bd;
-  font-size: .5em;
-`;
-
-const Footer = styled.footer`
-  padding-bottom: 1rem;
-  margin: 1rem 0;
-`;
-
-const Contributor = styled.a`
-  color: #228ae6;
-`;
-
-// end of styles
-
 class App extends Component {
   render() {
     return (
-      <AppWrapper>
-        <AppPadding>
-          <MainHeading>
+      <main
+        className={cxs({
+          fontFamily: "-apple-system,BlinkMacSystemFont,sans-serif",
+          margin: "0 auto",
+          maxWidth: "720px",
+        })}
+      >
+        <div className={cxs({ padding: "1rem" })}>
+          <h1
+            className={cxs({
+              marginBottom: "1rem",
+              color: "#212529",
+              fontWeight: 900,
+              fontSize: "2em",
+            })}
+          >
             React Cheat Sheet{" "}
-            <MainHeadingVersion>v15</MainHeadingVersion>
-          </MainHeading>
+            <small
+              className={cxs({
+                color: "#adb5bd",
+                fontSize: ".5em",
+              })}
+            >
+              v15
+            </small>
+          </h1>
 
           <ReactCheatSheet categories={categories} data={data}>
             {(
@@ -67,7 +52,7 @@ class App extends Component {
                 handleSearchChange,
               }
             ) => (
-              <div className="my-2">
+              <div>
                 <SearchInput
                   searchPredicate={searchPredicate}
                   handleSearchChange={handleSearchChange}
@@ -96,13 +81,24 @@ class App extends Component {
             )}
           </ReactCheatSheet>
 
-          <Footer>
-            <Contributor href="https://twitter.com/chantastic" target="_blank">
+          <footer
+            className={cxs({
+              paddingBottom: "1rem",
+              margin: "1rem 0",
+            })}
+          >
+            <a
+              classname={cxs({
+                color: "#228ae6",
+              })}
+              href="https://twitter.com/chantastic"
+              target="_blank"
+            >
               ❤ @chantastic
-            </Contributor>
-          </Footer>
-        </AppPadding>
-      </AppWrapper>
+            </a>
+          </footer>
+        </div>
+      </main>
     );
   }
 }

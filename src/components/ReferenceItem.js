@@ -1,64 +1,5 @@
 import React from "react";
-import styled from "styled-components";
-
-const Container = styled.article`
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-width: 0;
-  border-bottom-width: 1px;
-  border-style: solid;
-  border-color: #dee2e6;
-`;
-
-const Title = styled.h2`
-  margin: .5rem 0;
-  font-weight: 800;
-`;
-
-const Details = styled.div`
-  margin: .5rem 0;
-`;
-
-const Module = styled.div`
-  font-weight: 400;
-  color: #adb5bd;
-`;
-
-const DetailsRight = styled.div`
-  float: right;
-`;
-
-const DocsLink = styled.a`
-  padding-left: 1rem;
-  &, &:visited {
-    color: #228ae6;
-  }
-`;
-
-const Example = styled.pre`
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 2px;
-  background-color: #212529;
-  color: #fff;
-  position: relative;
-  overflow-x: auto;
-  overflow-y: hidden;
-  white-space: pre;
-`;
-
-const Code = styled.code`
-  color: #e9ecef;
-`;
-
-const NotSupported = styled.span`
-  font-weight: 800;
-  color: #e03131;
-`;
-
-const Chart = styled.div`
-  margin: 1rem 0;
-`;
+import cxs from "cxs";
 
 const ReferenceItem = (
   {
@@ -71,38 +12,111 @@ const ReferenceItem = (
     notSupported,
   }
 ) => (
-  <Container>
-    <Title>{name}</Title>
+  <article
+    className={cxs({
+      paddingTop: "1rem",
+      paddingBottom: "1rem",
+      borderWidth: 0,
+      borderBottomWidth: "1px",
+      borderStyle: "solid",
+      borderColor: "#dee2e6",
+    })}
+  >
 
-    <Details>
-      <DetailsRight>
+    <h2
+      className={cxs({
+        margin: ".5rem 0",
+        fontWeight: 800,
+      })}
+    >
+      {name}
+    </h2>
+
+    <div
+      className={cxs({
+        margin: ".5rem 0",
+      })}
+    >
+      <div className={cxs({ float: "right" })}>
         {playground &&
-          <DocsLink href={playground} target="_blank">
+          <a
+            className={cxs({
+              paddingLeft: "1rem",
+              ":visited": {
+                color: "#228ae6",
+              },
+            })}
+            href={playground}
+            target="_blank"
+          >
             example
-          </DocsLink>}
+          </a>}
         {href &&
-          <DocsLink href={href} target="_blank">
+          <a
+            className={cxs({
+              paddingLeft: "1rem",
+              ":visited": {
+                color: "#228ae6",
+              },
+            })}
+            href={href}
+            target="_blank"
+          >
             docs
-          </DocsLink>}
-      </DetailsRight>
-      <Module>{module}</Module>
-    </Details>
+          </a>}
+      </div>
+      <div
+        className={cxs({
+          fontWeight: 400,
+          color: "#adb5bd",
+        })}
+      >
+        {module}
+      </div>
+    </div>
 
     {example &&
-      <Example>
-        <Code>{example}</Code>
-      </Example>}
+      <pre
+        className={cxs({
+          padding: "1rem",
+          margin: "1rem 0",
+          borderRadius: "2px",
+          backgroundColor: "#212529",
+          color: "#fff",
+          position: "relative",
+          overflowX: "auto",
+          overflowY: "hidden",
+          whiteSpace: "pre",
+        })}
+      >
+        <code
+          className={cxs({
+            color: "#e9ecef",
+          })}
+        >
+          {example}
+        </code>
+      </pre>}
 
     {chart &&
-      <Chart>
+      <div
+        className={cxs({
+          margin: "1rem 0",
+        })}
+      >
         {chart}
-      </Chart>}
+      </div>}
 
     {notSupported &&
-      <NotSupported>
+      <span
+        className={cxs({
+          fontWeight: 800,
+          color: "#e03131",
+        })}
+      >
         <strong>{`\u2716 ${notSupported}`}</strong>
-      </NotSupported>}
-  </Container>
+      </span>}
+  </article>
 );
 
 export default ReferenceItem;
