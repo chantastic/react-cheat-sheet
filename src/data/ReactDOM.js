@@ -2,14 +2,28 @@ import extendWithDefaults from "../assignSharedDefaults";
 
 const data = [
   {
+    name: "render",
+    example: `import { render } from "react-dom";
+
+render(
+  <MyComponent />,
+  document.getElementById("component-root")
+);`,
+    reference: "https://facebook.github.io/react/docs/react-dom.html#render",
+  },
+  {
     name: "findDOMNode",
-    example: `ReactDOM.findDOMNode(componentRef);`,
-    reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.finddomnode",
+    example: `import { findDOMNode } from "react-dom";
+
+ReactDOM.findDOMNode(componentRef);`,
+    reference: "https://facebook.github.io/react/docs/react-dom.html#finddomnode",
   },
   {
     name: "unmountComponentAtNode",
-    example: `ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))`,
-    reference: "http://facebook.github.io/react/docs/top-level-api.html#reactdom.unmountcomponentatnode",
+    example: `import { unmountComponentAtNode } from "react-dom";
+
+ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))`,
+    reference: "https://facebook.github.io/react/docs/react-dom.html#unmountcomponentatnode",
   },
 ];
 

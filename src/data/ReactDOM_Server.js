@@ -2,16 +2,6 @@ import extendWithDefaults from "../assignSharedDefaults";
 
 const data = [
   {
-    name: "render",
-    example: `import { render } from "react-dom";
-
-render(
-  <MyComponent />,
-  document.getElementById("component-root")
-);`,
-    reference: "https://facebook.github.io/react/docs/react-dom.html#render",
-  },
-  {
     name: "renderToString",
     example: `import { renderToString } from "react-dom/server";
 ReactDOMServer.renderToString(<MyComponent />);`,
