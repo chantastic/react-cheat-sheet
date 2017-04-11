@@ -70,7 +70,9 @@ const LifecycleMethodsChart = () => (
           <td data-label="name">{event.name}</td>
           <td data-label="called for">{event.calledFor}</td>
           <td data-label="receives context">{event.receivesContext}</td>
-          <td data-label="setState() triggers an update">{event.setStateTriggersUpdate}</td>
+          <td data-label="setState() triggers an update">
+            {event.setStateTriggersUpdate}
+          </td>
         </tr>
       ))}
     </tbody>

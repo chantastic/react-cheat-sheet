@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const NoResults = () => (
   <article className="py-2">

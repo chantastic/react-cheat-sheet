@@ -1,4 +1,4 @@
-export default function (collection, defaults) {
+export default function(collection, defaults) {
   return collection.map(el => {
     return { ...el, ...defaults };
   });

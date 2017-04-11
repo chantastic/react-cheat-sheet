@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 
-import { includes } from 'lodash';
+import { includes } from "lodash";
 
-import categories from './data/categories.js';
-import data from './data.js';
+import categories from "./data/categories.js";
+import data from "./data.js";
 
-import ReactCheatSheet from './containers/ReactCheatSheet';
-import CategoryFilter from './components/CategoryFilter';
-import ReferenceItem from './components/ReferenceItem';
-import SearchInput from './components/SearchInput';
-import NoResults from './components/NoResults';
+import ReactCheatSheet from "./containers/ReactCheatSheet";
+import CategoryFilter from "./components/CategoryFilter";
+import ReferenceItem from "./components/ReferenceItem";
+import SearchInput from "./components/SearchInput";
+import NoResults from "./components/NoResults";
 
 const AppWrapper = styled.main`
   font-family: -apple-system,BlinkMacSystemFont,sans-serif;
@@ -43,7 +43,7 @@ const Footer = styled.footer`
 
 const Contributor = styled.a`
   color: #228ae6;
-`
+`;
 
 // end of styles
 
@@ -53,21 +53,20 @@ class App extends Component {
       <AppWrapper>
         <AppPadding>
           <MainHeading>
-            React Cheat Sheet{' '}
+            React Cheat Sheet{" "}
             <MainHeadingVersion>v15</MainHeadingVersion>
           </MainHeading>
 
-          <ReactCheatSheet
-            categories={categories}
-            data={data}
-          >
-            {({
-              selectedCategories,
-              filteredResults,
-              handleCategoryChange,
-              searchPredicate,
-              handleSearchChange,
-            }) =>
+          <ReactCheatSheet categories={categories} data={data}>
+            {(
+              {
+                selectedCategories,
+                filteredResults,
+                handleCategoryChange,
+                searchPredicate,
+                handleSearchChange,
+              }
+            ) => (
               <div className="my-2">
                 <SearchInput
                   searchPredicate={searchPredicate}
@@ -80,29 +79,25 @@ class App extends Component {
                       active={includes(selectedCategories, key)}
                       key={i}
                       name={name}
-                      onToggle={(category, checked) => handleCategoryChange(category, checked)}
+                      onToggle={(category, checked) =>
+                        handleCategoryChange(category, checked)}
                     />
                   ))}
                 </div>
 
                 <section>
-                  {(filteredResults.length) ? (
-                    filteredResults.map((item, i) => (
-                      <ReferenceItem key={i} {...item} />
-                    ))
-                  ) : (
-                    <NoResults />
-                  )}
+                  {filteredResults.length
+                    ? filteredResults.map((item, i) => (
+                        <ReferenceItem key={i} {...item} />
+                      ))
+                    : <NoResults />}
                 </section>
               </div>
-            }
+            )}
           </ReactCheatSheet>
 
           <Footer>
-            <Contributor
-              href="https://twitter.com/chantastic"
-              target="_blank"
-            >
+            <Contributor href="https://twitter.com/chantastic" target="_blank">
               ❤ @chantastic
             </Contributor>
           </Footer>

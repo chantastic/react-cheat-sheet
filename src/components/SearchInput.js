@@ -1,6 +1,6 @@
-import React from 'react';
-import { func, string } from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import { func, string } from "prop-types";
+import styled from "styled-components";
 
 const Input = styled.input`
   padding: 1rem;
@@ -13,10 +13,12 @@ const Input = styled.input`
   box-sizing: border-box;
 `;
 
-const SearchInput = ({
-  handleSearchChange,
-  searchPredicate
-}) => (
+const SearchInput = (
+  {
+    handleSearchChange,
+    searchPredicate,
+  }
+) => (
   <Input
     autoFocus
     placeholder="Filter by name"
@@ -28,8 +30,8 @@ const SearchInput = ({
 );
 
 SearchInput.propTypes = {
-  handleSearchChange : func.isRequired,
-  searchPredicate : string.isRequired,
-}
+  handleSearchChange: func.isRequired,
+  searchPredicate: string.isRequired,
+};
 
 export default SearchInput;

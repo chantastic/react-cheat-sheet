@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { bool, string, func } from 'prop-types';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import { bool, string, func } from "prop-types";
+import styled from "styled-components";
 
 const Button = styled.label`
   margin-right: .5rem;
   margin-top: .5rem;
   border-radius: 2px;
-  background-color: ${props => props.active ? '#ffd43b' : '#adb5bd'};
+  background-color: ${props => props.active ? "#ffd43b" : "#adb5bd"};
   color: #fff;
   font-size: 1em;
   line-height: 2em;
@@ -22,7 +22,7 @@ const Button = styled.label`
 `;
 
 const Label = styled.span`
-  color: ${props => props.active ? '#212529' : '#fff'};
+  color: ${props => props.active ? "#212529" : "#fff"};
 `;
 
 const CheckBox = styled.input`
@@ -31,15 +31,13 @@ const CheckBox = styled.input`
 `;
 
 class CategoryFilter extends Component {
-
   static propTypes = {
     active: bool.isRequired,
     name: string.isRequired,
     onToggle: func.isRequired,
-  }
+  };
 
-  render () {
-
+  render() {
     const {
       active,
       name,
@@ -51,13 +49,16 @@ class CategoryFilter extends Component {
         <Label active={active}>{name + " "}</Label>
         <CheckBox
           checked={active}
-          onChange={e => onToggle(name.replace(/[^a-z0-9]/gi,"").toUpperCase(), e.target.checked)}
+          onChange={e =>
+            onToggle(
+              name.replace(/[^a-z0-9]/gi, "").toUpperCase(),
+              e.target.checked
+            )}
           type="checkbox"
         />
       </Button>
-    )
+    );
   }
-
 }
 
 export default CategoryFilter;
