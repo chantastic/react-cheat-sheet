@@ -1,6 +1,6 @@
 # React Cheat Sheet
 [![CircleCI](https://circleci.com/gh/chantastic/react-cheat-sheet.svg?style=svg)](https://circleci.com/gh/chantastic/react-cheat-sheet)
-[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors)
 
 ## Contributing
 
@@ -48,7 +48,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 | [<img src="https://avatars1.githubusercontent.com/u/658360?v=3" width="64px;"/><br /><sub>Michael Chan</sub>](http://twitter.com/chantastic)<br /> | [<img src="https://avatars3.githubusercontent.com/u/156722?v=3" width="64px;"/><br /><sub>Jon Stuebe</sub>](http://jonstuebe.com)<br /> | [<img src="https://avatars2.githubusercontent.com/u/310323?v=3" width="64px;"/><br /><sub>Ted Pennings</sub>](http://ted.pennin.gs/)<br /> | [<img src="https://avatars3.githubusercontent.com/u/4595?v=3" width="64px;"/><br /><sub>James Miller</sub>](http://www.bensie.com)<br /> | [<img src="https://avatars1.githubusercontent.com/u/974552?v=3" width="64px;"/><br /><sub>Eugene Zhlobo</sub>](https://github.com/ezhlobo)<br /> | [<img src="https://avatars3.githubusercontent.com/u/810438?v=3" width="64px;"/><br /><sub>Dan Abramov</sub>](http://twitter.com/dan_abramov)<br /> | [<img src="https://avatars2.githubusercontent.com/u/576455?v=3" width="64px;"/><br /><sub>Alexander Burtsev</sub>](http://burtsev.me)<br /> |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars0.githubusercontent.com/u/240368?v=3" width="64px;"/><br /><sub>Shrayas Rajagopal</sub>](http://www.shrayas.com)<br /> |
+| [<img src="https://avatars0.githubusercontent.com/u/240368?v=3" width="64px;"/><br /><sub>Shrayas Rajagopal</sub>](http://www.shrayas.com)<br /> | [<img src="https://avatars1.githubusercontent.com/u/18579508?v=3" width="64px;"/><br /><sub>Christopher Miller</sub>](https://github.com/cs-miller)<br /> |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
