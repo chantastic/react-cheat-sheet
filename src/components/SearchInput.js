@@ -1,5 +1,4 @@
 import React from "react";
-import { func, string } from "prop-types";
 import styled from "styled-components";
 
 const Input = styled.input`
@@ -28,10 +27,5 @@ const SearchInput = (
     onChange={e => handleSearchChange(e.target.value)}
   />
 );
-
-SearchInput.propTypes = {
-  handleSearchChange: func.isRequired,
-  searchPredicate: string.isRequired,
-};
 
 export default SearchInput;

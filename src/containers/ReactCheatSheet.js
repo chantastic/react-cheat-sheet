@@ -1,28 +1,13 @@
 import { Children, Component } from "react";
-import { arrayOf, object, shape, string } from "prop-types";
 
 import { filter, without } from "lodash";
 import filterByCategory from "../helpers/filterByCategory";
 
 class ReactCheatSheet extends Component {
-  static propTypes = {
-    categories: arrayOf(
-      shape({
-        key: string.isRequired,
-        name: string.isRequired,
-      })
-    ),
-    data: arrayOf(object).isRequired,
+  state = {
+    predicate: "",
+    categories: [],
   };
-
-  constructor() {
-    super();
-
-    this.state = {
-      predicate: "",
-      categories: [],
-    };
-  }
 
   render() {
     const {

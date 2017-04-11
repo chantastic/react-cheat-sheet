@@ -1,5 +1,4 @@
 import React from "react";
-import { string, node } from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.article`
@@ -105,16 +104,5 @@ const ReferenceItem = (
       </NotSupported>}
   </Container>
 );
-
-ReferenceItem.propTypes = {
-  example: string.isRequired,
-  name: string.isRequired,
-
-  chart: node,
-  module: string,
-  notSupported: string,
-  playground: string,
-  reference: string,
-};
 
 export default ReferenceItem;

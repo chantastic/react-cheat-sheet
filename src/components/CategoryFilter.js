@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { bool, string, func } from "prop-types";
 import styled from "styled-components";
 
 const Button = styled.label`
@@ -31,12 +30,6 @@ const CheckBox = styled.input`
 `;
 
 class CategoryFilter extends Component {
-  static propTypes = {
-    active: bool.isRequired,
-    name: string.isRequired,
-    onToggle: func.isRequired,
-  };
-
   render() {
     const {
       active,
