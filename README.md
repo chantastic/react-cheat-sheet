@@ -24,20 +24,6 @@ Cheers!
 
 Chan
 
-#### CONTRIBUTERS
-   127  Michael Chan
-     1  Jon Stuebe
-     💻 https://github.com/chantastic/react-cheat-sheet/commits?author=jonstuebe
-     1  Ted Pennings
-     🐛 https://github.com/chantastic/react-cheat-sheet/issues?q=author%3Atedpennings
-     1  James Miller
-     🐛 https://github.com/chantastic/react-cheat-sheet/issues?q=author%3Abensie
-     1  Eugene Zhlobo
-     🐛 https://github.com/chantastic/react-cheat-sheet/issues?q=author%3Aezhlobo
-     1  Dan Abramov
-     🐛 https://github.com/chantastic/react-cheat-sheet/issues?q=author%3Agaearon
-     1  Alexander Burtsev
-     🐛 https://github.com/chantastic/react-cheat-sheet/issues?q=author%3Aalbburtsev
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
