@@ -1,4 +1,5 @@
 # React Cheat Sheet
+[![CircleCI](https://circleci.com/gh/chantastic/react-cheat-sheet.svg?style=svg)](https://circleci.com/gh/chantastic/react-cheat-sheet)
 [![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
 
 ## Contributing
