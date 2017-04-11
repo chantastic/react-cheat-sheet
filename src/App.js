@@ -38,7 +38,7 @@ class App extends Component {
                 fontSize: ".5em",
               })}
             >
-              v15
+              v15.5
             </small>
           </h1>
 
