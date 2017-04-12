@@ -20,6 +20,9 @@ const ReferenceItem = (
       borderBottomWidth: "1px",
       borderStyle: "solid",
       borderColor: "#dee2e6",
+      overflow: "hidden",
+      textOverflow: "ellipsis",
+      whiteSpace: "nowrap",
     })}
   >
 
