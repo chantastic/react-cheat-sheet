@@ -15,7 +15,8 @@ class CategoryFilter extends Component {
           marginRight: ".5rem",
           marginTop: ".5rem",
           borderRadius: "2px",
-          backgroundColor: active ? "#ffd43b" : "#adb5bd",
+          backgroundColor: active ? "#ffd43b" : "#868e96",
+          fontWeight: "500",
           color: "#fff",
           fontSize: "1em",
           lineHeight: "2em",
@@ -40,6 +41,8 @@ class CategoryFilter extends Component {
         <input
           checked={active}
           className={cxs({
+            marginLeft: ".25em",
+            verticalAlign: "middle",
             position: "relative",
             top: "-2px",
           })}

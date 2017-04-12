@@ -34,7 +34,7 @@ class App extends Component {
             React Cheat Sheet{" "}
             <small
               className={cxs({
-                color: "#adb5bd",
+                color: "#6a7884",
                 fontSize: ".5em",
               })}
             >
@@ -89,9 +89,6 @@ class App extends Component {
           >
             A free{' '}
             <a
-              className={cxs({
-                color: "#228ae6",
-              })}
               href="https://twitter.com/chantastic"
               rel="noopener"
               target="_blank"

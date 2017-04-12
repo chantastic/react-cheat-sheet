@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ff007b">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <!--
@@ -17,7 +18,516 @@
     <title>React Cheat Sheet</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <main><div ><h1 >React Cheat Sheet <small >v15.5</small></h1><section><article ><h2 >render</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-dom.html#render" rel="noopener" target="_blank">docs</a></div><div >react-dom</div></div><pre ><code >import { render } from "react-dom";
+
+render(
+  &lt;MyComponent /&gt;,
+  document.getElementById("component-root")
+);</code></pre></article><article ><h2 >findDOMNode</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-dom.html#finddomnode" rel="noopener" target="_blank">docs</a></div><div >react-dom</div></div><pre ><code >import { findDOMNode } from "react-dom";
+
+ReactDOM.findDOMNode(componentRef);</code></pre></article><article ><h2 >unmountComponentAtNode</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-dom.html#unmountcomponentatnode" rel="noopener" target="_blank">docs</a></div><div >react-dom</div></div><pre ><code >import { unmountComponentAtNode } from "react-dom";
+
+ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))</code></pre></article><article ><h2 >renderToString</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-dom.html#unmountcomponentatnode" rel="noopener" target="_blank">docs</a></div><div >react-dom/server</div></div><pre ><code >import { renderToString } from "react-dom/server";
+ReactDOMServer.renderToString(&lt;MyComponent /&gt;);</code></pre></article><article ><h2 >renderToStaticMarkup</h2><div ><div ><a  href="http://facebook.github.io/react/docs/top-level-api.html#reactdomserver.rendertostaticmarkup" rel="noopener" target="_blank">docs</a></div><div >react-dom/server</div></div><pre ><code >import {renderToStaticMarkup} from "react-dom/server";
+renderToStaticMarkup(&lt;MyComponent /&gt;);</code></pre></article><article ><h2 >Component</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#react.component" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >class MyComponent extends React.Component {
+  render() {
+    return &lt;div /&gt;;
+  }
+}
+</code></pre></article><article ><h2 >PureComponent</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#react.purecomponent" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >class MyComponent extends React.PureComponent {
+  render() {
+    // only updates props and state have not changed.
+    // uses a shallow compare.
+
+    return &lt;div /&gt;;
+  }
+}
+</code></pre></article><article ><h2 >createElement</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#createelement" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.createElement('div', props, children); // tag name
+
+React.createElement(MyComponent, props, children); // React Component type</code></pre></article><article ><h2 >cloneElement</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#cloneelement" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.cloneElement(element, props, ...children);</code></pre></article><article ><h2 >createFactory</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#createfactory" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.createFactory('div'); // tag name;
+
+React.createFactory(MyComponentClass); // React Component type</code></pre></article><article ><h2 >isValidElement</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#isvalidelement" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.isValidElement(MyComponent);</code></pre></article><article ><h2 >Children.map</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#react.children.map" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.Children.map(this.props.children, (child, i) =&gt; {
+    return child;
+})</code></pre></article><article ><h2 >Children.forEach</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#react.children.foreach" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.Children.forEach(this.props.children, (child, i) =&gt; {
+  console.log(child + ' at index: ' + i);
+})</code></pre></article><article ><h2 >Children.count</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#react.children.count" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.Children.count(this.props.children);</code></pre></article><article ><h2 >Children.only</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#react.children.only" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.Children.only(this.props.children);</code></pre></article><article ><h2 >Children.toArray</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-api.html#react.children.toarray" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >React.Children.toArray(this.props.children)</code></pre></article><article ><h2 >setState (object)</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#setstate" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// good for static values
+
+this.setState({mykey: 'my new value'});</code></pre></article><article ><h2 >setState (function)</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#setstate" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// good for state transitions
+
+this.setState((prevState, props) =&gt; {
+  return {count: prevState.count + props.step};
+});</code></pre></article><article ><h2 >setState (optional callback)</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#setstate" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// fires after setState
+// prefer componentDidUpdate
+
+this.setState(
+  (prevState, props) =&gt; ({ count: prevState.count + props.step }),
+  () =&gt; console.log(this.state.count)
+);</code></pre></article><article ><h2 >forceUpdate</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#forceupdate" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// forces a re-render; AVOID if possible
+
+this.forceUpdate();</code></pre></article><article ><h2 >Context (example)</h2><div ><div ><a  href="https://facebook.github.io/react/docs/context.html" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// requires 'prop-types' library
+
+import { string } from "prop-types";
+
+class Cowboy extends React.Component {
+  childContextTypes: {
+    salutation: string
+  }
+
+  getChildContext() {
+    return { salutation: "Howdy" };
+  }
+
+  render() {
+    return React.Children.only(this.props.children);
+  }
+}
+
+var Greeting = React.createClass({
+  contextTypes: {
+    salutation: string
+  },
+
+  render: function () {
+    return &lt;div&gt;{this.context.salutation} {this.props.name}.&lt;/div&gt;
+  }
+});
+
+// &lt;Greeting name="Michael" /&gt;
+// =&gt; Michael.
+
+// &lt;Cowboy&gt;&lt;Greeting name="Michael" /&gt;&lt;/Cowboy&gt;
+// =&gt; Howdy Michael.
+</code></pre></article><article ><h2 >contextTypes</h2><div ><div ><a  href="https://facebook.github.io/react/docs/context.html" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// add to the context-aware component
+// requires 'prop-types' library
+
+contextTypes: {
+  color: PropTypes.string
+},</code></pre></article><article ><h2 >childContextTypes</h2><div ><div ><a  href="https://facebook.github.io/react/docs/context.html" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// add to the context provider
+// requires 'prop-types' library
+
+childContextTypes: {
+  color: PropTypes.string
+},</code></pre></article><article ><h2 >getChildContext</h2><div ><div ><a  href="https://facebook.github.io/react/docs/context.html" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >// add to the context provider
+
+getChildContext() {
+  return {color: "purple"};
+}</code></pre></article><article ><h2 >render</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#render" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >render() {
+  return &lt;div /&gt;;
+}</code></pre></article><article ><h2 >displayName</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#displayname" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >displayName: "MyComponent"</code></pre></article><article ><h2 >Lifecycle methods</h2><div ><div ></div><div >react</div></div><div ><table><thead><tr><th>name</th><th>called for</th><th>receives context</th><th>setState() triggers an update</th></tr></thead><tbody><tr><td data-label="name">componentWillMount</td><td data-label="called for">initial render()</td><td data-label="receives context">no</td><td data-label="setState() triggers an update">no</td></tr><tr><td data-label="name">componentDidMount</td><td data-label="called for">initial render()</td><td data-label="receives context">no</td><td data-label="setState() triggers an update">yes</td></tr><tr><td data-label="name">componentWillReceiveProps</td><td data-label="called for">new props</td><td data-label="receives context">yes</td><td data-label="setState() triggers an update">yes</td></tr><tr><td data-label="name">shouldComponentUpdate</td><td data-label="called for">new props/state</td><td data-label="receives context">yes</td><td data-label="setState() triggers an update">yes</td></tr><tr><td data-label="name">componentWillUpdate</td><td data-label="called for">new props/state</td><td data-label="receives context">yes</td><td data-label="setState() triggers an update">n/a</td></tr><tr><td data-label="name">componentDidUpdate</td><td data-label="called for">new props/state</td><td data-label="receives context">no</td><td data-label="setState() triggers an update">yes</td></tr><tr><td data-label="name">componentWillUnmount</td><td data-label="called for">unmounting</td><td data-label="receives context">no</td><td data-label="setState() triggers an update">n/a</td></tr></tbody></table></div></article><article ><h2 >componentWillMount</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#componentwillmount" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >componentWillMount() {
+  // invoked once.
+  // fires before initial 'render'
+}</code></pre></article><article ><h2 >componentDidMount</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#componentdidmount" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >componentDidMount() {
+  // good for AJAX: fetch, ajax, or subscriptions.
+
+  // invoked once (client-side only).
+  // fires before initial 'render'
+}</code></pre></article><article ><h2 >componentWillReceiveProps</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#componentwillreceiveprops" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >componentWillReceiveProps(nextProps) {
+  // invoked every time component is recieves new props.
+  // does not before initial 'render'
+}</code></pre></article><article ><h2 >shouldComponentUpdate</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#shouldcomponentupdate" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >shouldComponentUpdate(nextProps, nextState) {
+  // invoked before every update (new props or state).
+  // does not fire before initial 'render'.
+}</code></pre></article><article ><h2 >componentWillUpdate</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#componentwillupdate" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >componentWillUpdate(nextProps, nextState) {
+  // invoked immediately before update (new props or state).
+  // does not fire before initial 'render'.
+
+  // (see componentWillReceiveProps if you need to call setState)
+}</code></pre><span ><strong>✖ this.setState</strong></span></article><article ><h2 >componentDidUpdate</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#componentdidupdate" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >componentDidUpdate(prevProps, prevState) {
+  // invoked immediately after DOM updates
+  // does not fire after initial 'render'
+}</code></pre></article><article ><h2 >componentWillUnmount</h2><div ><div ><a  href="https://facebook.github.io/react/docs/react-component.html#componentwillunmount" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >componentWillUnmount() {
+  // invoked immediately before a component is unmounted.
+}</code></pre></article><article ><h2 >PropTypes.array</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { array } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalArray: array,
+  requiredArray: array.isRequired
+}</code></pre></article><article ><h2 >PropTypes.bool</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { bool } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalBoolean: bool,
+  requiredBoolean: bool.isRequired
+}</code></pre></article><article ><h2 >PropTypes.func</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { func } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalFunction: func,
+  requiredFunction: func.isRequired
+}</code></pre></article><article ><h2 >PropTypes.number</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { number } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalNumber: number,
+  requiredNumber: number.isRequired
+}</code></pre></article><article ><h2 >PropTypes.object</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { object } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalObject: object,
+  requiredObject: object.isRequired
+}</code></pre></article><article ><h2 >PropTypes.string</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { string } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalString: string,
+  requiredString: string.isRequired
+}</code></pre></article><article ><h2 >PropTypes.node</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { node } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalNode: node,
+  requiredNode: node.isRequired
+};
+
+// anything that can be rendered</code></pre></article><article ><h2 >PropTypes.element</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { element } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalElement: element,
+  requiredElement: element.isRequired
+}</code></pre></article><article ><h2 >PropTypes.instanceOf</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { instanceOf } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalClass: instanceOf(SomeClass),
+  requiredClass: instanceOf(SomeClass).isRequired
+}</code></pre></article><article ><h2 >PropTypes.oneOf</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { oneOf } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalEnum: oneOf(['Thing 1', 'Thing 2']),
+  requiredEnum: oneOf(['Thing 1', 'Thing 2']).isRequired
+}</code></pre></article><article ><h2 >PropTypes.oneOfType</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { oneOfType, bool, string } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalUnion: oneOfType([ bool, string ]),
+
+  requiredUnion: oneOfType([ bool, string ]).isRequired,
+}</code></pre></article><article ><h2 >PropTypes.arrayOf</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { arrayOf, string } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalArrayOfStrings: arrayOf(string),
+  requiredArrayOfStrings: arrayOf(string).isRequired
+}</code></pre></article><article ><h2 >PropTypes.objectOf</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { objectOf, string } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalObjectOfStrings: objectOf(string),
+  requiredObjectOfStrings: objectOf(string).isRequired
+}</code></pre></article><article ><h2 >PropTypes.shape</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >
+import { number, shape, string } from "prop-types";
+
+MyComponent.propTypes = {
+  optionalObjectWithShape: shape({
+    age: number,
+    name: string
+  }),
+
+  requiredObjectWithShape: shape({
+    age: number,
+    name: string
+  }).isRequired,
+
+  requiredObjectWithRequiredShape: shape({
+    age: number.isRequired,
+    name: string.isRequired
+  }).isRequired,
+}</code></pre></article><article ><h2 >PropTypes.any</h2><div ><div ><a  href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes" rel="noopener" target="_blank">docs</a></div><div >prop-types</div></div><pre ><code >import { any } from "prop-types";
+
+MyComponent.propTypes = {
+  requiredAny: any.isRequired
+}</code></pre></article><article ><h2 >Simulate (basic)</h2><div ><div ><a  href="http://jsbin.com/foxini/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#simulate" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var subject = TestUtils.renderIntoDocument(
+  &lt;div onClick={handleClick} /&gt;
+);
+
+TestUtils.Simulate.click(subject);</code></pre></article><article ><h2 >Simulate (with data)</h2><div ><div ><a  href="http://jsbin.com/wiqile/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#simulate" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >function handleChange (event) {
+  console.log('A change was simulated with key: ' + event.key);
+}
+
+var subject = TestUtils.renderIntoDocument(
+  &lt;input type="text" onChange={handleChange} /&gt;
+);
+
+TestUtils.Simulate.change(subject, { key: "Enter" });</code></pre></article><article ><h2 >renderIntoDocument</h2><div ><div ><a  href="http://jsbin.com/buzigo/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#renderintodocument" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var componentTree = TestUtils.renderIntoDocument(&lt;div&gt;&lt;span /&gt;&lt;/div&gt;);
+
+console.log('You mounted a component tree with a ' + componentTree.tagName + ' at the root!');</code></pre></article><article ><h2 >mockComponent</h2><div ><div ><a  href="https://facebook.github.io/react/docs/test-utils.html#mockcomponent" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >// no example</code></pre></article><article ><h2 >isElement</h2><div ><div ><a  href="http://jsbin.com/jiyune/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#iselement" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >expect(TestUtils.isElement(&lt;div /&gt;)).toBe(true);</code></pre></article><article ><h2 >isElementOfType</h2><div ><div ><a  href="http://jsbin.com/pasohi/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#iselementoftype" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var MyComponent = React.createClass({
+  render () {
+    return &lt;div /&gt;;
+  }
+});
+
+expect(
+  TestUtils.isElementOfType(&lt;MyComponent /&gt;, MyComponent)
+).toBe(true);</code></pre></article><article ><h2 >isDOMComponent</h2><div ><div ><a  href="http://jsbin.com/fadoka/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#isdomcomponent" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var subject = TestUtils.renderIntoDocument(&lt;div /&gt;);
+
+expect(
+  TestUtils.isDOMComponent(subject)
+).toBe(true);</code></pre></article><article ><h2 >isCompositeComponent</h2><div ><div ><a  href="http://jsbin.com/vocofa/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#iscompositecomponent" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var subject = TestUtils.renderIntoDocument(
+  &lt;CompositeComponent /&gt;
+);
+
+expect(
+  TestUtils.isCompositeComponent(subject)
+).toBe(true);</code></pre></article><article ><h2 >isCompositeComponentWithType</h2><div ><div ><a  href="http://jsbin.com/kegoqe/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#iscompositecomponentwithtype" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var CompositeComponent = React.createClass({
+  render () {
+    return &lt;div /&gt;;
+  }
+});
+
+var subject = TestUtils.renderIntoDocument(
+  &lt;CompositeComponent /&gt;
+);
+
+expect(
+  TestUtils.isCompositeComponentWithType(
+    subject,
+    CompositeComponent
+  )
+).toBe(true);</code></pre></article><article ><h2 >findAllInRenderedTree</h2><div ><div ><a  href="http://jsbin.com/dozevu/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#findallinrenderedtree" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var CompositeComponent = React.createClass({
+  render () {
+    return &lt;div&gt;&lt;div /&gt;&lt;/div&gt;;
+  }
+});
+
+var componentTree = TestUtils.renderIntoDocument(
+  &lt;CompositeComponent /&gt;
+);
+
+var allDivs = TestUtils.findAllInRenderedTree(
+  componentTree,
+  (c) =&gt; c.tagName === 'DIV'
+)
+
+expect(allDivs).toBeAn('array');
+expect(allDivs.length).toBe(2);</code></pre></article><article ><h2 >scryRenderedDOMComponentsWithClass</h2><div ><div ><a  href="http://jsbin.com/kujeda/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithclass" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var CompositeComponent = React.createClass({
+  render () {
+    return (
+      &lt;div className="target"&gt;
+        &lt;div className="not-target"&gt;
+          &lt;div className="target" /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+var componentTree = TestUtils.renderIntoDocument(
+  &lt;CompositeComponent /&gt;
+);
+
+var allDOMComponentsWithMatchingClass = TestUtils.scryRenderedDOMComponentsWithClass(
+  componentTree,
+  'target'
+);
+
+expect(allDOMComponentsWithMatchingClass).toBeAn('array');
+expect(allDOMComponentsWithMatchingClass.length).toBe(2);</code></pre></article><article ><h2 >findRenderedDOMComponentWithClass</h2><div ><div ><a  href="http://jsbin.com/kuteve/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithclass" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var MyCompositeComponent = React.createClass({
+  render () {
+    return &lt;MyNestedComponent /&gt;;
+  }
+});
+
+var MyNestedComponent = React.createClass({
+  render () {
+    return &lt;div className="nested"/&gt;;
+  }
+});
+
+var componentTree = TestUtils.renderIntoDocument(&lt;MyCompositeComponent /&gt;);
+
+var singleComponentWithMatchedClass = TestUtils.findRenderedDOMComponentWithClass(
+  componentTree,
+  'nested'
+);
+
+expect(singleComponentWithMatchedClass).toBeAn('object');
+expect(singleComponentWithMatchedClass).toNotBeAn('array');
+expect(singleComponentWithMatchedClass.className).toBe('nested');</code></pre></article><article ><h2 >scryRenderedDOMComponentsWithTag</h2><div ><div ><a  href="http://jsbin.com/hehede/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithtag" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var CompositeComponent = React.createClass({
+  render () {
+    return &lt;div&gt;&lt;div /&gt;&lt;/div&gt;;
+  }
+});
+
+var componentTree = TestUtils.renderIntoDocument(
+  &lt;CompositeComponent /&gt;
+);
+
+var allDivs = TestUtils.scryRenderedDOMComponentsWithTag(
+  componentTree,
+  'DIV'
+);
+
+expect(allDivs).toBeAn('array');
+expect(allDivs.length).toBe(2);</code></pre></article><article ><h2 >findRenderedDOMComponentWithTag</h2><div ><div ><a  href="http://jsbin.com/puhule/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithtag" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var MyCompositeComponent = React.createClass({
+  render () {
+    return &lt;MyNestedComponent /&gt;;
+  }
+});
+
+var MyNestedComponent = React.createClass({
+  render () {
+    return &lt;div /&gt;;
+  }
+});
+
+var componentTree = TestUtils.renderIntoDocument(&lt;MyCompositeComponent /&gt;);
+
+var onlyDiv = TestUtils.findRenderedDOMComponentWithTag(
+  componentTree,
+  'div'
+);
+
+expect(onlyDiv).toBeAn('object');
+expect(onlyDiv).toNotBeAn('array');
+expect(onlyDiv.tagName).toBe('DIV');</code></pre></article><article ><h2 >scryRenderedComponentsWithType</h2><div ><div ><a  href="http://jsbin.com/lesowo/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#scryrenderedcomponentswithtype" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var MyCompositeComponent = React.createClass({
+  render () {
+    return (
+      &lt;div&gt;
+        &lt;Target /&gt;
+        &lt;br /&gt;
+        &lt;Target /&gt;
+      &lt;/div&gt;
+    )
+  }
+});
+
+var Target = React.createClass({
+  render () {
+    return &lt;div /&gt;;
+  }
+});
+
+var componentTree = TestUtils.renderIntoDocument(
+  &lt;MyCompositeComponent /&gt;
+);
+
+var allTargetComponents = TestUtils.scryRenderedComponentsWithType(
+  componentTree,
+  Target
+);
+
+expect(allTargetComponents).toBeAn('array');
+expect(allTargetComponents.length).toBe(2);</code></pre></article><article ><h2 >findRenderedComponentWithType</h2><div ><div ><a  href="http://jsbin.com/wosane/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#findrenderedcomponentwithtype" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var MyCompositeComponent = React.createClass({
+  render () { return &lt;TargetComponent /&gt; }
+});
+
+var TargetComponent = React.createClass({
+  render () { return &lt;div /&gt; }
+});
+
+var componentTree = TestUtils.renderIntoDocument(
+  &lt;MyCompositeComponent /&gt;
+);
+
+var onlyTargetComponent = TestUtils.findRenderedComponentWithType(
+  componentTree,
+  TargetComponent
+);
+
+expect(onlyTargetComponent).toBeAn('object');
+expect(onlyTargetComponent).toNotBeAn('array');
+expect(TestUtils.isCompositeComponentWithType(
+  onlyTargetComponent,
+  TargetComponent
+)).toBe(true);</code></pre></article><article ><h2 >Shallow rendering (basics)</h2><div ><div ><a  href="http://jsbin.com/raloqu/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >// 1. create a renderer
+var renderer = TestUtils.createRenderer();
+
+// 2. render component into renderer
+renderer.render(&lt;MyComponent /&gt;);
+
+// 3. capture renderer output
+var subject = renderer.getRenderOutput();
+
+// 4. make assertions
+expect(subject.type).toBe('div');</code></pre></article><article ><h2 >Shallow rendering (type example)</h2><div ><div ><a  href="http://jsbin.com/xojudi/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var renderer = TestUtils.createRenderer();
+
+renderer.render(&lt;MyComponent /&gt;);
+
+var subject = renderer.getRenderOutput();
+
+expect(subject.type).toBe('div');  // =&gt; true</code></pre></article><article ><h2 >Shallow rendering (props example)</h2><div ><div ><a  href="http://jsbin.com/najubu/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var renderer = TestUtils.createRenderer();
+
+renderer.render(&lt;MyComponent className="my-component" /&gt;);
+
+var subject = renderer.getRenderOutput();
+
+expect(subject.props.className).toBe('my-component'); // =&gt; true</code></pre></article><article ><h2 >Shallow rendering (child-count example)</h2><div ><div ><a  href="http://jsbin.com/dayomi/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var renderer = TestUtils.createRenderer();
+
+renderer.render(
+  &lt;MyList items={[1, 2, 3]} /&gt;
+);
+
+var subject = renderer.getRenderOutput();
+
+var childCount = React.Children.count(subject.props.children);
+
+expect(childCount).toBe(3); // =&gt; true</code></pre></article><article ><h2 >Shallow rendering (child-equality example)</h2><div ><div ><a  href="http://jsbin.com/sexeve/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var renderer = TestUtils.createRenderer();
+
+renderer.render(
+  &lt;MyComponent&gt;
+    &lt;div&gt;Thing 1&lt;/div&gt;
+    &lt;div&gt;Thing 2&lt;/div&gt;
+  &lt;/MyComponent&gt;
+);
+
+var subject = renderer.getRenderOutput();
+
+expect(subject.props.children).toEqual([
+  &lt;div&gt;Thing 1&lt;/div&gt;,
+  &lt;div&gt;Thing 2&lt;/div&gt;
+]); // =&gt; true</code></pre></article><article ><h2 >Shallow rendering (events example)</h2><div ><div ><a  href="http://jsbin.com/quzeya/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var renderer = TestUtils.createRenderer();
+
+var spy = expect.createSpy();
+
+renderer.render(&lt;MyComponent onClick={spy} /&gt;);
+
+var subject = renderer.getRenderOutput();
+
+expect(spy.call.length).toEqual(1); // =&gt; true</code></pre></article><article ><h2 >Shallow rendering (state changes example)</h2><div ><div ><a  href="http://jsbin.com/nobavu/edit?html,js,console" rel="noopener" target="_blank">example</a><a  href="https://facebook.github.io/react/docs/test-utils.html#shallow-rendering" rel="noopener" target="_blank">docs</a></div><div >react-addons-test-utils</div></div><pre ><code >var renderer = TestUtils.createRenderer();
+
+renderer.render(&lt;ClickCounter /&gt;);
+
+// test initial rendering
+var result = renderer.getRenderOutput();
+
+expect(result.props.children).toEqual(0);
+
+
+// test post-click rendering
+result.props.onClick();
+
+var clickedResult = renderer.getRenderOutput();
+
+expect(clickedResult.props.children).toEqual(1);</code></pre></article><article ><h2 >ref (class component)</h2><div ><div ><a  href="https://facebook.github.io/react/docs/refs-and-the-dom.html#adding-a-ref-to-a-class-component" rel="noopener" target="_blank">docs</a></div><div ></div></div><pre ><code >class AutoFocusTextInput extends React.Component {
+  componentDidMount() {
+    this.textInput.focus();
+  }
+
+  render() {
+    return (
+      &lt;CustomTextInput
+        ref={(input) =&gt; { this.textInput = input; }} /&gt;
+    );
+  }
+}</code></pre></article><article ><h2 >ref (functional component)</h2><div ><div ><a  href="https://facebook.github.io/react/docs/refs-and-the-dom.html#refs-and-functional-components" rel="noopener" target="_blank">docs</a></div><div ></div></div><pre ><code >function CustomTextInput(props) {
+  let textInput = null;
+
+  function handleClick() {
+    textInput.focus();
+  }
+
+  return (
+    &lt;div&gt;
+      &lt;input
+        type="text"
+        ref={(input) =&gt; { textInput = input; }} /&gt;
+      &lt;input
+        type="button"
+        value="Focus the text input"
+        onClick={handleClick}
+      /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre></article><article ><h2 >functional component</h2><div ><div ><a  href="https://facebook.github.io/react/docs/reusable-components.html#stateless-functions" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >const Greeting = props =&gt; &lt;div&gt;Hello {props.name}&lt;/div&gt;;</code></pre></article><article ><h2 >functional component (with context)</h2><div ><div ><a  href="https://facebook.github.io/react/docs/reusable-components.html#stateless-functions" rel="noopener" target="_blank">docs</a></div><div >react</div></div><pre ><code >import { string } from "prop-types";
+
+const Greeting = (props, context) =&gt; (
+  &lt;div&gt;{context.salutation} {props.name}&lt;/div&gt;
+);
+
+Greeting.contextTypes = { salutation: string };</code></pre></article></section></div><footer >A free <a href="https://twitter.com/chantastic" rel="noopener" target="_blank">learnreact.com</a> resource.</footer></div></main>
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

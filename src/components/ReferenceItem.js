@@ -46,7 +46,7 @@ const ReferenceItem = (
             className={cxs({
               paddingLeft: "1rem",
               ":visited": {
-                color: "#228ae6",
+                color: "#1b6ec2",
               },
             })}
             href={playground}
@@ -58,10 +58,7 @@ const ReferenceItem = (
         {href &&
           <a
             className={cxs({
-              paddingLeft: "1rem",
-              ":visited": {
-                color: "#228ae6",
-              },
+              paddingLeft: "1rem"
             })}
             href={href}
             rel="noopener"
