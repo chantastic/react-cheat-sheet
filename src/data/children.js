@@ -81,5 +81,5 @@ React.createFactory(MyComponentClass); // React Component type`,
 
 export default extendWithDefaults(data, {
   module: "react",
-  category: "Top level API",
+  category: "Children",
 });

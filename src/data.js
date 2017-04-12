@@ -1,23 +1,19 @@
-import ReactDOM from "./data/ReactDOM";
-import ReactDOMServer from "./data/ReactDOM_Server";
-import ReactTopLevel from "./data/React_TopLevel";
-import ReactComponent from "./data/React_Component";
-import ReactContext from "./data/React_Context";
-import ReactSpec from "./data/React_Spec";
-import ReactLifecycle from "./data/React_Lifecycle";
-import ReactPropTypes from "./data/React_PropTypes";
-import ReactTestUtils from "./data/React_TestUtils";
-import Misc from "./data/Misc";
+import dom from "./data/react-dom";
+import top from "./data/top-level-api";
+import component from "./data/component";
+import children from "./data/children";
+import context from "./data/context";
+import proptypes from "./data/prop-types";
+import testutils from "./data/test-utils";
+import misc from "./data/misc";
 
 export default [
-  ...ReactTopLevel,
-  ...ReactComponent,
-  ...ReactContext,
-  ...ReactDOM,
-  ...ReactDOMServer,
-  ...ReactSpec,
-  ...ReactLifecycle,
-  ...ReactPropTypes,
-  ...ReactTestUtils,
-  ...Misc,
+  ...top,
+  ...component,
+  ...children,
+  ...context,
+  ...dom,
+  ...proptypes,
+  ...testutils,
+  ...misc,
 ];
