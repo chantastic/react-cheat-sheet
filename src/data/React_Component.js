@@ -39,5 +39,5 @@ this.forceUpdate();`,
 
 export default extendWithDefaults(data, {
   module: "react",
-  category: "COMPONENT",
+  category: "Component",
 });

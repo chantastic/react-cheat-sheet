@@ -155,6 +155,6 @@ MyComponent.propTypes = {
 
 export default extendWithDefaults(data, {
   module: "prop-types",
-  category: "PROPTYPES",
+  category: "prop-types",
   reference: "https://facebook.github.io/react/docs/typechecking-with-proptypes.html#react.proptypes",
 });

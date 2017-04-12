@@ -72,5 +72,5 @@ getChildContext() {
 
 export default extendWithDefaults(data, {
   module: "react",
-  category: "CONTEXT",
+  category: "Context",
 });

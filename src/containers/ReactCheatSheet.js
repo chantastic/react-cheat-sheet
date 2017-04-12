@@ -34,6 +34,7 @@ class ReactCheatSheet extends Component {
           }),
         searchPredicate: predicate,
         handleSearchChange: newValue => this.setState({ predicate: newValue }),
+        categories: data.reduce((acc, { category }) => acc.indexOf(category) === -1 ? acc.concat([category]) : acc, [])
       })
     );
   }

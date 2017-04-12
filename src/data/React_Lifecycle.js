@@ -149,5 +149,5 @@ const data = [
 
 export default extendWithDefaults(data, {
   module: "react",
-  category: "LIFECYCLE",
+  category: "Lifecycle",
 });

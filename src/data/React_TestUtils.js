@@ -425,6 +425,6 @@ expect(clickedResult.props.children).toEqual(1);`,
 ];
 
 export default extendWithDefaults(data, {
-  module: "react-addons-test-utils",
-  category: "TESTUTILS",
+  module: "react-dom/test-utils",
+  category: "test-utils",
 });

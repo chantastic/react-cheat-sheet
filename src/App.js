@@ -3,7 +3,6 @@ import cxs from "cxs";
 
 import { includes } from "lodash";
 
-import categories from "./data/categories.js";
 import data from "./data.js";
 
 import ReactCheatSheet from "./containers/ReactCheatSheet";
@@ -42,9 +41,10 @@ class App extends Component {
             </small>
           </h1>
 
-          <ReactCheatSheet categories={categories} data={data}>
+          <ReactCheatSheet data={data}>
             {(
               {
+                categories,
                 selectedCategories,
                 filteredResults,
                 handleCategoryChange,
@@ -59,9 +59,9 @@ class App extends Component {
                 />
 
                 <div>
-                  {categories.map(({ name, key }, i) => (
+                  {categories.map((name, i) => (
                     <CategoryFilter
-                      active={includes(selectedCategories, key)}
+                      active={includes(selectedCategories, name)}
                       key={i}
                       name={name}
                       onToggle={(category, checked) =>

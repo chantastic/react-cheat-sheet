@@ -37,7 +37,7 @@ const data = [
         onClick={handleClick}
       />
     </div>
-  );  
+  );
 }`,
     reference: "https://facebook.github.io/react/docs/refs-and-the-dom.html#refs-and-functional-components",
   },
@@ -62,5 +62,5 @@ Greeting.contextTypes = { salutation: string };`,
 ];
 
 export default extendWithDefaults(data, {
-  category: "MISC",
+  category: "syntax",
 });

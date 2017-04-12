@@ -17,5 +17,5 @@ const data = [
 
 export default extendWithDefaults(data, {
   module: "react",
-  category: "SPEC",
+  category: "Spec",
 });

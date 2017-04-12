@@ -17,5 +17,5 @@ renderToStaticMarkup(<MyComponent />);`,
 
 export default extendWithDefaults(data, {
   module: "react-dom/server",
-  category: "REACTDOM",
+  category: "react-dom",
 });

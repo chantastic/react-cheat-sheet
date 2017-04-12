@@ -48,7 +48,7 @@ class CategoryFilter extends Component {
           })}
           onChange={e =>
             onToggle(
-              name.replace(/[^a-z0-9]/gi, "").toUpperCase(),
+              name,
               e.target.checked
             )}
           type="checkbox"

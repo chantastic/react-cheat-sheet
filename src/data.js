@@ -10,11 +10,11 @@ import ReactTestUtils from "./data/React_TestUtils";
 import Misc from "./data/Misc";
 
 export default [
-  ...ReactDOM,
-  ...ReactDOMServer,
   ...ReactTopLevel,
   ...ReactComponent,
   ...ReactContext,
+  ...ReactDOM,
+  ...ReactDOMServer,
   ...ReactSpec,
   ...ReactLifecycle,
   ...ReactPropTypes,

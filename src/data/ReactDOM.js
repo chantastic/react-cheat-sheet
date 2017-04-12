@@ -29,5 +29,5 @@ ReactDOM.unmountComponentAtNode(document.getElementById('MyComponent'))`,
 
 export default extendWithDefaults(data, {
   module: "react-dom",
-  category: "REACTDOM",
+  category: "react-dom",
 });
