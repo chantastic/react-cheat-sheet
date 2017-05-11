@@ -89,7 +89,7 @@ class App extends Component {
           >
             A free{' '}
             <a
-              href="https://twitter.com/chantastic"
+              href="https://learnreact.com"
               rel="noopener"
               target="_blank"
             >
