@@ -49,7 +49,7 @@ constructor() {
     name: "componentWillReceiveProps",
     example: `componentWillReceiveProps(nextProps) {
   // invoked every time component is recieves new props.
-  // does not before initial 'render'
+  // does not fire before initial 'render'
 }`,
     reference: "https://reactjs.org/docs/react-component.html#componentwillreceiveprops"
   },
