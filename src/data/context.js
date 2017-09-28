@@ -21,15 +21,12 @@ class Cowboy extends React.Component {
   }
 }
 
-var Greeting = React.createClass({
-  contextTypes: {
-    salutation: string
-  },
+const Greeting = (props, context) =>
+  <div>{this.context.salutation} {this.props.name}.</div>
 
-  render: function () {
-    return <div>{this.context.salutation} {this.props.name}.</div>
-  }
-});
+Greeting.contextTypes = {
+  salutation: PropTypes.string
+}
 
 // <Greeting name="Michael" />
 // => Michael.

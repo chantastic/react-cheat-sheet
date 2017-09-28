@@ -45,8 +45,8 @@ findDOMNode(componentRef);`,
     name: "createPortal",
     example: `import { createPortal } from "react-dom";
 
-  class MyPortalComponent extends React.Component {
-    render() {
+class MyPortalComponent extends React.Component {
+  render() {
 
     return createPortal(
       this.props.children,
