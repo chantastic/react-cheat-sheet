@@ -45,7 +45,15 @@ findDOMNode(componentRef);`,
     name: "createPortal",
     example: `import { createPortal } from "react-dom";
 
-findDOMNode(componentRef);`,
+  class MyPortalComponent extends React.Component {
+    render() {
+
+    return createPortal(
+      this.props.children,
+      document.getElementById("portal-element"),
+    );
+  }
+}`,
     reference: "https://reactjs.org/docs/react-dom.html#createportal",
     module: "react-dom",
   },
