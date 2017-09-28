@@ -9,7 +9,7 @@ const data = [
   }
 }
 `,
-    reference: "https://facebook.github.io/react/docs/react-api.html#react.component",
+    reference: "https://reactjs.org/docs/react-api.html#reactcomponent"
   },
   {
     name: "PureComponent",
@@ -22,35 +22,35 @@ const data = [
   }
 }
 `,
-    reference: "https://facebook.github.io/react/docs/react-api.html#react.purecomponent",
+    reference: "https://reactjs.org/docs/react-api.html#reactpurecomponent"
   },
   {
     name: "createElement",
     example: `React.createElement('div', props, children); // tag name
 
 React.createElement(MyComponent, props, children); // React Component type`,
-    reference: "https://facebook.github.io/react/docs/react-api.html#createelement",
+    reference: "https://reactjs.org/docs/react-api.html#createelement"
   },
   {
     name: "cloneElement",
-    example: `React.cloneElement(element, props, ...children);`,
-    reference: "https://facebook.github.io/react/docs/react-api.html#cloneelement",
+    example: `React.cloneElement(element, props, children);`,
+    reference: "https://reactjs.org/docs/react-api.html#cloneelement"
   },
   {
     name: "createFactory",
     example: `React.createFactory('div'); // tag name;
 
 React.createFactory(MyComponentClass); // React Component type`,
-    reference: "https://facebook.github.io/react/docs/react-api.html#createfactory",
+    reference: "https://reactjs.org/docs/react-api.html#createfactory"
   },
   {
     name: "isValidElement",
     example: `React.isValidElement(MyComponent);`,
-    reference: "https://facebook.github.io/react/docs/react-api.html#isvalidelement",
-  },
+    reference: "https://reactjs.org/docs/react-api.html#isvalidelement"
+  }
 ];
 
 export default extendWithDefaults(data, {
   module: "react",
-  category: "Top level API",
+  category: "React"
 });
