@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "all-contributors-cli": "^4.1.0",
-    "react-scripts": "0.9.5"
+    "react-scripts": "^1.0.17"
   },
   "dependencies": {
     "classnames": "^2.2.5",
