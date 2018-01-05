@@ -50,8 +50,8 @@ const ReferenceItem = (
               },
             })}
             href={playground}
-            rel="noopener"
             target="_blank"
+            rel="noopener noreferrer"
           >
             example
           </a>}
@@ -61,7 +61,7 @@ const ReferenceItem = (
               paddingLeft: "1rem"
             })}
             href={href}
-            rel="noopener"
+            rel="noopener noreferrer"
             target="_blank"
           >
             docs

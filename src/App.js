@@ -87,7 +87,7 @@ class App extends Component {
               margin: "1rem 0",
             })}
           >
-            <a href="https://learnreact.com/courses/function-components?utm_source=reactcheatsheet&utm_medium=ad&utm_campaign=standalone_resources&utm_content=function-components" target="_blank" rel="noopener" style={{ display: "flex", lineHeight: "1.25", fontSize: "12px", boxSizing: "border-box", marginTop: "16px", width: "320px", maxWidth: "320px", textDecoration: "none", color: "#222" }}>
+            <a href="https://learnreact.com/courses/function-components?utm_source=reactcheatsheet&utm_medium=ad&utm_campaign=standalone_resources&utm_content=function-components" target="_blank" rel="noopener noreferrer" style={{ display: "flex", lineHeight: "1.25", fontSize: "12px", boxSizing: "border-box", marginTop: "16px", width: "320px", maxWidth: "320px", textDecoration: "none", color: "#222" }}>
               <div style={{ boxSizing: "border-box", border: "1px solid lightgray", overflow: "hidden" }}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 200" width="130px" height="100px" style={{ display: "block" }}>
                   <title>Learn React Ad</title>
