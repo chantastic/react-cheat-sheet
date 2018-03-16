@@ -22,7 +22,7 @@ class Cowboy extends React.Component {
 }
 
 const Greeting = (props, context) =>
-  <div>{this.context.salutation} {this.props.name}.</div>
+  <div>{context.salutation} {props.name}.</div>
 
 Greeting.contextTypes = {
   salutation: PropTypes.string
