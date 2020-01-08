@@ -1,6 +1,6 @@
 html {
   line-height: 1.15;
-  -webkit-text-size-adjust: 100%;  
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -10,12 +10,13 @@ body {
 table {
   border: 1px solid #ccc;
   width: 100%;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   border-collapse: collapse;
   border-spacing: 0;
   overflow-x: auto;
   display: block;
+  border: none;
 }
 
 table tr {
@@ -23,7 +24,8 @@ table tr {
   padding: 5px;
 }
 
-table th, table td {
+table th,
+table td {
   padding: 10px;
   text-align: center;
 }
@@ -35,7 +37,6 @@ table th {
 }
 
 @media screen and (max-width: 600px) {
-
   table {
     border: 0;
   }
