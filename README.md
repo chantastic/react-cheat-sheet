@@ -46,9 +46,26 @@ I'll get notified and the change will be fixed on the next deploy.
 Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-| [<img src="https://avatars1.githubusercontent.com/u/658360?v=3" width="64px;"/><br /><sub>Michael Chan</sub>](http://twitter.com/chantastic)<br /> | [<img src="https://avatars3.githubusercontent.com/u/156722?v=3" width="64px;"/><br /><sub>Jon Stuebe</sub>](http://jonstuebe.com)<br /> | [<img src="https://avatars2.githubusercontent.com/u/310323?v=3" width="64px;"/><br /><sub>Ted Pennings</sub>](http://ted.pennin.gs/)<br /> | [<img src="https://avatars3.githubusercontent.com/u/4595?v=3" width="64px;"/><br /><sub>James Miller</sub>](http://www.bensie.com)<br /> | [<img src="https://avatars1.githubusercontent.com/u/974552?v=3" width="64px;"/><br /><sub>Eugene Zhlobo</sub>](https://github.com/ezhlobo)<br /> | [<img src="https://avatars3.githubusercontent.com/u/810438?v=3" width="64px;"/><br /><sub>Dan Abramov</sub>](http://twitter.com/dan_abramov)<br /> | [<img src="https://avatars2.githubusercontent.com/u/576455?v=3" width="64px;"/><br /><sub>Alexander Burtsev</sub>](http://burtsev.me)<br /> |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [<img src="https://avatars0.githubusercontent.com/u/240368?v=3" width="64px;"/><br /><sub>Shrayas Rajagopal</sub>](http://www.shrayas.com)<br /> | [<img src="https://avatars1.githubusercontent.com/u/18579508?v=3" width="64px;"/><br /><sub>Christopher Miller</sub>](https://github.com/cs-miller)<br /> |
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="http://twitter.com/chantastic"><img src="https://avatars1.githubusercontent.com/u/658360?v=3" width="64px;" alt=""/><br /><sub><b>Michael Chan</b></sub></a><br /></td>
+    <td align="center"><a href="http://jonstuebe.com"><img src="https://avatars3.githubusercontent.com/u/156722?v=3" width="64px;" alt=""/><br /><sub><b>Jon Stuebe</b></sub></a><br /></td>
+    <td align="center"><a href="http://ted.pennin.gs/"><img src="https://avatars2.githubusercontent.com/u/310323?v=3" width="64px;" alt=""/><br /><sub><b>Ted Pennings</b></sub></a><br /></td>
+    <td align="center"><a href="http://www.bensie.com"><img src="https://avatars3.githubusercontent.com/u/4595?v=3" width="64px;" alt=""/><br /><sub><b>James Miller</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/ezhlobo"><img src="https://avatars1.githubusercontent.com/u/974552?v=3" width="64px;" alt=""/><br /><sub><b>Eugene Zhlobo</b></sub></a><br /></td>
+    <td align="center"><a href="http://twitter.com/dan_abramov"><img src="https://avatars3.githubusercontent.com/u/810438?v=3" width="64px;" alt=""/><br /><sub><b>Dan Abramov</b></sub></a><br /></td>
+    <td align="center"><a href="http://burtsev.me"><img src="https://avatars2.githubusercontent.com/u/576455?v=3" width="64px;" alt=""/><br /><sub><b>Alexander Burtsev</b></sub></a><br /></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="http://www.shrayas.com"><img src="https://avatars0.githubusercontent.com/u/240368?v=3" width="64px;" alt=""/><br /><sub><b>Shrayas Rajagopal</b></sub></a><br /></td>
+    <td align="center"><a href="https://github.com/cs-miller"><img src="https://avatars1.githubusercontent.com/u/18579508?v=3" width="64px;" alt=""/><br /><sub><b>Christopher Miller</b></sub></a><br /></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!

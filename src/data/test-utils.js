@@ -32,20 +32,23 @@ TestUtils.Simulate.change(subject, { key: "Enter" });`,
     example: `var componentTree = TestUtils.renderIntoDocument(<div><span /></div>);
 
 console.log('You mounted a component tree with a ' + componentTree.tagName + ' at the root!');`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#renderintodocument",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#renderintodocument",
     playground: "http://jsbin.com/buzigo/edit?html,js,console",
   },
 
   {
     name: "mockComponent",
     example: `// no example`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#mockcomponent",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#mockcomponent",
   },
 
   {
     name: "isElement",
     example: `expect(TestUtils.isElement(<div />)).toBe(true);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#iselement",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#iselement",
     playground: "http://jsbin.com/jiyune/edit?html,js,console",
   },
 
@@ -60,7 +63,8 @@ console.log('You mounted a component tree with a ' + componentTree.tagName + ' a
 expect(
   TestUtils.isElementOfType(<MyComponent />, MyComponent)
 ).toBe(true);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#iselementoftype",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#iselementoftype",
     playground: "http://jsbin.com/pasohi/edit?html,js,console",
   },
 
@@ -71,7 +75,8 @@ expect(
 expect(
   TestUtils.isDOMComponent(subject)
 ).toBe(true);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#isdomcomponent",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#isdomcomponent",
     playground: "http://jsbin.com/fadoka/edit?html,js,console",
   },
 
@@ -84,7 +89,8 @@ expect(
 expect(
   TestUtils.isCompositeComponent(subject)
 ).toBe(true);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponent",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponent",
     playground: "http://jsbin.com/vocofa/edit?html,js,console",
   },
 
@@ -106,7 +112,8 @@ expect(
     CompositeComponent
   )
 ).toBe(true);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponentwithtype",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#iscompositecomponentwithtype",
     playground: "http://jsbin.com/kegoqe/edit?html,js,console",
   },
 
@@ -129,7 +136,8 @@ var allDivs = TestUtils.findAllInRenderedTree(
 
 expect(allDivs).toBeAn('array');
 expect(allDivs.length).toBe(2);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#findallinrenderedtree",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#findallinrenderedtree",
     playground: "http://jsbin.com/dozevu/edit?html,js,console",
   },
 
@@ -158,7 +166,8 @@ var allDOMComponentsWithMatchingClass = TestUtils.scryRenderedDOMComponentsWithC
 
 expect(allDOMComponentsWithMatchingClass).toBeAn('array');
 expect(allDOMComponentsWithMatchingClass.length).toBe(2);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithclass",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithclass",
     playground: "http://jsbin.com/kujeda/edit?html,js,console",
   },
 
@@ -186,7 +195,8 @@ var singleComponentWithMatchedClass = TestUtils.findRenderedDOMComponentWithClas
 expect(singleComponentWithMatchedClass).toBeAn('object');
 expect(singleComponentWithMatchedClass).toNotBeAn('array');
 expect(singleComponentWithMatchedClass.className).toBe('nested');`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithclass",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithclass",
     playground: "http://jsbin.com/kuteve/edit?html,js,console",
   },
 
@@ -209,7 +219,8 @@ var allDivs = TestUtils.scryRenderedDOMComponentsWithTag(
 
 expect(allDivs).toBeAn('array');
 expect(allDivs.length).toBe(2);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithtag",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#scryrendereddomcomponentswithtag",
     playground: "http://jsbin.com/hehede/edit?html,js,console",
   },
 
@@ -237,7 +248,8 @@ var onlyDiv = TestUtils.findRenderedDOMComponentWithTag(
 expect(onlyDiv).toBeAn('object');
 expect(onlyDiv).toNotBeAn('array');
 expect(onlyDiv.tagName).toBe('DIV');`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithtag",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#findrendereddomcomponentwithtag",
     playground: "http://jsbin.com/puhule/edit?html,js,console",
   },
 
@@ -272,7 +284,8 @@ var allTargetComponents = TestUtils.scryRenderedComponentsWithType(
 
 expect(allTargetComponents).toBeAn('array');
 expect(allTargetComponents.length).toBe(2);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#scryrenderedcomponentswithtype",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#scryrenderedcomponentswithtype",
     playground: "http://jsbin.com/lesowo/edit?html,js,console",
   },
 
@@ -301,7 +314,8 @@ expect(TestUtils.isCompositeComponentWithType(
   onlyTargetComponent,
   TargetComponent
 )).toBe(true);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#findrenderedcomponentwithtype",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#findrenderedcomponentwithtype",
     playground: "http://jsbin.com/wosane/edit?html,js,console",
   },
 
@@ -318,7 +332,8 @@ var subject = renderer.getRenderOutput();
 
 // 4. make assertions
 expect(subject.type).toBe('div');`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/raloqu/edit?html,js,console",
   },
 
@@ -331,7 +346,8 @@ renderer.render(<MyComponent />);
 var subject = renderer.getRenderOutput();
 
 expect(subject.type).toBe('div');  // => true`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/xojudi/edit?html,js,console",
   },
 
@@ -344,7 +360,8 @@ renderer.render(<MyComponent className="my-component" />);
 var subject = renderer.getRenderOutput();
 
 expect(subject.props.className).toBe('my-component'); // => true`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/najubu/edit?html,js,console",
   },
 
@@ -361,7 +378,8 @@ var subject = renderer.getRenderOutput();
 var childCount = React.Children.count(subject.props.children);
 
 expect(childCount).toBe(3); // => true`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/dayomi/edit?html,js,console",
   },
 
@@ -382,7 +400,8 @@ expect(subject.props.children).toEqual([
   <div>Thing 1</div>,
   <div>Thing 2</div>
 ]); // => true`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/sexeve/edit?html,js,console",
   },
 
@@ -397,7 +416,8 @@ renderer.render(<MyComponent onClick={spy} />);
 var subject = renderer.getRenderOutput();
 
 expect(spy.call.length).toEqual(1); // => true`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/quzeya/edit?html,js,console",
   },
 
@@ -419,7 +439,8 @@ result.props.onClick();
 var clickedResult = renderer.getRenderOutput();
 
 expect(clickedResult.props.children).toEqual(1);`,
-    reference: "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
+    reference:
+      "https://facebook.github.io/react/docs/test-utils.html#shallow-rendering",
     playground: "http://jsbin.com/nobavu/edit?html,js,console",
   },
 ];

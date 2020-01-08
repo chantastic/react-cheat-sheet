@@ -1,17 +1,15 @@
 import React from "react";
 import cxs from "cxs";
 
-const ReferenceItem = (
-  {
-    name,
-    module,
-    reference: href,
-    example,
-    chart,
-    playground,
-    notSupported,
-  }
-) => (
+const ReferenceItem = ({
+  name,
+  module,
+  reference: href,
+  example,
+  chart,
+  playground,
+  notSupported,
+}) => (
   <article
     className={cxs({
       paddingTop: "1rem",
@@ -25,7 +23,6 @@ const ReferenceItem = (
       whiteSpace: "nowrap",
     })}
   >
-
     <h2
       className={cxs({
         margin: ".5rem 0",
@@ -41,7 +38,7 @@ const ReferenceItem = (
       })}
     >
       <div className={cxs({ float: "right" })}>
-        {playground &&
+        {playground && (
           <a
             className={cxs({
               paddingLeft: "1rem",
@@ -54,18 +51,20 @@ const ReferenceItem = (
             rel="noopener noreferrer"
           >
             example
-          </a>}
-        {href &&
+          </a>
+        )}
+        {href && (
           <a
             className={cxs({
-              paddingLeft: "1rem"
+              paddingLeft: "1rem",
             })}
             href={href}
             rel="noopener noreferrer"
             target="_blank"
           >
             docs
-          </a>}
+          </a>
+        )}
       </div>
       <div
         className={cxs({
@@ -77,7 +76,7 @@ const ReferenceItem = (
       </div>
     </div>
 
-    {example &&
+    {example && (
       <pre
         className={cxs({
           padding: "1rem",
@@ -98,18 +97,20 @@ const ReferenceItem = (
         >
           {example}
         </code>
-      </pre>}
+      </pre>
+    )}
 
-    {chart &&
+    {chart && (
       <div
         className={cxs({
           margin: "1rem 0",
         })}
       >
         {chart}
-      </div>}
+      </div>
+    )}
 
-    {notSupported &&
+    {notSupported && (
       <span
         className={cxs({
           fontWeight: 800,
@@ -117,7 +118,8 @@ const ReferenceItem = (
         })}
       >
         <strong>{`\u2716 ${notSupported}`}</strong>
-      </span>}
+      </span>
+    )}
   </article>
 );
 

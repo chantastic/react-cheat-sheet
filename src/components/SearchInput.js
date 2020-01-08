@@ -1,17 +1,16 @@
 import React from "react";
 import cxs from "cxs";
 
-const SearchInput = (
-  {
-    handleSearchChange,
-    searchPredicate,
-  }
-) => (
+const SearchInput = ({ handleSearchChange, searchPredicate }) => (
   <label>
-    <span className={cxs({
-      position: "absolute !important",
-      clip: "rect(1px, 1px, 1px, 1px)"
-    })}>Filter Search</span>
+    <span
+      className={cxs({
+        position: "absolute !important",
+        clip: "rect(1px, 1px, 1px, 1px)",
+      })}
+    >
+      Filter Search
+    </span>
     <input
       autoFocus
       placeholder="Filter by name"

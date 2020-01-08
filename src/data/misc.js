@@ -98,7 +98,8 @@ const data = [
     );
   }
 }`,
-    reference: "https://facebook.github.io/react/docs/refs-and-the-dom.html#adding-a-ref-to-a-class-component",
+    reference:
+      "https://facebook.github.io/react/docs/refs-and-the-dom.html#adding-a-ref-to-a-class-component",
   },
   {
     name: "ref (functional component)",
@@ -122,12 +123,14 @@ const data = [
     </div>
   );
 }`,
-    reference: "https://facebook.github.io/react/docs/refs-and-the-dom.html#refs-and-functional-components",
+    reference:
+      "https://facebook.github.io/react/docs/refs-and-the-dom.html#refs-and-functional-components",
   },
   {
     name: "functional component",
     example: `const Greeting = props => <div>Hello {props.name}</div>;`,
-    reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
+    reference:
+      "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
     module: "react",
   },
   {
@@ -139,7 +142,8 @@ const Greeting = (props, context) => (
 );
 
 Greeting.contextTypes = { salutation: string };`,
-    reference: "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
+    reference:
+      "https://facebook.github.io/react/docs/reusable-components.html#stateless-functions",
     module: "react",
   },
 ];

@@ -68,21 +68,24 @@ ReactDOMServer.renderToString(<MyComponent />);`,
     name: "renderToStaticMarkup",
     example: `import {renderToStaticMarkup} from "react-dom/server";
 renderToStaticMarkup(<MyComponent />);`,
-    reference: "https://reactjs.org/docs/react-dom-server.html#rendertostaticmarkup",
+    reference:
+      "https://reactjs.org/docs/react-dom-server.html#rendertostaticmarkup",
     module: "react-dom/server",
   },
   {
     name: "renderToNodeStream",
     example: `import { renderToNodeStream } from "react-dom/server";
 renderToNodeStream(<MyComponent />);`,
-    reference: "https://reactjs.org/docs/react-dom-server.html#rendertonodestream",
+    reference:
+      "https://reactjs.org/docs/react-dom-server.html#rendertonodestream",
     module: "react-dom/server",
   },
   {
     name: "renderToStaticNodeStream",
     example: `import { renderToStaticNodeStream } from "react-dom/server";
 renderToStaticNodeStream(<MyComponent />);`,
-    reference: "https://reactjs.org/docs/react-dom-server.html#rendertostaticnodestream",
+    reference:
+      "https://reactjs.org/docs/react-dom-server.html#rendertostaticnodestream",
     module: "react-dom/server",
   },
 ];

@@ -6,7 +6,7 @@ const data = [
     example: `render() {
   return <div />;
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#render"
+    reference: "https://reactjs.org/docs/react-component.html#render",
   },
   {
     name: "constructor",
@@ -25,7 +25,7 @@ constructor() {
     list: []
   };
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#constructor"
+    reference: "https://reactjs.org/docs/react-component.html#constructor",
   },
   {
     name: "componentWillMount",
@@ -33,7 +33,8 @@ constructor() {
   // invoked once.
   // fires before initial 'render'
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#componentwillmount"
+    reference:
+      "https://reactjs.org/docs/react-component.html#componentwillmount",
   },
   {
     name: "componentDidMount",
@@ -43,7 +44,8 @@ constructor() {
   // invoked once (client-side only).
   // fires before initial 'render'
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#componentdidmount"
+    reference:
+      "https://reactjs.org/docs/react-component.html#componentdidmount",
   },
   {
     name: "componentWillReceiveProps",
@@ -51,7 +53,8 @@ constructor() {
   // invoked every time component recieves new props.
   // does not before initial 'render'
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#componentwillreceiveprops"
+    reference:
+      "https://reactjs.org/docs/react-component.html#componentwillreceiveprops",
   },
   {
     name: "shouldComponentUpdate",
@@ -59,7 +62,8 @@ constructor() {
   // invoked before every update (new props or state).
   // does not fire before initial 'render'.
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#shouldcomponentupdate"
+    reference:
+      "https://reactjs.org/docs/react-component.html#shouldcomponentupdate",
   },
   {
     name: "componentWillUpdate",
@@ -69,8 +73,9 @@ constructor() {
 
   // (see componentWillReceiveProps if you need to call setState)
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#componentwillupdate",
-    notSupported: "this.setState"
+    reference:
+      "https://reactjs.org/docs/react-component.html#componentwillupdate",
+    notSupported: "this.setState",
   },
   {
     name: "componentDidUpdate",
@@ -78,14 +83,16 @@ constructor() {
   // invoked immediately after DOM updates
   // does not fire after initial 'render'
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#componentdidupdate"
+    reference:
+      "https://reactjs.org/docs/react-component.html#componentdidupdate",
   },
   {
     name: "componentWillUnmount",
     example: `componentWillUnmount() {
   // invoked immediately before a component is unmounted.
 }`,
-    reference: "https://reactjs.org/docs/react-component.html#componentwillunmount"
+    reference:
+      "https://reactjs.org/docs/react-component.html#componentwillunmount",
   },
   {
     name: "setState (function)",
@@ -94,14 +101,14 @@ constructor() {
 this.setState((prevState, props) => {
   return {count: prevState.count + props.step};
 });`,
-    reference: "https://reactjs.org/docs/react-component.html#setstate"
+    reference: "https://reactjs.org/docs/react-component.html#setstate",
   },
   {
     name: "setState (object)",
     example: `// good for static values
 
 this.setState({mykey: 'my new value'});`,
-    reference: "https://reactjs.org/docs/react-component.html#setstate"
+    reference: "https://reactjs.org/docs/react-component.html#setstate",
   },
   {
     name: "setState (optional callback)",
@@ -112,14 +119,14 @@ this.setState(
   (prevState, props) => ({ count: prevState.count + props.step }),
   () => console.log(this.state.count)
 );`,
-    reference: "https://reactjs.org/docs/react-component.html#setstate"
+    reference: "https://reactjs.org/docs/react-component.html#setstate",
   },
   {
     name: "forceUpdate",
     example: `// forces a re-render; AVOID if possible
 
 this.forceUpdate();`,
-    reference: "https://reactjs.org/docs/react-component.html#forceupdate"
+    reference: "https://reactjs.org/docs/react-component.html#forceupdate",
   },
   {
     name: "displayName",
@@ -143,5 +150,5 @@ this.forceUpdate();`,
 
 export default extendWithDefaults(data, {
   module: "react",
-  category: "Component"
+  category: "Component",
 });

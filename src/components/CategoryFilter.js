@@ -3,11 +3,7 @@ import cxs from "cxs";
 
 class CategoryFilter extends Component {
   render() {
-    const {
-      active,
-      name,
-      onToggle,
-    } = this.props;
+    const { active, name, onToggle } = this.props;
 
     return (
       <label
@@ -46,11 +42,7 @@ class CategoryFilter extends Component {
             position: "relative",
             top: "-2px",
           })}
-          onChange={e =>
-            onToggle(
-              name,
-              e.target.checked
-            )}
+          onChange={e => onToggle(name, e.target.checked)}
           type="checkbox"
         />
       </label>
