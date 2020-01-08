@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "all-contributors-cli": "^6.12.0",
-    "react-scripts": "^1.0.17"
+    "react-scripts": "^3.3.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -37,5 +37,17 @@
     "deploy": "node_modules/.bin/gh-pages -d build",
     "add-contribs": "all-contributors add",
     "generate-contribs": "all-contributors generate"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
