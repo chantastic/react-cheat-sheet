@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["index.html","3a34c28e9b085a97a25a3ddafdd18717"],["manifest.json","ef0a95aebedf73fb38fcf43e29081fae"],["static/css/main.d6ad04c7.css","535c64bb7c0eacc01c5e244f4fade7c6"],["static/js/main.5341aae8.js","14edd5bc997e6c91e1335dcf12b43a2f"]];
+var precacheConfig = [["index.html","31d4266077ab657609dbf2cdfa8240b3"],["manifest.json","ef0a95aebedf73fb38fcf43e29081fae"],["static/css/main.b405d0e2.chunk.css","ab96f2d03e6f3e9664b4d7900ec55a4d"],["static/js/2.ae6ec3f8.chunk.js","c51c56c03c70504eb2fe77b0550b51f6"],["static/js/2.ae6ec3f8.chunk.js.LICENSE","6aeb469c0c20fd3334c86de961c4692c"],["static/js/main.ce90bf46.chunk.js","0b5d96891033ef01ce1f100d19d8f5b1"],["static/js/runtime-main.3f78fb73.js","279d0cff6f30fd28e5d1c05e25c00ada"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 
@@ -107,6 +107,8 @@ var isPathWhitelisted = function (whitelist, absoluteUrlString) {
 var stripIgnoredUrlParameters = function (originalUrl,
     ignoreUrlParametersMatching) {
     var url = new URL(originalUrl);
+    // Remove the hash; see https://github.com/GoogleChrome/sw-precache/issues/290
+    url.hash = '';
 
     url.search = url.search.slice(1) // Exclude initial '?'
       .split('&') // Split into an array of 'key=value' strings
@@ -212,8 +214,8 @@ self.addEventListener('fetch', function(event) {
     // handlers a chance to handle the request if need be.
     var shouldRespond;
 
-    // First, remove all the ignored parameter and see if we have that URL
-    // in our cache. If so, great! shouldRespond will be true.
+    // First, remove all the ignored parameters and hash fragment, and see if we
+    // have that URL in our cache. If so, great! shouldRespond will be true.
     var url = stripIgnoredUrlParameters(event.request.url, ignoreUrlParametersMatching);
     shouldRespond = urlsToCacheKeys.has(url);
 
