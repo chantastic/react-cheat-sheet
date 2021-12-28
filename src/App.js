@@ -33,7 +33,7 @@ class App extends Component {
             React Cheat Sheet{" "}
             <small
               className={cxs({
-                color: "#6a7884",
+                color: "#3e4750",
                 fontSize: ".5em",
               })}
             >
