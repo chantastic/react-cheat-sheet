@@ -82,7 +82,7 @@ const ReferenceItem = ({
           padding: "1rem",
           margin: "1rem 0",
           borderRadius: "2px",
-          backgroundColor: "#212529",
+          backgroundColor: "#39424a",
           color: "#fff",
           position: "relative",
           overflowX: "auto",
