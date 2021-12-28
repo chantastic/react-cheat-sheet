@@ -11,7 +11,7 @@ class CategoryFilter extends Component {
           marginRight: ".5rem",
           marginTop: ".5rem",
           borderRadius: "2px",
-          backgroundColor: active ? "#ffd43b" : "#868e96",
+          backgroundColor: active ? "#ffd43b" : "#b0b6bd",
           fontWeight: "500",
           color: "#fff",
           fontSize: "1em",
